@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>박준 Park Joon — AX Consultant & FDE</title>
+    <meta name="description" content="박준 Park Joon — AI 교육·컨설팅 전문가이자 에이전트 시스템 엔지니어(FDE). 교토대 정보학 석사. LG·SK 등 대기업 AI 교육·AX 컨설팅과 프로덕션 규모 멀티에이전트 시스템 설계·구축. 모든 공식 링크를 한 곳에.">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#141416" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="canonical" href="https://bio.joonlab98.com/">
+
+    <!-- Pre-paint theme (prevents dark-mode white flash on load) -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem("joon-bio-theme");
+                var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+                document.documentElement.setAttribute("data-theme", saved || (prefersDark ? "dark" : "light"));
+                var lang = localStorage.getItem("joon-bio-lang");
+                if (lang === "en") document.documentElement.setAttribute("lang", "en");
+            } catch (e) {}
+            document.documentElement.className += " js";
+        })();
+    </script>
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="박준 Park Joon">
+    <meta property="og:title" content="박준 Park Joon — AX Consultant & FDE">
+    <meta property="og:description" content="AI 교육·컨설팅 · 멀티에이전트 시스템 엔지니어. LG·SK 대기업 AI 교육과 AX 컨설팅, 프로덕션 규모 에이전트 시스템을 직접 설계·구축합니다.">
+    <meta property="og:url" content="https://bio.joonlab98.com">
+    <meta property="og:image" content="https://bio.joonlab98.com/assets/og.png">
+    <meta property="og:image:secure_url" content="https://bio.joonlab98.com/assets/og.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="박준 Park Joon · AX Consultant & FDE bio card">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="박준 Park Joon — AX Consultant & FDE">
+    <meta name="twitter:description" content="AI 교육·컨설팅 · 멀티에이전트 시스템 엔지니어. 모든 공식 링크를 한 곳에.">
+    <meta name="twitter:image" content="https://bio.joonlab98.com/assets/og.png">
+
+    <!-- Fonts: Noto Serif KR (display) · Noto Sans KR (body) · JetBrains Mono (meta) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;600;700&display=swap"></noscript>
+
+    <style>
+        :root {
+            --font-serif: "Noto Serif KR", ui-serif, Georgia, "Nanum Myeongjo", serif;
+            --font-sans: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+            --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+            /* Light — paper */
+            --paper: #FFFFFF;
+            --paper-soft: #FAFAF7;
+            --ink: #1C1C1E;
+            --ink-muted: #6B6B6B;
+            --silver: #8A8D8F;
+            --hairline: #E8E6E1;
+            --hairline-strong: #D9D6CF;
+            --red: #A50034;
+            --gold: #85714D;
+            --seal: #A50034;
+            --seal-frame: rgba(255,255,255,0.5);
+            --focus-ring: 0 0 0 3px color-mix(in srgb, var(--gold) 34%, transparent);
+            --card-bg: #FFFFFF;
+            --shadow-soft: 0 1px 2px rgba(28,28,30,0.04);
+        }
+
+        [data-theme="dark"] {
+            --paper: #141416;
+            --paper-soft: #1A1A1D;
+            --ink: #F2F1EF;
+            --ink-muted: #A2A2A4;
+            --silver: #74777A;
+            --hairline: #2A2A2E;
+            --hairline-strong: #3A3A40;
+            --red: #E05C81;
+            --gold: #BFA46F;
+            --seal: #C41E52;
+            --seal-frame: rgba(255,255,255,0.55);
+            --focus-ring: 0 0 0 3px color-mix(in srgb, var(--gold) 40%, transparent);
+            --card-bg: #1A1A1D;
+            --shadow-soft: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        * { margin: 0; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            min-height: 100dvh;
+            font-family: var(--font-sans);
+            font-size: 16px;
+            color: var(--ink);
+            background: var(--paper);
+            line-height: 1.72;
+            letter-spacing: -0.006em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background .28s ease, color .28s ease;
+        }
+        a { color: inherit; text-decoration: none; }
+        button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+        img, svg { display: block; max-width: 100%; }
+        ul { list-style: none; padding: 0; }
+        :focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: 4px; }
+
+        /* ---- Skip link ---- */
+        .skip {
+            position: fixed; left: 14px; top: 14px; z-index: 60;
+            transform: translateY(-160%);
+            background: var(--ink); color: var(--paper);
+            padding: 9px 14px; font-size: 13px; font-weight: 700; border-radius: 6px;
+        }
+        .skip:focus { transform: translateY(0); }
+
+        /* ---- Top controls ---- */
+        .controls {
+            position: fixed; top: 16px; right: 16px; z-index: 50;
+            display: flex; gap: 8px;
+        }
+        .ctrl {
+            display: inline-flex; align-items: center; justify-content: center;
+            height: 38px; min-width: 38px; padding: 0 11px;
+            border: 1px solid var(--hairline-strong);
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--paper) 82%, transparent);
+            -webkit-backdrop-filter: saturate(1.2) blur(8px);
+            backdrop-filter: saturate(1.2) blur(8px);
+            color: var(--ink-muted);
+            font-family: var(--font-mono);
+            font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+            transition: color .2s, border-color .2s, transform .2s;
+        }
+        .ctrl:hover { color: var(--ink); border-color: var(--silver); transform: translateY(-1px); }
+        .ctrl svg { width: 17px; height: 17px; stroke: currentColor; stroke-width: 1.7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+        /* ---- Page shell ---- */
+        .page {
+            width: min(100%, 660px);
+            margin: 0 auto;
+            padding: clamp(72px, 12vw, 108px) 24px clamp(56px, 10vw, 88px);
+        }
+        section { position: relative; }
+
+        /* ---- Reveal (page-load stagger). Revealed by JS via .in; stagger from inline --reveal-delay.
+               Fired by setTimeout so it works even where rAF/animations are throttled; content is
+               never left hidden (no-JS users skip the js class entirely). ---- */
+        @media (prefers-reduced-motion: no-preference) {
+            html.js [data-reveal] {
+                opacity: 0;
+                transform: translateY(16px);
+                transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
+                transition-delay: var(--reveal-delay, 0ms);
+            }
+            html.js [data-reveal].in { opacity: 1; transform: none; }
+        }
+
+        /* ================= HERO ================= */
+        .hero { text-align: left; }
+        .hero-avatar {
+            width: clamp(84px, 20vw, 104px);
+            height: clamp(84px, 20vw, 104px);
+            border-radius: 20px;
+            object-fit: cover;
+            border: 1px solid var(--hairline);
+            box-shadow: var(--shadow-soft);
+        }
+        .hero-namerow {
+            display: flex; align-items: center; gap: 16px;
+            margin-top: 26px;
+        }
+        .hero-name {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: clamp(38px, 8.4vw, 52px);
+            line-height: 1.04;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+        }
+        /* 낙관 (seal) — the single red-area element */
+        .seal {
+            flex-shrink: 0;
+            width: clamp(42px, 10vw, 52px);
+            height: clamp(42px, 10vw, 52px);
+            border-radius: 5px;
+            background: var(--seal);
+            display: grid; place-items: center;
+            position: relative;
+            box-shadow: 0 6px 20px -10px color-mix(in srgb, var(--seal) 70%, transparent);
+        }
+        .seal::before {
+            content: "";
+            position: absolute; inset: 4px;
+            border: 1px solid var(--seal-frame);
+            border-radius: 2px;
+        }
+        .seal span {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            color: #fff;
+            font-size: clamp(26px, 6.2vw, 33px);
+            line-height: 1;
+            transform: translateY(0.5px);
+        }
+
+        .hero-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 11.5px; font-weight: 600;
+            letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 30px;
+        }
+        .hero-role {
+            font-size: 15px;
+            color: var(--ink-muted);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        .hero-lede {
+            font-size: 16px;
+            color: var(--ink);
+            margin-top: 18px;
+            max-width: 52ch;
+            line-height: 1.78;
+        }
+        .hero-lede strong { font-weight: 700; }
+
+        /* Contact actions */
+        .hero-actions {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            margin-top: 28px;
+        }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            height: 44px; padding: 0 18px;
+            border-radius: 10px;
+            font-size: 14px; font-weight: 700;
+            transition: transform .18s, background .2s, border-color .2s, color .2s;
+        }
+        .btn-primary {
+            background: var(--ink); color: var(--paper);
+        }
+        .btn-primary:hover { transform: translateY(-1px); }
+        .btn-ghost {
+            border: 1px solid var(--hairline-strong);
+            color: var(--ink);
+        }
+        .btn-ghost:hover { border-color: var(--silver); transform: translateY(-1px); }
+        .btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .btn[data-copied="true"] { color: var(--gold); border-color: var(--gold); }
+
+        /* ================= SECTION scaffolding ================= */
+        .block { margin-top: clamp(72px, 13vw, 104px); }
+        .section-head { margin-bottom: 30px; }
+        .section-kicker {
+            font-family: var(--font-mono);
+            font-size: 11px; font-weight: 600;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--silver);
+            display: flex; align-items: center; gap: 12px;
+            margin-bottom: 14px;
+        }
+        .section-kicker::after {
+            content: ""; flex: 1; height: 1px;
+            background: var(--hairline);
+        }
+        .section-title {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: clamp(23px, 4.6vw, 29px);
+            letter-spacing: -0.015em;
+            color: var(--ink);
+            line-height: 1.24;
+        }
+        .section-desc {
+            font-size: 14.5px;
+            color: var(--ink-muted);
+            margin-top: 12px;
+            max-width: 54ch;
+        }
+
+        /* ================= LINK HUB ================= */
+        .links { border-top: 1px solid var(--hairline); }
+        .link-row {
+            display: grid;
+            grid-template-columns: 96px 1fr 22px;
+            gap: 18px;
+            align-items: baseline;
+            padding: 21px 4px;
+            border-bottom: 1px solid var(--hairline);
+            transition: transform .22s cubic-bezier(.22,.61,.36,1);
+        }
+        .link-cat {
+            font-family: var(--font-mono);
+            font-size: 10.5px; font-weight: 600;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: var(--silver);
+            padding-top: 3px;
+            white-space: nowrap;
+        }
+        .link-body { min-width: 0; }
+        .link-title {
+            font-size: 16.5px; font-weight: 700;
+            color: var(--ink);
+            line-height: 1.35;
+            display: inline;
+            background-image: linear-gradient(var(--gold), var(--gold));
+            background-size: 0% 1.5px;
+            background-position: 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size .34s cubic-bezier(.22,.61,.36,1);
+            padding-bottom: 1px;
+        }
+        .link-desc {
+            display: block;
+            font-size: 13px;
+            color: var(--ink-muted);
+            margin-top: 4px;
+            line-height: 1.55;
+        }
+        .link-arrow {
+            font-size: 15px;
+            color: var(--silver);
+            align-self: center;
+            transition: transform .22s cubic-bezier(.22,.61,.36,1), color .2s;
+            line-height: 1;
+        }
+        .link-row:hover { transform: translateX(5px); }
+        .link-row:hover .link-title { background-size: 100% 1.5px; }
+        .link-row:hover .link-arrow { color: var(--gold); transform: translate(2px, -2px); }
+        .link-row:focus-visible { box-shadow: var(--focus-ring); border-radius: 6px; }
+
+        @media (max-width: 520px) {
+            .link-row { grid-template-columns: 1fr 22px; gap: 10px 14px; padding: 18px 2px; }
+            .link-cat { grid-column: 1 / -1; padding-top: 0; }
+        }
+
+        /* ================= CLIENT ROSTER (강의·컨설팅) ================= */
+        .roster { display: grid; gap: 22px; }
+        .roster-row {
+            display: grid;
+            grid-template-columns: 128px 1fr;
+            gap: 18px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--hairline);
+        }
+        .roster-row:last-child { border-bottom: none; padding-bottom: 0; }
+        .roster-label {
+            font-family: var(--font-mono);
+            font-size: 11px; font-weight: 600;
+            letter-spacing: 0.06em; text-transform: uppercase;
+            color: var(--red);
+            padding-top: 2px;
+        }
+        .roster-items {
+            font-size: 14px;
+            color: var(--ink-muted);
+            line-height: 1.85;
+        }
+        .roster-items b { color: var(--ink); font-weight: 600; }
+        @media (max-width: 520px) {
+            .roster-row { grid-template-columns: 1fr; gap: 8px; }
+        }
+
+        /* ================= PROJECT CARDS ================= */
+        .cards { display: grid; grid-template-columns: 1fr; gap: 14px; }
+        @media (min-width: 600px) { .cards { grid-template-columns: 1fr 1fr; } }
+        .card {
+            border: 1px solid var(--hairline);
+            border-radius: 12px;
+            padding: 20px 20px 22px;
+            background: var(--card-bg);
+            box-shadow: var(--shadow-soft);
+            transition: border-color .22s, transform .22s, box-shadow .22s;
+        }
+        .card:hover {
+            border-color: var(--hairline-strong);
+            transform: translateY(-2px);
+        }
+        .card-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 10.5px; font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+        .card-title {
+            font-size: 15.5px; font-weight: 700;
+            color: var(--ink);
+            margin-top: 9px;
+            line-height: 1.4;
+        }
+        .card-desc {
+            font-size: 13px;
+            color: var(--ink-muted);
+            margin-top: 8px;
+            line-height: 1.62;
+        }
+        a.card.is-link { position: relative; display: block; color: inherit; }
+        a.card.is-link .card-title { padding-right: 22px; }
+        a.card.is-link::after {
+            content: "↗";
+            position: absolute; top: 18px; right: 18px;
+            font-size: 14px; color: var(--silver); line-height: 1;
+            transition: color .2s, transform .22s cubic-bezier(.22,.61,.36,1);
+        }
+        a.card.is-link:hover { border-color: var(--gold); }
+        a.card.is-link:hover::after { color: var(--gold); transform: translate(2px, -2px); }
+
+        /* ================= EDUCATION ================= */
+        .edu { display: grid; gap: 20px; }
+        .edu-item {
+            display: grid;
+            grid-template-columns: 128px 1fr;
+            gap: 18px;
+        }
+        .edu-period {
+            font-family: var(--font-mono);
+            font-size: 11.5px; font-weight: 500;
+            color: var(--silver);
+            padding-top: 3px;
+            letter-spacing: 0.01em;
+        }
+        .edu-school { font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.45; }
+        .edu-note { font-size: 13px; color: var(--ink-muted); margin-top: 4px; }
+        @media (max-width: 520px) {
+            .edu-item { grid-template-columns: 1fr; gap: 4px; }
+        }
+
+        /* ================= FOOTER ================= */
+        .footer {
+            margin-top: clamp(72px, 13vw, 104px);
+            padding-top: 34px;
+            border-top: 1px solid var(--hairline);
+        }
+        .social {
+            display: flex; gap: 10px;
+        }
+        .social a {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 42px; height: 42px;
+            border: 1px solid var(--hairline-strong);
+            border-radius: 10px;
+            color: var(--ink-muted);
+            transition: color .2s, border-color .2s, transform .2s;
+        }
+        .social a:hover { color: var(--ink); border-color: var(--silver); transform: translateY(-2px); }
+        .social svg { width: 19px; height: 19px; }
+        .footer-meta {
+            margin-top: 26px;
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            color: var(--silver);
+            letter-spacing: 0.02em;
+            line-height: 1.8;
+        }
+        .footer-meta .dot { opacity: 0.5; margin: 0 7px; }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; animation: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip" href="#links" data-ko="본문 링크로 이동" data-en="Skip to links">본문 링크로 이동</a>
+
+    <div class="controls">
+        <button class="ctrl" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+        <button class="ctrl" id="themeBtn" type="button" aria-pressed="false" aria-label="다크 모드로 전환">
+            <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true"></svg>
+        </button>
+    </div>
+
+    <main class="page">
+        <!-- ===================== HERO ===================== -->
+        <header class="hero" data-reveal style="--reveal-delay:0ms">
+            <img class="hero-avatar" src="assets/profile.jpg" width="104" height="104"
+                 data-alt-ko="박준 프로필 사진" data-alt-en="Portrait of Park Joon" alt="박준 프로필 사진">
+            <div class="hero-namerow">
+                <h1 class="hero-name" data-ko="박준" data-en="Park Joon">박준</h1>
+                <span class="seal" aria-hidden="true"><span>準</span></span>
+            </div>
+            <p class="hero-eyebrow" data-ko="AX 컨설턴트 · FDE" data-en="AX Consultant & FDE">AX 컨설턴트 · FDE</p>
+            <p class="hero-lede"
+               data-ko-html="교토대 정보학 석사(LLM·RAG 연구). LG·SK 등 대기업의 AI 교육과 AX 컨설팅을 하며, <strong>멀티에이전트·에이전트 하네스 시스템을 직접 설계하고 프로덕션 규모로 구축</strong>합니다."
+               data-en-html="M.S. in Informatics from Kyoto University (LLM·RAG research). I lead AI education and AX consulting for enterprises such as LG and SK, and <strong>personally design and ship production-grade multi-agent and agent-harness systems</strong>.">교토대 정보학 석사(LLM·RAG 연구). LG·SK 등 대기업의 AI 교육과 AX 컨설팅을 하며, <strong>멀티에이전트·에이전트 하네스 시스템을 직접 설계하고 프로덕션 규모로 구축</strong>합니다.</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="mailto:wns9133@gmail.com?subject=%EA%B0%95%EC%9D%98%20%C2%B7%20%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98"
+                   data-ko="강의 · 협업 문의" data-en="Invite / Collaborate">강의 · 협업 문의</a>
+                <button class="btn btn-ghost" id="copyEmail" type="button" data-copy="wns9133@gmail.com">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h8"/></svg>
+                    <span class="btn-label" data-ko="이메일 복사" data-en="Copy email">이메일 복사</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- ===================== LINK HUB ===================== -->
+        <section class="block" id="links" aria-labelledby="links-title" data-reveal style="--reveal-delay:65ms">
+            <div class="section-head">
+                <p class="section-kicker" data-ko="바로가기" data-en="Links">바로가기</p>
+                <h2 class="section-title" id="links-title" data-ko="공식 관문" data-en="Official Gateway">공식 관문</h2>
+                <p class="section-desc" data-ko="제가 하는 일과 만든 것들 — 채널, 커뮤니티, 코드, 강의, 공개 연구로 이어지는 공식 링크입니다." data-en="What I do and what I build — official links to my channel, communities, code, courses, and public research.">제가 하는 일과 만든 것들 — 채널, 커뮤니티, 코드, 강의, 공개 연구로 이어지는 공식 링크입니다.</p>
+            </div>
+            <ul class="links-list">
+                <li><a class="link-row" href="https://class.cmdspace.kr/channels/L2NoYW5uZWxzLzE3Njkx/C00007/classes/153787/information" target="_blank" rel="noopener">
+                    <span class="link-cat" data-ko="강의" data-en="Lecture">강의</span>
+                    <span class="link-body">
+                        <span class="link-title" data-ko="월간 CMDS (구요한 & 박준)" data-en="Monthly CMDS (Koo Yohan & Park Joon)">월간 CMDS (구요한 &amp; 박준)</span>
+                        <span class="link-desc" data-ko="AI·LLM 실무를 다루는 월간 클래스" data-en="A monthly class on hands-on AI and LLM practice">AI·LLM 실무를 다루는 월간 클래스</span>
+                    </span>
+                    <span class="link-arrow" aria-hidden="true">↗</span>
+                </a></li>
+                <li><a class="link-row" href="https://fastcampus.co.kr/dgn_online_outsourcing" target="_blank" rel="noopener">
+                    <span class="link-cat" data-ko="강의" data-en="Lecture">강의</span>
+                    <span class="link-body">
+                        <span class="link-title" data-ko="[패스트캠퍼스 X AI 전문가] AI 외주 서비스" data-en="[FastCampus X AI Expert] AI Outsourcing Service">[패스트캠퍼스 X AI 전문가] AI 외주 서비스</span>
+                        <span class="link-desc" data-ko="AI로 외주 서비스를 만드는 온라인 강의" data-en="Online course on building AI-powered outsourcing services">AI로 외주 서비스를 만드는 온라인 강의</span>
+                    </span>
+                    <span class="link-arrow" aria-hidden="true">↗</span>
+                </a></li>
+                <li><a class="link-row" href="https://fastcampus.co.kr/data_oneonone_aiservice" target="_blank" rel="noopener">
+                    <span class="link-cat" data-ko="강의" data-en="Lecture">강의</span>
+                    <span class="link-body">
+                        <span class="link-title" data-ko="박준의 나만을 위한 AI 서비스 만들기" data-en="Park Joon's Build-Your-Own AI Service">박준의 나만을 위한 AI 서비스 만들기</span>
+                        <span class="link-desc" data-ko="나만의 AI 서비스를 직접 만드는 강의" data-en="Course on building your own personal AI service">나만의 AI 서비스를 직접 만드는 강의</span>
+                    </span>
+                    <span class="link-arrow" aria-hidden="true">↗</span>
+                </a></li>
+                <li><a class="link-row" href="https://fastcampus.co.kr/biz_online_researcher" target="_blank" rel="noopener">
+                    <span class="link-cat" data-ko="강의" data-en="Lecture">강의</span>
+                    <span class="link-body">
+                        <span class="link-title" data-ko="연구자를 위한 AI툴 활용법" data-en="AI Tools for Researchers">연구자를 위한 AI툴 활용법</span>
+                        <span class="link-desc" data-ko="차원이 다른 연구 프로세스를 위한 AI 활용법" data-en="AI tooling for a next-level research process">차원이 다른 연구 프로세스를 위한 AI 활용법</span>
+                    </span>
+                    <span class="link-arrow" aria-hidden="true">↗</span>
+                </a></li>
+                <li><a class="link-row" href="https://open.kakao.com/o/gl7JSkSg" target="_blank" rel="noopener">
+                    <span class="link-cat" data-ko="커뮤니티" data-en="Community">커뮤니티</span>
+                    <span class="link-body">
+                        <span class="link-title" data-ko="준랩 | JoonLab 지식 공유방 (AI, LLM)" data-en="JoonLab Knowledge Community (AI, LLM)">준랩 | JoonLab 지식 공유방 (AI, LLM)</span>
+                        <span class="link-desc" data-ko="480여 명이 함께하는 AI·LLM 오픈채팅" data-en="An AI·LLM open chat with 480+ members">480여 명이 함께하는 AI·LLM 오픈채팅</span>
+                    </span>
+                    <span class="link-arrow" aria-hidden="true">↗</span>
+                </a></li>
+                <li><a class="link-row" href="https://open.kakao.com/o/sUXWYvlf" target="_blank" rel="noopener">
+                    <span class="link-cat" data-ko="문의" data-en="Inquiry">문의</span>
+                    <span class="link-body">
+                        <span class="link-title" data-ko="카카오톡 1:1 오픈채팅 문의" data-en="1:1 Inquiry via KakaoTalk">카카오톡 1:1 오픈채팅 문의</span>
+                        <span class="link-desc" data-ko="강의·컨설팅 1:1 문의 채널" data-en="Direct channel for lecture and consulting inquiries">강의·컨설팅 1:1 문의 채널</span>
+                    </span>
+                    <span class="link-arrow" aria-hidden="true">↗</span>
+                </a></li>
+                <li><a class="link-row" href="https://www.youtube.com/@joonlab98" target="_blank" rel="noopener">
+                    <span class="link-cat" data-ko="채널" data-en="Channel">채널</span>
+                    <span class="link-body">
+                        <span class="link-title" data-ko="준랩 | JoonLab (YouTube)" data-en="JoonLab (YouTube)">준랩 | JoonLab (YouTube)</span>
+                        <span class="link-desc" data-ko="AI·에이전트·개발을 다루는 유튜브 채널" data-en="YouTube channel on AI, agents, and development">AI·에이전트·개발을 다루는 유튜브 채널</span>
+                    </span>
+                    <span class="link-arrow" aria-hidden="true">↗</span>
+                </a></li>
+                <li><a class="link-row" href="https://soomgo.com/profile/users/7524519" target="_blank" rel="noopener">
+                    <span class="link-cat" data-ko="문의" data-en="Inquiry">문의</span>
+                    <span class="link-body">
+                        <span class="link-title" data-ko="숨고(Soomgo) 전문가 프로필" data-en="Soomgo Expert Profile">숨고(Soomgo) 전문가 프로필</span>
+                        <span class="link-desc" data-ko="AI 강의·컨설팅 전문가 매칭 프로필" data-en="Expert-matching profile for AI lectures and consulting">AI 강의·컨설팅 전문가 매칭 프로필</span>
+                    </span>
+                    <span class="link-arrow" aria-hidden="true">↗</span>
+                </a></li>
+            </ul>
+        </section>
+
+        <!-- ===================== 기업 강의 · 컨설팅 ===================== -->
+        <section class="block" aria-labelledby="clients-title" data-reveal style="--reveal-delay:130ms">
+            <div class="section-head">
+                <p class="section-kicker" data-ko="포트폴리오 01" data-en="Portfolio 01">포트폴리오 01</p>
+                <h2 class="section-title" id="clients-title" data-ko="기업 강의 · 컨설팅" data-en="Corporate Training & Consulting">기업 강의 · 컨설팅</h2>
+                <p class="section-desc" data-ko="LG·SK를 비롯한 대기업 경영진과 실무진을 대상으로 AI 교육과 AX 컨설팅을 수행합니다. 에이전트·바이브코딩·AX 전환을 실무에 바로 적용하도록 설계합니다." data-en="I deliver AI education and AX consulting for executives and practitioners at major enterprises including LG and SK, designed for immediate, hands-on application of agents, vibe coding, and AX transformation.">LG·SK를 비롯한 대기업 경영진과 실무진을 대상으로 AI 교육과 AX 컨설팅을 수행합니다. 에이전트·바이브코딩·AX 전환을 실무에 바로 적용하도록 설계합니다.</p>
+            </div>
+            <div class="roster">
+                <div class="roster-row">
+                    <span class="roster-label" data-ko="LG 그룹" data-en="LG Group">LG 그룹</span>
+                    <p class="roster-items" data-ko="LG AX Camp for Leaders CEO 과정, LG U+ 실무 교육(NPS +81), LG전자 임원 심화, LG인화원 신임팀장·리더 세미나" data-en="LG AX Camp for Leaders (CEO track), LG Uplus practitioner training (NPS +81), LG Electronics executive intensives, and LG Academy new-team-lead & leader seminars">LG AX Camp for Leaders CEO 과정, LG U+ 실무 교육(NPS +81), LG전자 임원 심화, LG인화원 신임팀장·리더 세미나</p>
+                </div>
+                <div class="roster-row">
+                    <span class="roster-label" data-ko="SK 그룹" data-en="SK Group">SK 그룹</span>
+                    <p class="roster-items" data-ko="SKT AI Frontier 1–8기 파트너, SK하이닉스·SK에코플랜트·SK mysuni·에이닷비즈 강의·컨설팅" data-en="SK Telecom AI Frontier partner (cohorts 1–8), plus lectures and consulting for SK hynix, SK ecoplant, SK mysuni, and A.biz">SKT AI Frontier 1–8기 파트너, SK하이닉스·SK에코플랜트·SK mysuni·에이닷비즈 강의·컨설팅</p>
+                </div>
+                <div class="roster-row">
+                    <span class="roster-label" data-ko="서울 AI 허브" data-en="Seoul AI Hub">서울 AI 허브</span>
+                    <p class="roster-items" data-ko="「AI Native CEO」 8주 과정 메인 강사 — 에이전트·하네스 엔지니어링" data-en="Lead instructor for the 8-week &quot;AI Native CEO&quot; program on agent and harness engineering">「AI Native CEO」 8주 과정 메인 강사 — 에이전트·하네스 엔지니어링</p>
+                </div>
+                <div class="roster-row">
+                    <span class="roster-label" data-ko="패스트캠퍼스" data-en="FastCampus">패스트캠퍼스</span>
+                    <p class="roster-items" data-ko="생성 AI 마스터 패키지, 연구자를 위한 AI툴 등 온라인 대표 강의" data-en="Flagship online courses including the Generative AI Master Package and AI Tools for Researchers">생성 AI 마스터 패키지, 연구자를 위한 AI툴 등 온라인 대표 강의</p>
+                </div>
+                <div class="roster-row">
+                    <span class="roster-label" data-ko="커뮤니티·컨퍼런스" data-en="Community">커뮤니티·컨퍼런스</span>
+                    <p class="roster-items" data-ko="GPTers·지피터스 특강, CMDS AI PKM 컨퍼런스 발표" data-en="Guest lectures at GPTers, and talks at the CMDS AI PKM Conference">GPTers·지피터스 특강, CMDS AI PKM 컨퍼런스 발표</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== 컨설팅 프로젝트 ===================== -->
+        <section class="block" aria-labelledby="consult-title" data-reveal style="--reveal-delay:195ms">
+            <div class="section-head">
+                <p class="section-kicker" data-ko="포트폴리오 02" data-en="Portfolio 02">포트폴리오 02</p>
+                <h2 class="section-title" id="consult-title" data-ko="컨설팅 프로젝트" data-en="Consulting Projects">컨설팅 프로젝트</h2>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <p class="card-eyebrow">2026 · LG</p>
+                    <p class="card-title" data-ko="AI Agent 플랫폼 개발" data-en="AI Agent Platform Development">AI Agent 플랫폼 개발</p>
+                    <p class="card-desc" data-ko="AI 리터러시 교육용 대화형 AI 웹앱 구축 (LangGraph·FastAPI·Supabase·Gemini)" data-en="Built a conversational AI web app for AI-literacy training (LangGraph, FastAPI, Supabase, Gemini)">AI 리터러시 교육용 대화형 AI 웹앱 구축 (LangGraph·FastAPI·Supabase·Gemini)</p>
+                </div>
+                <div class="card">
+                    <p class="card-eyebrow" data-ko="2025 · 신세계서울병원" data-en="2025 · Shinsegae Seoul Hospital">2025 · 신세계서울병원</p>
+                    <p class="card-title" data-ko="AI 운영 컨설팅" data-en="AI Operations Consulting">AI 운영 컨설팅</p>
+                    <p class="card-desc" data-ko="AI 기반 병원 운영 데이터 분석 및 재고관리 시스템 컨설팅" data-en="AI-driven analysis of hospital operations data and inventory management systems">AI 기반 병원 운영 데이터 분석 및 재고관리 시스템 컨설팅</p>
+                </div>
+                <div class="card">
+                    <p class="card-eyebrow" data-ko="2025–26 · 이포넷" data-en="2025–26 · E4NET">2025–26 · 이포넷</p>
+                    <p class="card-title" data-ko="TOPIK AI 문제 생성 시스템" data-en="TOPIK AI Question Generation System">TOPIK AI 문제 생성 시스템</p>
+                    <p class="card-desc" data-ko="Gemini API 기반 TOPIK 듣기평가용 이미지 자동생성 플랫폼 개발" data-en="Developed a Gemini-powered platform that auto-generates images for TOPIK listening assessments">Gemini API 기반 TOPIK 듣기평가용 이미지 자동생성 플랫폼 개발</p>
+                </div>
+                <div class="card">
+                    <p class="card-eyebrow" data-ko="2026 · 백석대학교" data-en="2026 · Baekseok University">2026 · 백석대학교</p>
+                    <p class="card-title" data-ko="Pind 프로젝트 기술 멘토링" data-en="Pind Project Technical Mentoring">Pind 프로젝트 기술 멘토링</p>
+                    <p class="card-desc" data-ko="YouTube 영상 기반 장소 자동 추출 서비스 기술 멘토링" data-en="Technical mentoring for a service that auto-extracts places from YouTube videos">YouTube 영상 기반 장소 자동 추출 서비스 기술 멘토링</p>
+                </div>
+                <div class="card">
+                    <p class="card-eyebrow" data-ko="2025 · 데이원컴퍼니" data-en="2025 · Day1Company">2025 · 데이원컴퍼니</p>
+                    <p class="card-title" data-ko="교육 콘텐츠 생성기 개발" data-en="Education Content Generator">교육 콘텐츠 생성기 개발</p>
+                    <p class="card-desc" data-ko="FastCampus 교육 콘텐츠 생성 데모 앱 개발 (Python, PyInstaller)" data-en="Built a demo app for generating FastCampus training content (Python, PyInstaller)">FastCampus 교육 콘텐츠 생성 데모 앱 개발 (Python, PyInstaller)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== 개발 프로젝트 ===================== -->
+        <section class="block" aria-labelledby="dev-title" data-reveal style="--reveal-delay:260ms">
+            <div class="section-head">
+                <p class="section-kicker" data-ko="포트폴리오 03" data-en="Portfolio 03">포트폴리오 03</p>
+                <h2 class="section-title" id="dev-title" data-ko="개발 프로젝트" data-en="Engineering Projects">개발 프로젝트</h2>
+                <p class="section-desc" data-ko="직접 설계·구축한 프로덕션 규모 에이전트 시스템과 자동화 도구 일부." data-en="Selected production-scale agent systems and automation tools I designed and built.">직접 설계·구축한 프로덕션 규모 에이전트 시스템과 자동화 도구 일부.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <p class="card-eyebrow">MULTI-AGENT</p>
+                    <p class="card-title" data-ko="준랩 AutoTrader — 멀티에이전트 자동매매" data-en="JoonLab AutoTrader — Multi-Agent Trading">준랩 AutoTrader — 멀티에이전트 자동매매</p>
+                    <p class="card-desc" data-ko="7~12명 LLM 전문가 토론(독립분석→상호반박→종합) 후 결정론적 regime 게이트·하드 리스크 한도로 집행하는 자동매매 (기술 연구)" data-en="Automated trading where 7–12 LLM experts debate (independent analysis, rebuttal, synthesis) before a deterministic regime gate and hard risk limits execute (research project)">7~12명 LLM 전문가 토론(독립분석→상호반박→종합) 후 결정론적 regime 게이트·하드 리스크 한도로 집행하는 자동매매 (기술 연구)</p>
+                </div>
+                <div class="card">
+                    <p class="card-eyebrow">AI ASSISTANT</p>
+                    <p class="card-title" data-ko="Hermes — 능동형 AI 비서" data-en="Hermes — Proactive AI Assistant">Hermes — 능동형 AI 비서</p>
+                    <p class="card-desc" data-ko="데일리 브리핑·SOP 위키·이메일 triage·월간 자가진화를 크론으로 자동화. 클라우드에서 로컬(PM2)로 이전하고 ChatGPT OAuth 정액 백엔드로 운영" data-en="Cron-automated daily briefings, SOP wiki, email triage, and monthly self-evolution — migrated from cloud to local (PM2) on a flat-rate ChatGPT OAuth backend">데일리 브리핑·SOP 위키·이메일 triage·월간 자가진화를 크론으로 자동화. 클라우드에서 로컬(PM2)로 이전하고 ChatGPT OAuth 정액 백엔드로 운영</p>
+                </div>
+                <div class="card">
+                    <p class="card-eyebrow">PIPELINE</p>
+                    <p class="card-title" data-ko="TOPIK I 강의영상 완전 자동화" data-en="Fully Automated TOPIK I Lecture Videos">TOPIK I 강의영상 완전 자동화</p>
+                    <p class="card-desc" data-ko="문제생성→해설→TTS→슬라이드→영상 합성→다국어(5개 언어)까지 무인 파이프라인. 15종 에이전트 팀 + Gemini 4차원 영상 QA" data-en="An unattended pipeline from question generation to explanation, TTS, slides, video synthesis, and 5-language localization — a 15-agent team with Gemini 4-dimensional video QA">문제생성→해설→TTS→슬라이드→영상 합성→다국어(5개 언어)까지 무인 파이프라인. 15종 에이전트 팀 + Gemini 4차원 영상 QA</p>
+                </div>
+                <a class="card is-link" href="https://fable5-traces-analysis.vercel.app" target="_blank" rel="noopener">
+                    <p class="card-eyebrow">OPEN RESEARCH</p>
+                    <p class="card-title" data-ko="Fable-5 Traces 분석 (공개 연구)" data-en="Fable-5 Traces Analysis (Open Research)">Fable-5 Traces 분석 (공개 연구)</p>
+                    <p class="card-desc" data-ko="프런티어 모델의 실제 코딩 궤적 4,665행을 분석해 검증 내장 루프의 86.7%가 10스텝 내 완료됨을 발견. 인터랙티브 뷰어·덱·인포그래픽 공개" data-en="Analyzed 4,665 lines of a frontier model's real coding traces, finding 86.7% of verification-embedded loops finish within 10 steps. Published as an interactive viewer, deck, and infographic">프런티어 모델의 실제 코딩 궤적 4,665행을 분석해 검증 내장 루프의 86.7%가 10스텝 내 완료됨을 발견. 인터랙티브 뷰어·덱·인포그래픽 공개</p>
+                </a>
+                <div class="card">
+                    <p class="card-eyebrow">REVERSE-ENGINEERED</p>
+                    <p class="card-title" data-ko="TimeTree Calendar CLI" data-en="TimeTree Calendar CLI">TimeTree Calendar CLI</p>
+                    <p class="card-desc" data-ko="공식 API가 없는 TimeTree의 내부 API를 리버스엔지니어링한 CLI 백엔드 — 일정 CRUD·댓글·동기화·ICS/CSV 내보내기" data-en="A CLI backend built by reverse-engineering TimeTree's internal API (no official API exists) — event CRUD, comments, sync, and ICS/CSV export">공식 API가 없는 TimeTree의 내부 API를 리버스엔지니어링한 CLI 백엔드 — 일정 CRUD·댓글·동기화·ICS/CSV 내보내기</p>
+                </div>
+                <div class="card">
+                    <p class="card-eyebrow">macOS · OPEN SOURCE</p>
+                    <p class="card-title" data-ko="Barback — macOS 메뉴바 관리앱" data-en="Barback — macOS Menu Bar Manager">Barback — macOS 메뉴바 관리앱</p>
+                    <p class="card-desc" data-ko="노치에 가려진 메뉴바 아이콘을 팝업으로 꺼내는 Bartender 클론. Swift 6 + ScreenCaptureKit + macOS 저수준 API (오픈소스)" data-en="A Bartender clone that surfaces menu-bar icons hidden behind the notch. Swift 6, ScreenCaptureKit, and low-level macOS APIs (open source)">노치에 가려진 메뉴바 아이콘을 팝업으로 꺼내는 Bartender 클론. Swift 6 + ScreenCaptureKit + macOS 저수준 API (오픈소스)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== 학력 ===================== -->
+        <section class="block" aria-labelledby="edu-title" data-reveal style="--reveal-delay:325ms">
+            <div class="section-head">
+                <p class="section-kicker" data-ko="포트폴리오 04" data-en="Portfolio 04">포트폴리오 04</p>
+                <h2 class="section-title" id="edu-title" data-ko="학력" data-en="Education">학력</h2>
+            </div>
+            <div class="edu">
+                <div class="edu-item">
+                    <span class="edu-period">2022.10 – 2025.03</span>
+                    <div>
+                        <p class="edu-school" data-ko="교토대학 대학원 정보학연구과 지능정보학 석사 (Kashima Lab)" data-en="Kyoto University, Graduate School of Informatics — M.S. in Intelligence Science and Technology (Kashima Lab)">교토대학 대학원 정보학연구과 지능정보학 석사 (Kashima Lab)</p>
+                        <p class="edu-note" data-ko="LLM·Long Context·RAG·Prompt Engineering 연구. Panasonic 공동연구(시계열 이상탐지)" data-en="Research on LLMs, long-context comprehension, RAG, and prompt engineering; joint research with Panasonic on time-series anomaly detection">LLM·Long Context·RAG·Prompt Engineering 연구. Panasonic 공동연구(시계열 이상탐지)</p>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <span class="edu-period">2018.04 – 2022.04</span>
+                    <div>
+                        <p class="edu-school" data-ko="오카야마대학 이학부 수학과 학사" data-en="Okayama University, Faculty of Science — B.S. in Mathematics">오카야마대학 이학부 수학과 학사</p>
+                        <p class="edu-note" data-ko="한일공동이공계학부 국비유학생(18기), 학부 전액장학생" data-en="Korea-Japan Joint Government Scholarship student (18th cohort), full undergraduate scholarship">한일공동이공계학부 국비유학생(18기), 학부 전액장학생</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== FOOTER ===================== -->
+        <footer class="footer" data-reveal style="--reveal-delay:390ms">
+            <nav class="social" aria-label="소셜 링크">
+                <a href="https://github.com/joonlab" target="_blank" rel="noopener" data-label-ko="GitHub" data-label-en="GitHub" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.4 9.4 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@joonlab98" target="_blank" rel="noopener" data-label-ko="YouTube" data-label-en="YouTube" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.4-.43-5.03a2.6 2.6 0 00-1.83-1.84C19.1 4.7 12 4.7 12 4.7s-7.1 0-8.74.43A2.6 2.6 0 001.43 6.97C1 8.6 1 12 1 12s0 3.4.43 5.03c.24.9.94 1.6 1.83 1.84 1.64.43 8.74.43 8.74.43s7.1 0 8.74-.43a2.6 2.6 0 001.83-1.84C23 15.4 23 12 23 12zM9.75 15.27V8.73L15.5 12l-5.75 3.27z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/joonlab/" target="_blank" rel="noopener" data-label-ko="LinkedIn" data-label-en="LinkedIn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3V9zm6 0h3.83v1.64h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14V21h-4v-5.44c0-1.3-.02-2.97-1.81-2.97-1.81 0-2.09 1.41-2.09 2.87V21H9V9z"/></svg>
+                </a>
+                <a href="mailto:wns9133@gmail.com" data-label-ko="이메일 보내기" data-label-en="Send email" aria-label="이메일 보내기">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
+                </a>
+            </nav>
+            <p class="footer-meta">
+                <span>© <span id="yr">2026</span> JoonLab · 박준 Park Joon</span>
+                <span class="dot" aria-hidden="true">·</span>
+                <span data-ko="최종 업데이트 2026-07-04" data-en="Last updated 2026-07-04">최종 업데이트 2026-07-04</span>
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        (function () {
+            var root = document.documentElement;
+            var themeBtn = document.getElementById("themeBtn");
+            var themeIcon = document.getElementById("themeIcon");
+            var langBtn = document.getElementById("langBtn");
+
+            var currentLang = "ko";
+            try { currentLang = localStorage.getItem("joon-bio-lang") === "en" ? "en" : "ko"; } catch (e) {}
+            var savedTheme = null;
+            try { savedTheme = localStorage.getItem("joon-bio-theme"); } catch (e) {}
+            var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+            /* ---------- Theme ---------- */
+            function iconMarkup(theme) {
+                if (theme === "dark") {
+                    return '<circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/>';
+                }
+                return '<path d="M20.5 13.2A8.3 8.3 0 1110.8 3.5 6.5 6.5 0 0020.5 13.2z"/>';
+            }
+            function setTheme(theme) {
+                root.setAttribute("data-theme", theme);
+                themeBtn.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+                var toLight = currentLang === "en" ? "Switch to light mode" : "라이트 모드로 전환";
+                var toDark = currentLang === "en" ? "Switch to dark mode" : "다크 모드로 전환";
+                themeBtn.setAttribute("aria-label", theme === "dark" ? toLight : toDark);
+                themeIcon.innerHTML = iconMarkup(theme);
+            }
+
+            /* ---------- Language ---------- */
+            function applyLanguage(lang) {
+                currentLang = lang === "en" ? "en" : "ko";
+                root.setAttribute("lang", currentLang);
+                try { localStorage.setItem("joon-bio-lang", currentLang); } catch (e) {}
+                var attr = currentLang === "en" ? "data-en" : "data-ko";
+                var attrHtml = currentLang === "en" ? "data-en-html" : "data-ko-html";
+                document.querySelectorAll("[data-ko][data-en]").forEach(function (el) {
+                    el.textContent = el.getAttribute(attr);
+                });
+                document.querySelectorAll("[data-ko-html][data-en-html]").forEach(function (el) {
+                    el.innerHTML = el.getAttribute(attrHtml);
+                });
+                document.querySelectorAll("[data-label-ko][data-label-en]").forEach(function (el) {
+                    el.setAttribute("aria-label", currentLang === "en" ? el.getAttribute("data-label-en") : el.getAttribute("data-label-ko"));
+                });
+                document.querySelectorAll("[data-alt-ko][data-alt-en]").forEach(function (el) {
+                    el.setAttribute("alt", currentLang === "en" ? el.getAttribute("data-alt-en") : el.getAttribute("data-alt-ko"));
+                });
+                langBtn.textContent = currentLang === "en" ? "KO" : "EN";
+                langBtn.setAttribute("aria-label", currentLang === "en" ? "한국어로 전환" : "Switch to English");
+                setTheme(root.getAttribute("data-theme") || (prefersDark ? "dark" : "light"));
+            }
+
+            setTheme(savedTheme || (prefersDark ? "dark" : "light"));
+            applyLanguage(currentLang);
+
+            themeBtn.addEventListener("click", function () {
+                var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+                setTheme(next);
+                try { localStorage.setItem("joon-bio-theme", next); } catch (e) {}
+            });
+            langBtn.addEventListener("click", function () {
+                applyLanguage(currentLang === "en" ? "ko" : "en");
+            });
+
+            document.getElementById("yr").textContent = String(new Date().getFullYear());
+
+            /* ---------- Email copy ---------- */
+            var copyBtn = document.getElementById("copyEmail");
+            var copyLabel = copyBtn.querySelector(".btn-label");
+            function fallbackCopy(text) {
+                var area = document.createElement("textarea");
+                area.value = text; area.setAttribute("readonly", "");
+                area.style.position = "fixed"; area.style.opacity = "0";
+                document.body.appendChild(area); area.select();
+                try { document.execCommand("copy"); } finally { document.body.removeChild(area); }
+            }
+            copyBtn.addEventListener("click", function () {
+                var text = copyBtn.getAttribute("data-copy");
+                var settled = false;
+                var done = function () {
+                    if (settled) return;
+                    settled = true;
+                    copyLabel.textContent = currentLang === "en" ? "Copied" : "복사됨";
+                    copyBtn.setAttribute("data-copied", "true");
+                    setTimeout(function () {
+                        copyLabel.textContent = currentLang === "en" ? "Copy email" : "이메일 복사";
+                        copyBtn.removeAttribute("data-copied");
+                    }, 1600);
+                };
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(done).catch(function () { fallbackCopy(text); done(); });
+                    /* guard: if writeText neither resolves nor rejects (e.g. no focus), copy + confirm anyway */
+                    setTimeout(function () { if (!settled) { fallbackCopy(text); done(); } }, 500);
+                } else { fallbackCopy(text); done(); }
+            });
+
+            /* ---------- Reveal (one-time page-load stagger; idempotent, multi-triggered) ---------- */
+            var groups = Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"));
+            function revealAll() { groups.forEach(function (el) { el.classList.add("in"); }); }
+            var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            if (reduceMotion) {
+                revealAll();
+            } else {
+                if (window.requestAnimationFrame) requestAnimationFrame(function () { requestAnimationFrame(revealAll); });
+                setTimeout(revealAll, 80);                 // fires even where rAF is throttled
+                window.addEventListener("load", revealAll); // last-resort trigger
+            }
+        })();
+    </script>
+    <script>
+        /* Independent failsafe: guarantee content is visible even if the main script above threw. */
+        (function () {
+            function reveal() {
+                var g = document.querySelectorAll("[data-reveal]"), i;
+                for (i = 0; i < g.length; i++) g[i].classList.add("in");
+            }
+            try { setTimeout(reveal, 1400); }
+            catch (e) { document.documentElement.className = document.documentElement.className.replace(/\bjs\b/, ""); }
+        })();
+    </script>
+</body>
+</html>
