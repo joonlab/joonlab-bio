@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>박준 Park Joon — AX Consultant & FDE</title>
-    <meta name="description" content="박준 Park Joon — AI 교육·컨설팅 전문가이자 에이전트 시스템 엔지니어(FDE). 교토대 정보학 석사. LG·SK 등 대기업 AI 교육·AX 컨설팅과 프로덕션 규모 멀티에이전트 시스템 설계·구축. 모든 공식 링크를 한 곳에.">
+    <meta name="description" content="박준 Park Joon — 교토대 LLM 연구에서 출발해 LG·SK 등 대기업의 AX 교육을 설계하고, 가르치는 모든 것을 프로덕션 에이전트 시스템으로 직접 만들어 증명하는 AI 컨설턴트·FDE. 강의·프로젝트·커뮤니티의 모든 공식 링크.">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#141416" media="(prefers-color-scheme: dark)">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -29,7 +29,7 @@
     <meta property="og:type" content="profile">
     <meta property="og:site_name" content="박준 Park Joon">
     <meta property="og:title" content="박준 Park Joon — AX Consultant & FDE">
-    <meta property="og:description" content="AI 교육·컨설팅 · 멀티에이전트 시스템 엔지니어. LG·SK 대기업 AI 교육과 AX 컨설팅, 프로덕션 규모 에이전트 시스템을 직접 설계·구축합니다.">
+    <meta property="og:description" content="교토대 LLM 연구 → LG·SK 대기업 AX 교육 설계 → 가르치는 모든 것을 프로덕션 에이전트 시스템으로 직접 증명. 강의·프로젝트·커뮤니티 공식 링크.">
     <meta property="og:url" content="https://bio.joonlab98.com">
     <meta property="og:image" content="https://bio.joonlab98.com/assets/og.png">
     <meta property="og:image:secure_url" content="https://bio.joonlab98.com/assets/og.png">
@@ -66,8 +66,6 @@
             --hairline-strong: #D9D6CF;
             --red: #A50034;
             --gold: #85714D;
-            --seal: #A50034;
-            --seal-frame: rgba(255,255,255,0.5);
             --focus-ring: 0 0 0 3px color-mix(in srgb, var(--gold) 34%, transparent);
             --card-bg: #FFFFFF;
             --shadow-soft: 0 1px 2px rgba(28,28,30,0.04);
@@ -83,8 +81,6 @@
             --hairline-strong: #3A3A40;
             --red: #E05C81;
             --gold: #BFA46F;
-            --seal: #C41E52;
-            --seal-frame: rgba(255,255,255,0.55);
             --focus-ring: 0 0 0 3px color-mix(in srgb, var(--gold) 40%, transparent);
             --card-bg: #1A1A1D;
             --shadow-soft: 0 1px 2px rgba(0,0,0,0.3);
@@ -184,32 +180,6 @@
             letter-spacing: -0.02em;
             color: var(--ink);
         }
-        /* 낙관 (seal) — the single red-area element */
-        .seal {
-            flex-shrink: 0;
-            width: clamp(42px, 10vw, 52px);
-            height: clamp(42px, 10vw, 52px);
-            border-radius: 5px;
-            background: var(--seal);
-            display: grid; place-items: center;
-            position: relative;
-            box-shadow: 0 6px 20px -10px color-mix(in srgb, var(--seal) 70%, transparent);
-        }
-        .seal::before {
-            content: "";
-            position: absolute; inset: 4px;
-            border: 1px solid var(--seal-frame);
-            border-radius: 2px;
-        }
-        .seal span {
-            font-family: var(--font-serif);
-            font-weight: 700;
-            color: #fff;
-            font-size: clamp(26px, 6.2vw, 33px);
-            line-height: 1;
-            transform: translateY(0.5px);
-        }
-
         .hero-eyebrow {
             font-family: var(--font-mono);
             font-size: 11.5px; font-weight: 600;
@@ -255,6 +225,92 @@
         .btn-ghost:hover { border-color: var(--silver); transform: translateY(-1px); }
         .btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
         .btn[data-copied="true"] { color: var(--gold); border-color: var(--gold); }
+
+        /* ================= PROOF STRIP (숫자 밴드) ================= */
+        .stats {
+            margin-top: clamp(48px, 9vw, 68px);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--hairline-strong);
+            border-bottom: 1px solid var(--hairline);
+        }
+        .stat {
+            padding: 20px 6px 22px;
+            border-left: 1px solid var(--hairline);
+        }
+        .stat:first-child { border-left: none; padding-left: 2px; }
+        .stat:not(:first-child) { padding-left: 18px; }
+        .stat-num {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: clamp(21px, 4.6vw, 27px);
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            line-height: 1.1;
+        }
+        .stat-num sub { font-size: 0.5em; vertical-align: baseline; color: var(--silver); font-weight: 500; margin-left: 2px; }
+        .stat-label {
+            font-size: 11.5px;
+            color: var(--ink-muted);
+            margin-top: 7px;
+            line-height: 1.5;
+        }
+        @media (max-width: 560px) {
+            .stats { grid-template-columns: 1fr 1fr; }
+            .stat { padding: 16px 6px 18px; }
+            .stat:nth-child(3) { border-left: none; padding-left: 2px; }
+            .stat:nth-child(n+3) { border-top: 1px solid var(--hairline); }
+        }
+
+        /* ================= NOW (진행 중 — live dot) ================= */
+        .now-list { border-top: 1px solid var(--hairline); }
+        .now-item {
+            display: grid;
+            grid-template-columns: 18px 1fr auto;
+            gap: 14px;
+            align-items: baseline;
+            padding: 18px 2px;
+            border-bottom: 1px solid var(--hairline);
+        }
+        .now-dot {
+            position: relative;
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--red);
+            align-self: start;
+            justify-self: center;
+            margin-top: 8px;
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            .now-dot::after {
+                content: "";
+                position: absolute; inset: -4px;
+                border-radius: 50%;
+                border: 1.5px solid var(--red);
+                opacity: 0;
+                animation: nowPulse 2.6s ease-out infinite;
+            }
+            @keyframes nowPulse {
+                0% { transform: scale(0.5); opacity: 0.7; }
+                70% { transform: scale(1.35); opacity: 0; }
+                100% { transform: scale(1.35); opacity: 0; }
+            }
+        }
+        .now-body { min-width: 0; }
+        .now-title { display: block; font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.45; }
+        .now-desc { display: block; font-size: 13px; color: var(--ink-muted); margin-top: 3px; line-height: 1.6; }
+        .now-meta {
+            font-family: var(--font-mono);
+            font-size: 10.5px; font-weight: 600;
+            letter-spacing: 0.06em; text-transform: uppercase;
+            color: var(--silver);
+            white-space: nowrap;
+            padding-top: 3px;
+        }
+        @media (max-width: 520px) {
+            .now-item { grid-template-columns: 18px 1fr; }
+            .now-meta { display: none; }
+        }
 
         /* ================= SECTION scaffolding ================= */
         .block { margin-top: clamp(72px, 13vw, 104px); }
@@ -488,8 +544,8 @@
             </div>
             <p class="hero-eyebrow">AX Consultant &amp; FDE</p>
             <p class="hero-lede"
-               data-ko-html="교토대 정보학 석사(LLM·RAG 연구). LG·SK 등 대기업의 AI 교육과 AX 컨설팅을 하며, <strong>멀티에이전트·에이전트 하네스 시스템을 직접 설계하고 프로덕션 규모로 구축</strong>합니다."
-               data-en-html="M.S. in Informatics from Kyoto University (LLM·RAG research). I lead AI education and AX consulting for enterprises such as LG and SK, and <strong>personally design and ship production-grade multi-agent and agent-harness systems</strong>.">교토대 정보학 석사(LLM·RAG 연구). LG·SK 등 대기업의 AI 교육과 AX 컨설팅을 하며, <strong>멀티에이전트·에이전트 하네스 시스템을 직접 설계하고 프로덕션 규모로 구축</strong>합니다.</p>
+               data-ko-html="교토대 LLM 연구(정보학 석사)에서 출발해, LG·SK 등 대기업의 AX 교육과 컨설팅을 설계합니다. 그리고 <strong>가르치는 모든 것을 직접 프로덕션 에이전트 시스템으로 만들어 증명</strong>합니다."
+               data-en-html="Starting from LLM research at Kyoto University (M.S. in Informatics), I design AX education and consulting for enterprises like LG and SK — and <strong>prove everything I teach by building it into production agent systems myself</strong>.">교토대 LLM 연구(정보학 석사)에서 출발해, LG·SK 등 대기업의 AX 교육과 컨설팅을 설계합니다. 그리고 <strong>가르치는 모든 것을 직접 프로덕션 에이전트 시스템으로 만들어 증명</strong>합니다.</p>
             <div class="hero-actions">
                 <a class="btn btn-primary" href="mailto:wns9133@gmail.com?subject=%EA%B0%95%EC%9D%98%20%C2%B7%20%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98"
                    data-ko="강의 · 협업 문의" data-en="Invite / Collaborate">강의 · 협업 문의</a>
@@ -500,8 +556,70 @@
             </div>
         </header>
 
+        <!-- ===================== PROOF STRIP ===================== -->
+        <section class="stats" aria-label="핵심 수치" data-reveal style="--reveal-delay:50ms">
+            <div class="stat">
+                <p class="stat-num">+81</p>
+                <p class="stat-label" data-ko="LG U+ AI 교육 NPS (B2B 평균 +50~70)" data-en="LG U+ training NPS (B2B avg +50–70)">LG U+ AI 교육 NPS (B2B 평균 +50~70)</p>
+            </div>
+            <div class="stat">
+                <p class="stat-num">15+</p>
+                <p class="stat-label" data-ko="강의·컨설팅 수행 기업·기관" data-en="Enterprises &amp; orgs trained">강의·컨설팅 수행 기업·기관</p>
+            </div>
+            <div class="stat">
+                <p class="stat-num">204<sub>repos</sub></p>
+                <p class="stat-label" data-ko="GitHub 저장소 (공개 54)" data-en="GitHub repositories (54 public)">GitHub 저장소 (공개 54)</p>
+            </div>
+            <div class="stat">
+                <p class="stat-num">973<sub>명</sub></p>
+                <p class="stat-label" data-ko="직접 만든 교육 LMS 누적 참가자" data-en="Learners on my self-built LMS">직접 만든 교육 LMS 누적 참가자</p>
+            </div>
+        </section>
+
+        <!-- ===================== NOW ===================== -->
+        <section class="block" aria-labelledby="now-title" data-reveal style="--reveal-delay:100ms">
+            <div class="section-head">
+                <p class="section-kicker" data-ko="지금" data-en="Now">지금</p>
+                <h2 class="section-title" id="now-title" data-ko="지금 하고 있는 일" data-en="What I'm Doing Now">지금 하고 있는 일</h2>
+            </div>
+            <ul class="now-list">
+                <li class="now-item">
+                    <span class="now-dot" aria-hidden="true"></span>
+                    <span class="now-body">
+                        <span class="now-title" data-ko="LG그룹 AX 교육 시리즈 메인강사" data-en="Lead instructor, LG Group AX education series">LG그룹 AX 교육 시리즈 메인강사</span>
+                        <span class="now-desc" data-ko="LG인화원 AX Camp·리더 세미나·신임팀장 과정 — CEO부터 신임팀장까지, 커리큘럼 설계와 강사진 온보딩 리드" data-en="LG Academy AX Camp, leader seminars, and new-team-lead programs — from CEOs to new team leads, leading curriculum design and instructor onboarding">LG인화원 AX Camp·리더 세미나·신임팀장 과정 — CEO부터 신임팀장까지, 커리큘럼 설계와 강사진 온보딩 리드</span>
+                    </span>
+                    <span class="now-meta">2026 · LG</span>
+                </li>
+                <li class="now-item">
+                    <span class="now-dot" aria-hidden="true"></span>
+                    <span class="now-body">
+                        <span class="now-title" data-ko="서울 AI 허브 「AI Native CEO」 메인강사" data-en="Lead instructor, Seoul AI Hub &quot;AI Native CEO&quot;">서울 AI 허브 「AI Native CEO」 메인강사</span>
+                        <span class="now-desc" data-ko="선발 CEO 65명 대상 8주 과정 — 'AI를 인력처럼 배치하는 법': 에이전트 시스템과 하네스 엔지니어링" data-en="An 8-week program for 65 selected CEOs — deploying AI like a workforce: agent systems and harness engineering">선발 CEO 65명 대상 8주 과정 — 'AI를 인력처럼 배치하는 법': 에이전트 시스템과 하네스 엔지니어링</span>
+                    </span>
+                    <span class="now-meta">8 weeks</span>
+                </li>
+                <li class="now-item">
+                    <span class="now-dot" aria-hidden="true"></span>
+                    <span class="now-body">
+                        <span class="now-title" data-ko="TOPIK AI 콘텐츠 자동화 파이프라인 운영" data-en="Running the TOPIK AI content pipeline">TOPIK AI 콘텐츠 자동화 파이프라인 운영</span>
+                        <span class="now-desc" data-ko="E4NET과 협업 — 문제 생성부터 강의영상까지 무인 파이프라인, 5개 언어 다국어 확장" data-en="With E4NET — an unattended pipeline from question generation to lecture videos, expanding to 5 languages">E4NET과 협업 — 문제 생성부터 강의영상까지 무인 파이프라인, 5개 언어 다국어 확장</span>
+                    </span>
+                    <span class="now-meta">Pipeline</span>
+                </li>
+                <li class="now-item">
+                    <span class="now-dot" aria-hidden="true"></span>
+                    <span class="now-body">
+                        <span class="now-title" data-ko="월간 CMDS 정기 발표 (구요한 &amp; 박준)" data-en="Monthly CMDS talks (Koo Yohan &amp; Park Joon)">월간 CMDS 정기 발표 (구요한 &amp; 박준)</span>
+                        <span class="now-desc" data-ko="하네스 엔지니어링·AI 리서치 자동화 등 최전선 주제를 매달 자료집·실습키트와 함께 공개" data-en="Frontier topics like harness engineering and AI research automation, with monthly companion decks and hands-on kits">하네스 엔지니어링·AI 리서치 자동화 등 최전선 주제를 매달 자료집·실습키트와 함께 공개</span>
+                    </span>
+                    <span class="now-meta">Monthly</span>
+                </li>
+            </ul>
+        </section>
+
         <!-- ===================== LINK HUB ===================== -->
-        <section class="block" id="links" aria-labelledby="links-title" data-reveal style="--reveal-delay:65ms">
+        <section class="block" id="links" aria-labelledby="links-title" data-reveal style="--reveal-delay:150ms">
             <div class="section-head">
                 <p class="section-kicker" data-ko="바로가기" data-en="Links">바로가기</p>
                 <h2 class="section-title" id="links-title" data-ko="공식 관문" data-en="Official Gateway">공식 관문</h2>
@@ -568,7 +686,7 @@
         </section>
 
         <!-- ===================== 기업 강의 · 컨설팅 ===================== -->
-        <section class="block" aria-labelledby="clients-title" data-reveal style="--reveal-delay:130ms">
+        <section class="block" aria-labelledby="clients-title" data-reveal style="--reveal-delay:200ms">
             <div class="section-head">
                 <p class="section-kicker" data-ko="포트폴리오 01" data-en="Portfolio 01">포트폴리오 01</p>
                 <h2 class="section-title" id="clients-title" data-ko="기업 강의 · 컨설팅" data-en="Corporate Training & Consulting">기업 강의 · 컨설팅</h2>
@@ -577,29 +695,29 @@
             <div class="roster">
                 <div class="roster-row">
                     <span class="roster-label" data-ko="LG 그룹" data-en="LG Group">LG 그룹</span>
-                    <p class="roster-items" data-ko="LG AX Camp for Leaders CEO 과정, LG U+ 실무 교육(NPS +81), LG전자 임원 심화, LG인화원 신임팀장·리더 세미나" data-en="LG AX Camp for Leaders (CEO track), LG Uplus practitioner training (NPS +81), LG Electronics executive intensives, and LG Academy new-team-lead & leader seminars">LG AX Camp for Leaders CEO 과정, LG U+ 실무 교육(NPS +81), LG전자 임원 심화, LG인화원 신임팀장·리더 세미나</p>
+                    <p class="roster-items" data-ko="LG인화원 AX Camp CEO·임원·리더·신임팀장 시리즈 메인강사(단일 교육 NPS 최고 100), LG U+ AI Build Up 1·2차수(NPS +81.2), 안전환경(HSE) 리더 워크숍" data-en="Lead instructor for LG Academy's AX Camp series — CEO, executive, leader, and new-team-lead tracks (peak NPS 100) — plus LG U+ AI Build Up cohorts 1–2 (NPS +81.2) and HSE leader workshops">LG인화원 AX Camp CEO·임원·리더·신임팀장 시리즈 메인강사(단일 교육 NPS 최고 100), LG U+ AI Build Up 1·2차수(NPS +81.2), 안전환경(HSE) 리더 워크숍</p>
                 </div>
                 <div class="roster-row">
                     <span class="roster-label" data-ko="SK 그룹" data-en="SK Group">SK 그룹</span>
-                    <p class="roster-items" data-ko="SKT AI Frontier 1–8기 파트너, SK하이닉스·SK에코플랜트·SK mysuni·에이닷비즈 강의·컨설팅" data-en="SK Telecom AI Frontier partner (cohorts 1–8), plus lectures and consulting for SK hynix, SK ecoplant, SK mysuni, and A.biz">SKT AI Frontier 1–8기 파트너, SK하이닉스·SK에코플랜트·SK mysuni·에이닷비즈 강의·컨설팅</p>
+                    <p class="roster-items" data-ko="SKT AI Frontier 1–8기 파트너, SK하이닉스·SK에코플랜트·SK mySUNI·SK브로드밴드 강의·컨설팅, SK 일본법인 도쿄 강연(일본어 진행)" data-en="SK Telecom AI Frontier partner (cohorts 1–8); lectures and consulting for SK hynix, SK ecoplant, SK mySUNI, and SK Broadband; a Tokyo keynote for SK Japan, delivered in Japanese">SKT AI Frontier 1–8기 파트너, SK하이닉스·SK에코플랜트·SK mySUNI·SK브로드밴드 강의·컨설팅, SK 일본법인 도쿄 강연(일본어 진행)</p>
                 </div>
                 <div class="roster-row">
                     <span class="roster-label" data-ko="서울 AI 허브" data-en="Seoul AI Hub">서울 AI 허브</span>
-                    <p class="roster-items" data-ko="「AI Native CEO」 8주 과정 메인 강사 — 에이전트·하네스 엔지니어링" data-en="Lead instructor for the 8-week &quot;AI Native CEO&quot; program on agent and harness engineering">「AI Native CEO」 8주 과정 메인 강사 — 에이전트·하네스 엔지니어링</p>
+                    <p class="roster-items" data-ko="「AI Native CEO」 8주 과정(지원 300명 중 선발 CEO 65명) 메인강사 — AI 에이전트 시스템·하네스 엔지니어링" data-en="Lead instructor for the 8-week &quot;AI Native CEO&quot; program (65 CEOs selected from 300 applicants) — AI agent systems and harness engineering">「AI Native CEO」 8주 과정(지원 300명 중 선발 CEO 65명) 메인강사 — AI 에이전트 시스템·하네스 엔지니어링</p>
                 </div>
                 <div class="roster-row">
                     <span class="roster-label" data-ko="패스트캠퍼스" data-en="FastCampus">패스트캠퍼스</span>
-                    <p class="roster-items" data-ko="생성 AI 마스터 패키지, 연구자를 위한 AI툴 등 온라인 대표 강의" data-en="Flagship online courses including the Generative AI Master Package and AI Tools for Researchers">생성 AI 마스터 패키지, 연구자를 위한 AI툴 등 온라인 대표 강의</p>
+                    <p class="roster-items" data-ko="Best 강의 2개 선정 — 생성 AI 마스터 패키지, 연구자를 위한 AI툴, 나만의 AI 서비스 만들기 등 온라인 강의 4종" data-en="Two courses selected as Best — four online courses including the Generative AI Master Package, AI Tools for Researchers, and Build-Your-Own AI Service">Best 강의 2개 선정 — 생성 AI 마스터 패키지, 연구자를 위한 AI툴, 나만의 AI 서비스 만들기 등 온라인 강의 4종</p>
                 </div>
                 <div class="roster-row">
                     <span class="roster-label" data-ko="커뮤니티·컨퍼런스" data-en="Community">커뮤니티·컨퍼런스</span>
-                    <p class="roster-items" data-ko="GPTers·지피터스 특강, CMDS AI PKM 컨퍼런스 발표" data-en="Guest lectures at GPTers, and talks at the CMDS AI PKM Conference">GPTers·지피터스 특강, CMDS AI PKM 컨퍼런스 발표</p>
+                    <p class="roster-items" data-ko="GPTers 커뮤니티 리더('AI로 연구하기'), 월간 CMDS 정기 발표, 국립농업과학원·IYUNO 특강, 카카오 오픈채팅 480여 명 운영" data-en="GPTers community leader (AI for Research), regular Monthly CMDS speaker, guest lectures for the National Institute of Agricultural Sciences and IYUNO, and a 480-member open chat community">GPTers 커뮤니티 리더('AI로 연구하기'), 월간 CMDS 정기 발표, 국립농업과학원·IYUNO 특강, 카카오 오픈채팅 480여 명 운영</p>
                 </div>
             </div>
         </section>
 
         <!-- ===================== 컨설팅 프로젝트 ===================== -->
-        <section class="block" aria-labelledby="consult-title" data-reveal style="--reveal-delay:195ms">
+        <section class="block" aria-labelledby="consult-title" data-reveal style="--reveal-delay:250ms">
             <div class="section-head">
                 <p class="section-kicker" data-ko="포트폴리오 02" data-en="Portfolio 02">포트폴리오 02</p>
                 <h2 class="section-title" id="consult-title" data-ko="컨설팅 프로젝트" data-en="Consulting Projects">컨설팅 프로젝트</h2>
@@ -607,8 +725,8 @@
             <div class="cards">
                 <div class="card">
                     <p class="card-eyebrow">2026 · LG</p>
-                    <p class="card-title" data-ko="AI Agent 플랫폼 개발" data-en="AI Agent Platform Development">AI Agent 플랫폼 개발</p>
-                    <p class="card-desc" data-ko="AI 리터러시 교육용 대화형 AI 웹앱 구축 (LangGraph·FastAPI·Supabase·Gemini)" data-en="Built a conversational AI web app for AI-literacy training (LangGraph, FastAPI, Supabase, Gemini)">AI 리터러시 교육용 대화형 AI 웹앱 구축 (LangGraph·FastAPI·Supabase·Gemini)</p>
+                    <p class="card-title" data-ko="교육용 AI Agent 플랫폼 개발·납품" data-en="AI Agent Platform for Corporate Training">교육용 AI Agent 플랫폼 개발·납품</p>
+                    <p class="card-desc" data-ko="인터뷰 에이전트·에이전트 빌더·멀티에이전트 패널토의 웹앱을 LG인화원 실교육에 투입 — 동시접속 79명 무중단 처리" data-en="Interview agents, an agent builder, and a multi-agent panel-discussion web app deployed in live LG Academy training — 79 concurrent users, zero downtime">인터뷰 에이전트·에이전트 빌더·멀티에이전트 패널토의 웹앱을 LG인화원 실교육에 투입 — 동시접속 79명 무중단 처리</p>
                 </div>
                 <div class="card">
                     <p class="card-eyebrow" data-ko="2025 · 신세계서울병원" data-en="2025 · Shinsegae Seoul Hospital">2025 · 신세계서울병원</p>
@@ -617,8 +735,8 @@
                 </div>
                 <div class="card">
                     <p class="card-eyebrow" data-ko="2025–26 · 이포넷" data-en="2025–26 · E4NET">2025–26 · 이포넷</p>
-                    <p class="card-title" data-ko="TOPIK AI 문제 생성 시스템" data-en="TOPIK AI Question Generation System">TOPIK AI 문제 생성 시스템</p>
-                    <p class="card-desc" data-ko="Gemini API 기반 TOPIK 듣기평가용 이미지 자동생성 플랫폼 개발" data-en="Developed a Gemini-powered platform that auto-generates images for TOPIK listening assessments">Gemini API 기반 TOPIK 듣기평가용 이미지 자동생성 플랫폼 개발</p>
+                    <p class="card-title" data-ko="TOPIK AI 콘텐츠 대량생산 시스템" data-en="TOPIK AI Content Production System">TOPIK AI 콘텐츠 대량생산 시스템</p>
+                    <p class="card-desc" data-ko="문제 생성→해설→TTS→슬라이드→강의영상의 7단계 AI 파이프라인 구축 — 모의고사 30세트, 5개 언어 확장" data-en="A 7-stage AI pipeline from question generation to explanations, TTS, slides, and lecture videos — 30 mock-exam sets, expanding to 5 languages">문제 생성→해설→TTS→슬라이드→강의영상의 7단계 AI 파이프라인 구축 — 모의고사 30세트, 5개 언어 확장</p>
                 </div>
                 <div class="card">
                     <p class="card-eyebrow" data-ko="2026 · 백석대학교" data-en="2026 · Baekseok University">2026 · 백석대학교</p>
@@ -634,7 +752,7 @@
         </section>
 
         <!-- ===================== 개발 프로젝트 ===================== -->
-        <section class="block" aria-labelledby="dev-title" data-reveal style="--reveal-delay:260ms">
+        <section class="block" aria-labelledby="dev-title" data-reveal style="--reveal-delay:300ms">
             <div class="section-head">
                 <p class="section-kicker" data-ko="포트폴리오 03" data-en="Portfolio 03">포트폴리오 03</p>
                 <h2 class="section-title" id="dev-title" data-ko="개발 프로젝트" data-en="Engineering Projects">개발 프로젝트</h2>
@@ -662,25 +780,49 @@
                     <p class="card-desc" data-ko="프런티어 모델의 실제 코딩 궤적 4,665행을 분석해 검증 내장 루프의 86.7%가 10스텝 내 완료됨을 발견. 인터랙티브 뷰어·덱·인포그래픽 공개" data-en="Analyzed 4,665 lines of a frontier model's real coding traces, finding 86.7% of verification-embedded loops finish within 10 steps. Published as an interactive viewer, deck, and infographic">프런티어 모델의 실제 코딩 궤적 4,665행을 분석해 검증 내장 루프의 86.7%가 10스텝 내 완료됨을 발견. 인터랙티브 뷰어·덱·인포그래픽 공개</p>
                 </a>
                 <div class="card">
-                    <p class="card-eyebrow">REVERSE-ENGINEERED</p>
-                    <p class="card-title" data-ko="TimeTree Calendar CLI" data-en="TimeTree Calendar CLI">TimeTree Calendar CLI</p>
-                    <p class="card-desc" data-ko="공식 API가 없는 TimeTree의 내부 API를 리버스엔지니어링한 CLI 백엔드 — 일정 CRUD·댓글·동기화·ICS/CSV 내보내기" data-en="A CLI backend built by reverse-engineering TimeTree's internal API (no official API exists) — event CRUD, comments, sync, and ICS/CSV export">공식 API가 없는 TimeTree의 내부 API를 리버스엔지니어링한 CLI 백엔드 — 일정 CRUD·댓글·동기화·ICS/CSV 내보내기</p>
+                    <p class="card-eyebrow">EDU PLATFORM</p>
+                    <p class="card-title" data-ko="LG AX Camp LMS 플랫폼" data-en="LG AX Camp LMS Platform">LG AX Camp LMS 플랫폼</p>
+                    <p class="card-desc" data-ko="LG그룹 AX 교육용 LMS를 직접 개발·운영 — 누적 참가자 973명, 수강생 제작 앱 갤러리 120개, 복수 교육 동시 배치 시스템" data-en="A self-built LMS powering LG Group AX programs — 973 learners, a 120-app student gallery, and multi-cohort batch operations">LG그룹 AX 교육용 LMS를 직접 개발·운영 — 누적 참가자 973명, 수강생 제작 앱 갤러리 120개, 복수 교육 동시 배치 시스템</p>
                 </div>
-                <div class="card">
+                <a class="card is-link" href="https://github.com/joonlab/barback" target="_blank" rel="noopener">
                     <p class="card-eyebrow">macOS · OPEN SOURCE</p>
                     <p class="card-title" data-ko="Barback — macOS 메뉴바 관리앱" data-en="Barback — macOS Menu Bar Manager">Barback — macOS 메뉴바 관리앱</p>
-                    <p class="card-desc" data-ko="노치에 가려진 메뉴바 아이콘을 팝업으로 꺼내는 Bartender 클론. Swift 6 + ScreenCaptureKit + macOS 저수준 API (오픈소스)" data-en="A Bartender clone that surfaces menu-bar icons hidden behind the notch. Swift 6, ScreenCaptureKit, and low-level macOS APIs (open source)">노치에 가려진 메뉴바 아이콘을 팝업으로 꺼내는 Bartender 클론. Swift 6 + ScreenCaptureKit + macOS 저수준 API (오픈소스)</p>
-                </div>
+                    <p class="card-desc" data-ko="노치에 가려진 메뉴바 아이콘을 팝업으로 꺼내는 Bartender 대안. Swift 6 + ScreenCaptureKit + macOS 저수준 API (MIT 오픈소스)" data-en="A Bartender alternative that surfaces menu-bar icons hidden behind the notch. Swift 6, ScreenCaptureKit, and low-level macOS APIs (MIT, open source)">노치에 가려진 메뉴바 아이콘을 팝업으로 꺼내는 Bartender 대안. Swift 6 + ScreenCaptureKit + macOS 저수준 API (MIT 오픈소스)</p>
+                </a>
+                <a class="card is-link" href="https://github.com/joonlab/MacPilot" target="_blank" rel="noopener">
+                    <p class="card-eyebrow">macOS · OPEN SOURCE</p>
+                    <p class="card-title" data-ko="MacPilot — 폰으로 조작하는 맥" data-en="MacPilot — Drive Your Mac from Your Phone">MacPilot — 폰으로 조작하는 맥</p>
+                    <p class="card-desc" data-ko="폰 브라우저가 맥의 무선 트랙패드·키보드·스트림덱이 되는 원격 조작 도구 — 앱 설치 0, 브라우저만으로" data-en="Turns your phone's browser into a wireless trackpad, keyboard, and stream deck for your Mac — zero installs, browser only">폰 브라우저가 맥의 무선 트랙패드·키보드·스트림덱이 되는 원격 조작 도구 — 앱 설치 0, 브라우저만으로</p>
+                </a>
+                <a class="card is-link" href="https://github.com/joonlab/claude-agent-sdk-tutorial" target="_blank" rel="noopener">
+                    <p class="card-eyebrow">OPEN SOURCE</p>
+                    <p class="card-title" data-ko="Claude Agent SDK 4-Phase 튜토리얼" data-en="Claude Agent SDK 4-Phase Tutorial">Claude Agent SDK 4-Phase 튜토리얼</p>
+                    <p class="card-desc" data-ko="에이전트를 코드로 직접 빌드하는 24개 예제 핸즈온 커리큘럼 공개 — 커뮤니티 발표와 함께 배포" data-en="A hands-on curriculum of 24 examples for building agents in code — published alongside a community talk">에이전트를 코드로 직접 빌드하는 24개 예제 핸즈온 커리큘럼 공개 — 커뮤니티 발표와 함께 배포</p>
+                </a>
             </div>
         </section>
 
         <!-- ===================== 학력 ===================== -->
-        <section class="block" aria-labelledby="edu-title" data-reveal style="--reveal-delay:325ms">
+        <section class="block" aria-labelledby="edu-title" data-reveal style="--reveal-delay:350ms">
             <div class="section-head">
                 <p class="section-kicker" data-ko="포트폴리오 04" data-en="Portfolio 04">포트폴리오 04</p>
-                <h2 class="section-title" id="edu-title" data-ko="학력" data-en="Education">학력</h2>
+                <h2 class="section-title" id="edu-title" data-ko="경력 · 학력" data-en="Background">경력 · 학력</h2>
             </div>
             <div class="edu">
+                <div class="edu-item">
+                    <span class="edu-period" data-ko="2026 – 현재" data-en="2026 – Now">2026 – 현재</span>
+                    <div>
+                        <p class="edu-school" data-ko="준랩 JoonLab 대표 — AI 교육 · AX 컨설팅 · 에이전트 시스템 개발" data-en="Founder, JoonLab — AI education, AX consulting, and agent systems">준랩 JoonLab 대표 — AI 교육 · AX 컨설팅 · 에이전트 시스템 개발</p>
+                        <p class="edu-note" data-ko="커맨드스페이스(CMDS)와 LG·SK 대기업 AX 교육 협업" data-en="Partnering with CMDSPACE on enterprise AX programs for LG and SK">커맨드스페이스(CMDS)와 LG·SK 대기업 AX 교육 협업</p>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <span class="edu-period">2024.01 – 2024.06</span>
+                    <div>
+                        <p class="edu-school" data-ko="Wordvice AI — LLM Researcher" data-en="Wordvice AI — LLM Researcher">Wordvice AI — LLM Researcher</p>
+                        <p class="edu-note" data-ko="기획팀 소속 LLM 리서처 (석사 재학 중 근무)" data-en="LLM researcher on the product planning team (during graduate school)">기획팀 소속 LLM 리서처 (석사 재학 중 근무)</p>
+                    </div>
+                </div>
                 <div class="edu-item">
                     <span class="edu-period">2022.10 – 2025.03</span>
                     <div>
@@ -699,7 +841,7 @@
         </section>
 
         <!-- ===================== FOOTER ===================== -->
-        <footer class="footer" data-reveal style="--reveal-delay:390ms">
+        <footer class="footer" data-reveal style="--reveal-delay:400ms">
             <nav class="social" aria-label="소셜 링크">
                 <a href="https://github.com/joonlab" target="_blank" rel="noopener" data-label-ko="GitHub" data-label-en="GitHub" aria-label="GitHub">
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.4 9.4 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
@@ -717,7 +859,7 @@
             <p class="footer-meta">
                 <span>© <span id="yr">2026</span> JoonLab · 박준 Park Joon</span>
                 <span class="dot" aria-hidden="true">·</span>
-                <span data-ko="최종 업데이트 2026-07-04" data-en="Last updated 2026-07-04">최종 업데이트 2026-07-04</span>
+                <span data-ko="최종 업데이트 2026-07-06" data-en="Last updated 2026-07-06">최종 업데이트 2026-07-06</span>
             </p>
         </footer>
     </main>
