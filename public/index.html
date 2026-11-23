@@ -1,989 +1,139 @@
-<!DOCTYPE html>
-<html lang="ko" data-theme="light">
+<!doctype html>
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>박준 Park Joon — AX Consultant & FDE</title>
-    <meta name="description" content="박준 Park Joon — 교토대 LLM 연구에서 출발해 LG·SK 등 대기업의 AX 교육을 설계하고, 가르치는 모든 것을 프로덕션 에이전트 시스템으로 직접 만들어 증명하는 AI 컨설턴트·FDE. 강의·프로젝트·커뮤니티의 모든 공식 링크.">
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#141416" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="apple-touch-icon" href="/favicon.svg">
-    <link rel="canonical" href="https://bio.joonlab98.com/">
-
-    <!-- Pre-paint theme (prevents dark-mode white flash on load) -->
-    <script>
-        (function () {
-            try {
-                var saved = localStorage.getItem("joon-bio-theme");
-                var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-                document.documentElement.setAttribute("data-theme", saved || (prefersDark ? "dark" : "light"));
-                var lang = localStorage.getItem("joon-bio-lang");
-                if (lang === "en") document.documentElement.setAttribute("lang", "en");
-            } catch (e) {}
-            document.documentElement.className += " js";
-        })();
-    </script>
-
-    <!-- Open Graph / Twitter -->
-    <meta property="og:type" content="profile">
-    <meta property="og:site_name" content="박준 Park Joon">
-    <meta property="og:title" content="박준 Park Joon — AX Consultant & FDE">
-    <meta property="og:description" content="교토대 LLM 연구 → LG·SK 대기업 AX 교육 설계 → 가르치는 모든 것을 프로덕션 에이전트 시스템으로 직접 증명. 강의·프로젝트·커뮤니티 공식 링크.">
-    <meta property="og:url" content="https://bio.joonlab98.com">
-    <meta property="og:image" content="https://bio.joonlab98.com/assets/og.png">
-    <meta property="og:image:secure_url" content="https://bio.joonlab98.com/assets/og.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="박준 Park Joon · AX Consultant & FDE bio card">
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:locale:alternate" content="en_US">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="박준 Park Joon — AX Consultant & FDE">
-    <meta name="twitter:description" content="AI 교육·컨설팅 · 멀티에이전트 시스템 엔지니어. 모든 공식 링크를 한 곳에.">
-    <meta name="twitter:image" content="https://bio.joonlab98.com/assets/og.png">
-
-    <!-- Fonts: Noto Serif KR (display) · Noto Sans KR (body) · JetBrains Mono (meta) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;600;700&display=swap"></noscript>
-
-    <style>
-        :root {
-            --font-serif: "Noto Serif KR", ui-serif, Georgia, "Nanum Myeongjo", serif;
-            --font-sans: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
-            --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-
-            /* Light — paper */
-            --paper: #FFFFFF;
-            --paper-soft: #FAFAF7;
-            --ink: #1C1C1E;
-            --ink-muted: #6B6B6B;
-            --silver: #8A8D8F;
-            --hairline: #E8E6E1;
-            --hairline-strong: #D9D6CF;
-            --red: #A50034;
-            --gold: #85714D;
-            --focus-ring: 0 0 0 3px color-mix(in srgb, var(--gold) 34%, transparent);
-            --card-bg: #FFFFFF;
-            --shadow-soft: 0 1px 2px rgba(28,28,30,0.04);
-        }
-
-        [data-theme="dark"] {
-            --paper: #141416;
-            --paper-soft: #1A1A1D;
-            --ink: #F2F1EF;
-            --ink-muted: #A2A2A4;
-            --silver: #74777A;
-            --hairline: #2A2A2E;
-            --hairline-strong: #3A3A40;
-            --red: #E05C81;
-            --gold: #BFA46F;
-            --focus-ring: 0 0 0 3px color-mix(in srgb, var(--gold) 40%, transparent);
-            --card-bg: #1A1A1D;
-            --shadow-soft: 0 1px 2px rgba(0,0,0,0.3);
-        }
-
-        *, *::before, *::after { box-sizing: border-box; }
-        * { margin: 0; }
-        html { -webkit-text-size-adjust: 100%; }
-        body {
-            min-height: 100dvh;
-            font-family: var(--font-sans);
-            font-size: 16px;
-            color: var(--ink);
-            background: var(--paper);
-            line-height: 1.72;
-            letter-spacing: -0.006em;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            transition: background .28s ease, color .28s ease;
-        }
-        a { color: inherit; text-decoration: none; }
-        button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
-        img, svg { display: block; max-width: 100%; }
-        ul { list-style: none; padding: 0; }
-        :focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: 4px; }
-
-        /* ---- Skip link ---- */
-        .skip {
-            position: fixed; left: 14px; top: 14px; z-index: 60;
-            transform: translateY(-160%);
-            background: var(--ink); color: var(--paper);
-            padding: 9px 14px; font-size: 13px; font-weight: 700; border-radius: 6px;
-        }
-        .skip:focus { transform: translateY(0); }
-
-        /* ---- Top controls ---- */
-        .controls {
-            position: fixed; top: 16px; right: 16px; z-index: 50;
-            display: flex; gap: 8px;
-        }
-        .ctrl {
-            display: inline-flex; align-items: center; justify-content: center;
-            height: 38px; min-width: 38px; padding: 0 11px;
-            border: 1px solid var(--hairline-strong);
-            border-radius: 999px;
-            background: color-mix(in srgb, var(--paper) 82%, transparent);
-            -webkit-backdrop-filter: saturate(1.2) blur(8px);
-            backdrop-filter: saturate(1.2) blur(8px);
-            color: var(--ink-muted);
-            font-family: var(--font-mono);
-            font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
-            transition: color .2s, border-color .2s, transform .2s;
-        }
-        .ctrl:hover { color: var(--ink); border-color: var(--silver); transform: translateY(-1px); }
-        .ctrl svg { width: 17px; height: 17px; stroke: currentColor; stroke-width: 1.7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-
-        /* ---- Page shell ---- */
-        .page {
-            width: min(100%, 660px);
-            margin: 0 auto;
-            padding: clamp(72px, 12vw, 108px) 24px clamp(56px, 10vw, 88px);
-        }
-        section { position: relative; }
-
-        /* ---- Reveal (page-load stagger). Revealed by JS via .in; stagger from inline --reveal-delay.
-               Fired by setTimeout so it works even where rAF/animations are throttled; content is
-               never left hidden (no-JS users skip the js class entirely). ---- */
-        @media (prefers-reduced-motion: no-preference) {
-            html.js [data-reveal] {
-                opacity: 0;
-                transform: translateY(16px);
-                transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
-                transition-delay: var(--reveal-delay, 0ms);
-            }
-            html.js [data-reveal].in { opacity: 1; transform: none; }
-        }
-
-        /* ================= HERO ================= */
-        .hero { text-align: left; }
-        .hero-avatar {
-            width: clamp(84px, 20vw, 104px);
-            height: clamp(84px, 20vw, 104px);
-            border-radius: 20px;
-            object-fit: cover;
-            border: 1px solid var(--hairline);
-            box-shadow: var(--shadow-soft);
-        }
-        .hero-namerow {
-            display: flex; align-items: center; gap: 16px;
-            margin-top: 26px;
-        }
-        .hero-name {
-            font-family: var(--font-serif);
-            font-weight: 700;
-            font-size: clamp(38px, 8.4vw, 52px);
-            line-height: 1.04;
-            letter-spacing: -0.02em;
-            color: var(--ink);
-        }
-        .hero-eyebrow {
-            font-family: var(--font-mono);
-            font-size: 11.5px; font-weight: 600;
-            letter-spacing: 0.18em; text-transform: uppercase;
-            color: var(--gold);
-            margin-top: 30px;
-        }
-        .hero-role {
-            font-size: 15px;
-            color: var(--ink-muted);
-            margin-top: 10px;
-            font-weight: 500;
-        }
-        .hero-lede {
-            font-size: 16px;
-            color: var(--ink);
-            margin-top: 18px;
-            max-width: 52ch;
-            line-height: 1.78;
-        }
-        .hero-lede strong { font-weight: 700; }
-
-        /* Contact actions */
-        .hero-actions {
-            display: flex; flex-wrap: wrap; gap: 10px;
-            margin-top: 28px;
-        }
-        .btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            height: 44px; padding: 0 18px;
-            border-radius: 10px;
-            font-size: 14px; font-weight: 700;
-            transition: transform .18s, background .2s, border-color .2s, color .2s;
-        }
-        .btn-primary {
-            background: var(--ink); color: var(--paper);
-        }
-        .btn-primary:hover { transform: translateY(-1px); }
-        .btn-ghost {
-            border: 1px solid var(--hairline-strong);
-            color: var(--ink);
-        }
-        .btn-ghost:hover { border-color: var(--silver); transform: translateY(-1px); }
-        .btn svg { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-        .btn[data-copied="true"] { color: var(--gold); border-color: var(--gold); }
-
-        /* ================= PROOF STRIP (숫자 밴드) ================= */
-        .stats {
-            margin-top: clamp(48px, 9vw, 68px);
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            border-top: 1px solid var(--hairline-strong);
-            border-bottom: 1px solid var(--hairline);
-        }
-        .stat {
-            padding: 20px 6px 22px;
-            border-left: 1px solid var(--hairline);
-        }
-        .stat:first-child { border-left: none; padding-left: 2px; }
-        .stat:not(:first-child) { padding-left: 18px; }
-        .stat-num {
-            font-family: var(--font-mono);
-            font-weight: 600;
-            font-size: clamp(21px, 4.6vw, 27px);
-            letter-spacing: -0.02em;
-            color: var(--ink);
-            line-height: 1.1;
-        }
-        .stat-num sub { font-size: 0.5em; vertical-align: baseline; color: var(--silver); font-weight: 500; margin-left: 2px; }
-        .stat-label {
-            font-size: 11.5px;
-            color: var(--ink-muted);
-            margin-top: 7px;
-            line-height: 1.5;
-        }
-        @media (max-width: 560px) {
-            .stats { grid-template-columns: 1fr 1fr; }
-            .stat { padding: 16px 6px 18px; }
-            .stat:nth-child(3) { border-left: none; padding-left: 2px; }
-            .stat:nth-child(n+3) { border-top: 1px solid var(--hairline); }
-        }
-
-        /* ================= NOW (진행 중 — live dot) ================= */
-        .now-list { border-top: 1px solid var(--hairline); }
-        .now-item {
-            display: grid;
-            grid-template-columns: 18px 1fr auto;
-            gap: 14px;
-            align-items: baseline;
-            padding: 18px 2px;
-            border-bottom: 1px solid var(--hairline);
-        }
-        .now-dot {
-            position: relative;
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: var(--red);
-            align-self: start;
-            justify-self: center;
-            margin-top: 8px;
-        }
-        @media (prefers-reduced-motion: no-preference) {
-            .now-dot::after {
-                content: "";
-                position: absolute; inset: -4px;
-                border-radius: 50%;
-                border: 1.5px solid var(--red);
-                opacity: 0;
-                animation: nowPulse 2.6s ease-out infinite;
-            }
-            @keyframes nowPulse {
-                0% { transform: scale(0.5); opacity: 0.7; }
-                70% { transform: scale(1.35); opacity: 0; }
-                100% { transform: scale(1.35); opacity: 0; }
-            }
-        }
-        .now-body { min-width: 0; }
-        .now-title { display: block; font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.45; }
-        .now-desc { display: block; font-size: 13px; color: var(--ink-muted); margin-top: 3px; line-height: 1.6; }
-        .now-meta {
-            font-family: var(--font-mono);
-            font-size: 10.5px; font-weight: 600;
-            letter-spacing: 0.06em; text-transform: uppercase;
-            color: var(--silver);
-            white-space: nowrap;
-            padding-top: 3px;
-        }
-        @media (max-width: 520px) {
-            .now-item { grid-template-columns: 18px 1fr; }
-            .now-meta { display: none; }
-        }
-
-        /* ================= SECTION scaffolding ================= */
-        .block { margin-top: clamp(72px, 13vw, 104px); }
-        .section-head { margin-bottom: 30px; }
-        .section-kicker {
-            font-family: var(--font-mono);
-            font-size: 11px; font-weight: 600;
-            letter-spacing: 0.2em; text-transform: uppercase;
-            color: var(--silver);
-            display: flex; align-items: center; gap: 12px;
-            margin-bottom: 14px;
-        }
-        .section-kicker::after {
-            content: ""; flex: 1; height: 1px;
-            background: var(--hairline);
-        }
-        .section-title {
-            font-family: var(--font-serif);
-            font-weight: 600;
-            font-size: clamp(23px, 4.6vw, 29px);
-            letter-spacing: -0.015em;
-            color: var(--ink);
-            line-height: 1.24;
-        }
-        .section-desc {
-            font-size: 14.5px;
-            color: var(--ink-muted);
-            margin-top: 12px;
-            max-width: 54ch;
-        }
-
-        /* ================= LINK HUB ================= */
-        .links { border-top: 1px solid var(--hairline); }
-        .link-row {
-            display: grid;
-            grid-template-columns: 96px 1fr 22px;
-            gap: 18px;
-            align-items: baseline;
-            padding: 21px 4px;
-            border-bottom: 1px solid var(--hairline);
-            transition: transform .22s cubic-bezier(.22,.61,.36,1);
-        }
-        .link-cat {
-            font-family: var(--font-mono);
-            font-size: 10.5px; font-weight: 600;
-            letter-spacing: 0.08em; text-transform: uppercase;
-            color: var(--silver);
-            padding-top: 3px;
-            white-space: nowrap;
-        }
-        .link-body { min-width: 0; }
-        .link-title {
-            font-size: 16.5px; font-weight: 700;
-            color: var(--ink);
-            line-height: 1.35;
-            display: inline;
-            background-image: linear-gradient(var(--gold), var(--gold));
-            background-size: 0% 1.5px;
-            background-position: 0 100%;
-            background-repeat: no-repeat;
-            transition: background-size .34s cubic-bezier(.22,.61,.36,1);
-            padding-bottom: 1px;
-        }
-        .link-desc {
-            display: block;
-            font-size: 13px;
-            color: var(--ink-muted);
-            margin-top: 4px;
-            line-height: 1.55;
-        }
-        .link-arrow {
-            font-size: 15px;
-            color: var(--silver);
-            align-self: center;
-            transition: transform .22s cubic-bezier(.22,.61,.36,1), color .2s;
-            line-height: 1;
-        }
-        .link-row:hover { transform: translateX(5px); }
-        .link-row:hover .link-title { background-size: 100% 1.5px; }
-        .link-row:hover .link-arrow { color: var(--gold); transform: translate(2px, -2px); }
-        .link-row:focus-visible { box-shadow: var(--focus-ring); border-radius: 6px; }
-
-        @media (max-width: 520px) {
-            .link-row { grid-template-columns: 1fr 22px; gap: 10px 14px; padding: 18px 2px; }
-            .link-cat { grid-column: 1 / -1; padding-top: 0; }
-        }
-
-        /* ================= CLIENT ROSTER (강의·컨설팅) ================= */
-        .roster { display: grid; gap: 22px; }
-        .roster-row {
-            display: grid;
-            grid-template-columns: 128px 1fr;
-            gap: 18px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--hairline);
-        }
-        .roster-row:last-child { border-bottom: none; padding-bottom: 0; }
-        .roster-label {
-            font-family: var(--font-mono);
-            font-size: 11px; font-weight: 600;
-            letter-spacing: 0.06em; text-transform: uppercase;
-            color: var(--red);
-            padding-top: 2px;
-        }
-        .roster-items {
-            font-size: 14px;
-            color: var(--ink-muted);
-            line-height: 1.85;
-        }
-        .roster-items b { color: var(--ink); font-weight: 600; }
-        @media (max-width: 520px) {
-            .roster-row { grid-template-columns: 1fr; gap: 8px; }
-        }
-
-        /* ================= PROJECT CARDS ================= */
-        .cards { display: grid; grid-template-columns: 1fr; gap: 14px; }
-        @media (min-width: 600px) { .cards { grid-template-columns: 1fr 1fr; } }
-        .card {
-            border: 1px solid var(--hairline);
-            border-radius: 12px;
-            padding: 20px 20px 22px;
-            background: var(--card-bg);
-            box-shadow: var(--shadow-soft);
-            transition: border-color .22s, transform .22s, box-shadow .22s;
-        }
-        .card:hover {
-            border-color: var(--hairline-strong);
-            transform: translateY(-2px);
-        }
-        .card-eyebrow {
-            font-family: var(--font-mono);
-            font-size: 10.5px; font-weight: 600;
-            letter-spacing: 0.06em;
-            color: var(--gold);
-            text-transform: uppercase;
-        }
-        .card-title {
-            font-size: 15.5px; font-weight: 700;
-            color: var(--ink);
-            margin-top: 9px;
-            line-height: 1.4;
-        }
-        .card-desc {
-            font-size: 13px;
-            color: var(--ink-muted);
-            margin-top: 8px;
-            line-height: 1.62;
-        }
-        a.card.is-link { position: relative; display: block; color: inherit; }
-        a.card.is-link .card-title { padding-right: 22px; }
-        a.card.is-link::after {
-            content: "↗";
-            position: absolute; top: 18px; right: 18px;
-            font-size: 14px; color: var(--silver); line-height: 1;
-            transition: color .2s, transform .22s cubic-bezier(.22,.61,.36,1);
-        }
-        a.card.is-link:hover { border-color: var(--gold); }
-        a.card.is-link:hover::after { color: var(--gold); transform: translate(2px, -2px); }
-
-        /* ================= EDUCATION ================= */
-        .edu { display: grid; gap: 20px; }
-        .edu-item {
-            display: grid;
-            grid-template-columns: 128px 1fr;
-            gap: 18px;
-        }
-        .edu-period {
-            font-family: var(--font-mono);
-            font-size: 11.5px; font-weight: 500;
-            color: var(--silver);
-            padding-top: 3px;
-            letter-spacing: 0.01em;
-        }
-        .edu-school { font-size: 15px; font-weight: 700; color: var(--ink); line-height: 1.45; }
-        .edu-note { font-size: 13px; color: var(--ink-muted); margin-top: 4px; }
-        @media (max-width: 520px) {
-            .edu-item { grid-template-columns: 1fr; gap: 4px; }
-        }
-
-        /* ================= FOOTER ================= */
-        .footer {
-            margin-top: clamp(72px, 13vw, 104px);
-            padding-top: 34px;
-            border-top: 1px solid var(--hairline);
-        }
-        .social {
-            display: flex; gap: 10px;
-        }
-        .social a {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 42px; height: 42px;
-            border: 1px solid var(--hairline-strong);
-            border-radius: 10px;
-            color: var(--ink-muted);
-            transition: color .2s, border-color .2s, transform .2s;
-        }
-        .social a:hover { color: var(--ink); border-color: var(--silver); transform: translateY(-2px); }
-        .social svg { width: 19px; height: 19px; }
-        .footer-meta {
-            margin-top: 26px;
-            font-family: var(--font-mono);
-            font-size: 11.5px;
-            color: var(--silver);
-            letter-spacing: 0.02em;
-            line-height: 1.8;
-        }
-        .footer-meta .dot { opacity: 0.5; margin: 0 7px; }
-
-        @media (prefers-reduced-motion: reduce) {
-            * { transition: none !important; animation: none !important; }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>박준 PARK JOON · AX Engineer, 준랩 JoonLab 대표</title>
+<meta name="description" content="에어스메디컬 AX Engineer, 준랩 JoonLab 대표 박준. LG·SK 등 기업 AI 교육과 AX 컨설팅, 에이전트 시스템 개발 이력과 공식 링크.">
+<link rel="canonical" href="https://bio.joonlab98.com/">
+<link rel="alternate" hreflang="ko" href="https://bio.joonlab98.com/">
+<link rel="alternate" hreflang="en" href="https://bio.joonlab98.com/en/">
+<link rel="alternate" hreflang="ja" href="https://bio.joonlab98.com/ja/">
+<link rel="alternate" hreflang="x-default" href="https://bio.joonlab98.com/">
+<meta name="theme-color" content="#FCFCFB">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="박준 PARK JOON">
+<meta property="og:title" content="박준 PARK JOON · AX Engineer, 준랩 JoonLab 대표">
+<meta property="og:description" content="에어스메디컬 AX Engineer, 준랩 JoonLab 대표 박준. LG·SK 등 기업 AI 교육과 AX 컨설팅, 에이전트 시스템 개발 이력과 공식 링크.">
+<meta property="og:url" content="https://bio.joonlab98.com/">
+<meta property="og:image" content="https://bio.joonlab98.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="박준 PARK JOON · AX Engineer, 준랩 JoonLab 대표">
+<meta name="twitter:description" content="에어스메디컬 AX Engineer, 준랩 JoonLab 대표 박준. LG·SK 등 기업 AI 교육과 AX 컨설팅, 에이전트 시스템 개발 이력과 공식 링크.">
+<meta name="twitter:image" content="https://bio.joonlab98.com/assets/og.png">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>:root{--serif:"Hahmlet", "Noto Serif KR", serif;--sans:"IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "박준", "alternateName": ["박준", "Park Joon", "パク・ジュン"], "url": "https://bio.joonlab98.com/", "image": "https://bio.joonlab98.com/assets/profile.jpg", "jobTitle": "AX Engineer", "worksFor": [{"@type": "Organization", "name": "AIRS Medical"}, {"@type": "Organization", "name": "JoonLab"}], "alumniOf": ["Kyoto University", "Okayama University"], "sameAs": ["https://github.com/joonlab", "https://www.linkedin.com/in/joonlab/", "https://www.youtube.com/@joonlab98", "https://joonlab98.com"]}</script>
 </head>
 <body>
-    <a class="skip" href="#links" data-ko="본문 링크로 이동" data-en="Skip to links">본문 링크로 이동</a>
-
-    <div class="controls">
-        <button class="ctrl" id="langBtn" type="button" aria-label="Switch to English">EN</button>
-        <button class="ctrl" id="themeBtn" type="button" aria-pressed="false" aria-label="다크 모드로 전환">
-            <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true"></svg>
-        </button>
+<a class="skip" href="#main">본문으로 이동</a>
+<div class="wrap">
+  <aside class="rail">
+    <div class="rail-top">
+      <div class="site"><b>박준</b>bio.joonlab98.com</div>
+      <nav aria-label="목차"><ol id="toc">
+<li><a href="#intro" aria-current="true"><span class="mono">01</span>소개</a></li>
+<li><a href="#now"><span class="mono">02</span>지금 하는 일</a></li>
+<li><a href="#teaching"><span class="mono">03</span>강의·교육</a></li>
+<li><a href="#projects"><span class="mono">04</span>대표 프로젝트</a></li>
+<li><a href="#consulting"><span class="mono">05</span>컨설팅·자문</a></li>
+<li><a href="#writing"><span class="mono">06</span>글·연구·공개 자료</a></li>
+<li><a href="#career"><span class="mono">07</span>경력·학력</a></li>
+<li><a href="#contact"><span class="mono">08</span>링크·연락</a></li>
+      </ol></nav>
     </div>
+    <div class="foot">
+      <nav class="langs" aria-label="언어"><a href="/" hreflang="ko" lang="ko" aria-current="page" title="한국어"><span class="full">한국어</span><span class="short" aria-hidden="true">KO</span></a> <a href="/en/" hreflang="en" lang="en" title="English"><span class="full">English</span><span class="short" aria-hidden="true">EN</span></a> <a href="/ja/" hreflang="ja" lang="ja" title="日本語"><span class="full">日本語</span><span class="short" aria-hidden="true">JA</span></a></nav>
+      <span class="upd">갱신 <span class="mono">2026-11-23</span></span>
+      <button class="themebtn" id="theme" type="button" data-dark="다크 모드" data-light="라이트 모드">다크 모드</button>
+    </div>
+  </aside>
 
-    <main class="page">
-        <!-- ===================== HERO ===================== -->
-        <header class="hero" data-reveal style="--reveal-delay:0ms">
-            <img class="hero-avatar" src="/assets/profile.jpg" width="104" height="104"
-                 data-alt-ko="박준 프로필 사진" data-alt-en="Portrait of Park Joon" alt="박준 프로필 사진">
-            <div class="hero-namerow">
-                <h1 class="hero-name" data-ko="박준" data-en="Park Joon">박준</h1>
-            </div>
-            <p class="hero-eyebrow">AX Consultant &amp; FDE</p>
-            <p class="hero-lede"
-               data-ko-html="교토대학 정보학연구과 석사(LLM·RAG 연구) 출신의 AI 교육·컨설팅 전문가이자 에이전트 시스템 엔지니어. LG·SK 등 대기업 경영진·실무진 대상 AI 교육과 AX 컨설팅을 수행하는 동시에, <strong>멀티에이전트 오케스트레이션·에이전트 하네스 엔지니어링·AI 업무 자동화 시스템을 프로덕션 규모로 직접 설계·구축</strong>합니다. 기획부터 개발·배포까지 풀사이클로 리딩하며, 프런티어 모델의 에이전트 행동을 데이터로 분석해 설계에 반영하는 '검증 중심(Verification-first)' 엔지니어링을 지향합니다."
-               data-en-html="An AI education &amp; consulting specialist and agent-systems engineer, with a master's from Kyoto University's Graduate School of Informatics (LLM·RAG research). I deliver AI education and AX consulting for executives and practitioners at enterprises like LG and SK, while <strong>personally designing and building multi-agent orchestration, agent-harness engineering, and AI workflow-automation systems at production scale</strong>. I lead the full cycle from planning through development and deployment, practicing a 'verification-first' engineering approach — analyzing how frontier models behave as agents and folding that data back into the design.">교토대학 정보학연구과 석사(LLM·RAG 연구) 출신의 AI 교육·컨설팅 전문가이자 에이전트 시스템 엔지니어. LG·SK 등 대기업 경영진·실무진 대상 AI 교육과 AX 컨설팅을 수행하는 동시에, <strong>멀티에이전트 오케스트레이션·에이전트 하네스 엔지니어링·AI 업무 자동화 시스템을 프로덕션 규모로 직접 설계·구축</strong>합니다. 기획부터 개발·배포까지 풀사이클로 리딩하며, 프런티어 모델의 에이전트 행동을 데이터로 분석해 설계에 반영하는 '검증 중심(Verification-first)' 엔지니어링을 지향합니다.</p>
-            <div class="hero-actions">
-                <a class="btn btn-primary" href="mailto:wns9133@gmail.com?subject=%EA%B0%95%EC%9D%98%20%C2%B7%20%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98"
-                   data-ko="강의 · 협업 문의" data-en="Invite / Collaborate">강의 · 협업 문의</a>
-                <button class="btn btn-ghost" id="copyEmail" type="button" data-copy="wns9133@gmail.com">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h8"/></svg>
-                    <span class="btn-label" data-ko="이메일 복사" data-en="Copy email">이메일 복사</span>
-                </button>
-            </div>
-        </header>
+  <main id="main" tabindex="-1">
+    <section id="intro" aria-labelledby="name">
+      <div class="hero-in">
+        <div class="idrow">
+          <img class="photo" src="/assets/profile.jpg" width="72" height="72" alt="박준 프로필 사진">
+          <div>
+            <h1 id="name">박준</h1>
+            <div class="en">PARK JOON</div>
+          </div>
+        </div>
+        <p class="lede">기업 경영진과 실무진에게 AI 활용을 가르치고, 업무에 쓰는 에이전트 시스템을 직접 설계해 운영합니다.</p>
+        <p class="role"><b>에어스메디컬</b> AX Engineer <span aria-hidden="true">·</span> <b>준랩 JoonLab</b> 대표</p>
+        <p class="subline">교토대학교 대학원 정보학연구과 석사(LLM·RAG 연구). 한국어와 일본어로 강의합니다.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:wns9133@gmail.com?subject=%EA%B0%95%EC%9D%98%C2%B7%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98">강의·협업 문의 메일 쓰기</a>
+          <button class="copy" type="button" id="copy" data-mail="wns9133@gmail.com" data-ok="주소를 복사했습니다" data-fail="복사하지 못했습니다. 주소를 직접 선택해 주세요"><span class="mono">wns9133@gmail.com</span> 복사</button>
+          <span class="status" id="copy-status" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
 
-        <!-- ===================== PROOF STRIP ===================== -->
-        <section class="stats" aria-label="핵심 수치" data-reveal style="--reveal-delay:50ms">
-            <div class="stat">
-                <p class="stat-num">+81</p>
-                <p class="stat-label" data-ko="LG U+ AI 교육 NPS (B2B 평균 +50~70)" data-en="LG U+ training NPS (B2B avg +50–70)">LG U+ AI 교육 NPS (B2B 평균 +50~70)</p>
-            </div>
-            <div class="stat">
-                <p class="stat-num">15+</p>
-                <p class="stat-label" data-ko="강의·컨설팅 수행 기업·기관" data-en="Enterprises &amp; orgs trained">강의·컨설팅 수행 기업·기관</p>
-            </div>
-            <div class="stat">
-                <p class="stat-num">204<sub>repos</sub></p>
-                <p class="stat-label" data-ko="GitHub 저장소 (공개 54)" data-en="GitHub repositories (54 public)">GitHub 저장소 (공개 54)</p>
-            </div>
-            <div class="stat">
-                <p class="stat-num">973<sub>명</sub></p>
-                <p class="stat-label" data-ko="직접 만든 교육 LMS 누적 참가자" data-en="Learners on my self-built LMS">직접 만든 교육 LMS 누적 참가자</p>
-            </div>
-        </section>
+    <section id="now" aria-labelledby="now-h">
+      <div class="sechead"><h2 id="now-h"><span class="mono secno">02</span>지금 하는 일</h2><span class="mono">2026-11-23 기준</span></div>
+      <ol class="list"><li><span class="mono d">2026.10 – 현재</span><div><p class="t">에어스메디컬 AX Engineer</p><ul class="sub"><li>회사의 정형·비정형 데이터를 AI 에이전트가 쓸 수 있게 모으는 Central Data Layer(OLAP·Vector DB·Graph DB)를 설계·구축·운영합니다.</li><li>사내 AI Native Workspace(MCP 서버, 업무 워크플로 빌더, Flywheel 엔진)를 만듭니다. 구성원이 워크플로를 쓸수록 데이터가 쌓이고, 그 데이터로 에이전트를 다시 개선하는 구조입니다.</li><li>Sales·Finance·RA/QA·CS 등 도메인 팀과 핵심 업무 워크플로를 AI 기반으로 다시 설계합니다.</li><li>사내 AI 사용 정책과 스킬 가이드를 쓰고 월간 교육 세션을 운영합니다.</li></ul></div></li><li><span class="mono d">2026.06 – 현재</span><div><p class="t">준랩 JoonLab 대표</p><ul class="sub"><li>근무시간 외에 기업 AI 교육과 AX 컨설팅을 맡습니다.</li><li>커맨드스페이스 구요한 님과 월간 CMDS를 매달 공동 진행합니다(2026-11-04 22회).</li></ul></div></li><li><span class="mono d">집필 중</span><div><p class="t">공저 《솔로프러너의 AI 에이전트 팀 만들기》</p><ul class="sub"><li>1인 사업자가 AI 에이전트로 업무를 나눠 맡기는 방법을 다룬 단행본입니다. 담당 원고 초고와 삽화를 마치고 다듬고 있습니다.</li></ul></div></li></ol>
+      <div class="figs">
+        <h3>숫자로 본 이력</h3>
+        <table>
+          <thead><tr><th scope="col">숫자</th><th scope="col">항목</th><th scope="col">기준</th></tr></thead>
+          <tbody><tr><td class="num">+81.2</td><td>LG U+ AI Build Up 1차수 교육 NPS</td><td class="src">교육 후 설문</td></tr><tr><td class="num">973명</td><td>직접 만든 LG AX 교육 LMS 누적 참가자</td><td class="src">2026-08</td></tr><tr><td class="num">65명</td><td>서울AI허브 「AI Native CEO」 1기 선발 CEO (지원 300명)</td><td class="src">2026-06</td></tr><tr><td class="num">22회</td><td>월간 CMDS 누적 회차</td><td class="src">2026-11-04</td></tr><tr><td class="num">240</td><td>GitHub 저장소 (공개 79)</td><td class="src">2026-11-23</td></tr><tr><td class="num">440+</td><td>준랩 지식 공유방(카카오 오픈채팅) 참여 인원</td><td class="src">2026-11</td></tr></tbody>
+        </table>
+      </div>
+    </section>
 
-        <!-- ===================== NOW ===================== -->
-        <section class="block" aria-labelledby="now-title" data-reveal style="--reveal-delay:100ms">
-            <div class="section-head">
-                <p class="section-kicker" data-ko="지금" data-en="Now">지금</p>
-                <h2 class="section-title" id="now-title" data-ko="지금 하고 있는 일" data-en="What I'm Doing Now">지금 하고 있는 일</h2>
-            </div>
-            <ul class="now-list">
-                <li class="now-item">
-                    <span class="now-dot" aria-hidden="true"></span>
-                    <span class="now-body">
-                        <span class="now-title" data-ko="LG그룹 AX 교육 시리즈 메인강사" data-en="Lead instructor, LG Group AX education series">LG그룹 AX 교육 시리즈 메인강사</span>
-                        <span class="now-desc" data-ko="LG인화원 AX Camp·리더 세미나·신임팀장 과정 — CEO부터 신임팀장까지, 커리큘럼 설계와 강사진 온보딩 리드" data-en="LG Academy AX Camp, leader seminars, and new-team-lead programs — from CEOs to new team leads, leading curriculum design and instructor onboarding">LG인화원 AX Camp·리더 세미나·신임팀장 과정 — CEO부터 신임팀장까지, 커리큘럼 설계와 강사진 온보딩 리드</span>
-                    </span>
-                    <span class="now-meta">2026 · LG</span>
-                </li>
-                <li class="now-item">
-                    <span class="now-dot" aria-hidden="true"></span>
-                    <span class="now-body">
-                        <span class="now-title" data-ko="서울 AI 허브 「AI Native CEO」 메인강사" data-en="Lead instructor, Seoul AI Hub &quot;AI Native CEO&quot;">서울 AI 허브 「AI Native CEO」 메인강사</span>
-                        <span class="now-desc" data-ko="선발 CEO 65명 대상 8주 과정 — 'AI를 인력처럼 배치하는 법': 에이전트 시스템과 하네스 엔지니어링" data-en="An 8-week program for 65 selected CEOs — deploying AI like a workforce: agent systems and harness engineering">선발 CEO 65명 대상 8주 과정 — 'AI를 인력처럼 배치하는 법': 에이전트 시스템과 하네스 엔지니어링</span>
-                    </span>
-                    <span class="now-meta">8 weeks</span>
-                </li>
-                <li class="now-item">
-                    <span class="now-dot" aria-hidden="true"></span>
-                    <span class="now-body">
-                        <span class="now-title" data-ko="TOPIK AI 콘텐츠 자동화 파이프라인 운영" data-en="Running the TOPIK AI content pipeline">TOPIK AI 콘텐츠 자동화 파이프라인 운영</span>
-                        <span class="now-desc" data-ko="E4NET과 협업 — 문제 생성부터 강의영상까지 무인 파이프라인, 5개 언어 다국어 확장" data-en="With E4NET — an unattended pipeline from question generation to lecture videos, expanding to 5 languages">E4NET과 협업 — 문제 생성부터 강의영상까지 무인 파이프라인, 5개 언어 다국어 확장</span>
-                    </span>
-                    <span class="now-meta">Pipeline</span>
-                </li>
-                <li class="now-item">
-                    <span class="now-dot" aria-hidden="true"></span>
-                    <span class="now-body">
-                        <span class="now-title" data-ko="월간 CMDS 정기 발표 (구요한 &amp; 박준)" data-en="Monthly CMDS talks (Koo Yohan &amp; Park Joon)">월간 CMDS 정기 발표 (구요한 &amp; 박준)</span>
-                        <span class="now-desc" data-ko="하네스 엔지니어링·AI 리서치 자동화 등 최전선 주제를 매달 자료집·실습키트와 함께 공개" data-en="Frontier topics like harness engineering and AI research automation, with monthly companion decks and hands-on kits">하네스 엔지니어링·AI 리서치 자동화 등 최전선 주제를 매달 자료집·실습키트와 함께 공개</span>
-                    </span>
-                    <span class="now-meta">Monthly</span>
-                </li>
-            </ul>
-        </section>
+    <section id="teaching" aria-labelledby="teaching-h">
+      <div class="sechead"><h2 id="teaching-h"><span class="mono secno">03</span>강의·교육</h2></div>
+      <p class="intro">대기업 경영진부터 신임팀장, 실무진까지 대상별로 과정을 설계하고 직접 진행합니다. 에이전트 활용, 바이브코딩, AX 전환을 실습 위주로 다룹니다.</p>
+      <ol class="list grp"><li><div class="k"><p class="t">LG인화원</p><span class="mono d2">2026</span></div><ul class="sub"><li>AX Camp 1박 2일 과정 3개 차수 메인강사·과정 개발 (5/27–28, 7/2–3, 7/9–10)</li><li>신임팀장 AX 교육 심화반 담당 강사 (7/7, 과정 전체 92명·3개 반)</li><li>AX 리더 세미나 (6월, 48명), 신임연구·전문위원 AX 세션 (4월, 66명), 안전환경(HSE) 리더 워크숍</li><li>LG 구매 컨퍼런스(PROCON) 발표자 AI 활용 코칭과 세션 구성 자문 (9/10)</li></ul></li><li><div class="k"><p class="t">LG U+ · LG전자</p><span class="mono d2">2026</span></div><ul class="sub"><li>LG U+ AI Build Up 1·2차수 (1차수 NPS +81.2)</li><li>LG전자 임원 대상 Claude Code 심화 교육</li></ul></li><li><div class="k"><p class="t">SK 그룹</p></div><ul class="sub"><li>SKT AI Frontier 1–8기 파트너</li><li>SK하이닉스·SK에코플랜트·SK mySUNI·SK브로드밴드 강의·컨설팅</li><li>SK 일본법인 도쿄 강연 (일본어 진행)</li></ul></li><li><div class="k"><p class="t">서울AI허브 「AI Native CEO」</p><span class="mono d2">2026.06 – 10</span></div><ul class="sub"><li>1기: 선발 CEO 65명, 7주차 13·14회차 메인강사 (에이전트 시스템·하네스 엔지니어링)</li><li>2기: 5주차 강의 (9/15 온라인, 9/17 오프라인, 하네스 엔지니어링과 에이전트 팀 설계)</li></ul></li><li><div class="k"><p class="t">월간 CMDS</p><span class="mono d2">매달</span></div><ul class="sub"><li>커맨드스페이스 구요한 님과 공동 진행하는 월간 AI 실무 클래스. 매 회차 발표 자료와 실습 키트를 함께 제공합니다(일부는 GitHub 공개).</li><li>최근: 19회 나만의 소프트웨어 만들기 (8/3), 22회 LLM 위키와 온톨로지 (11/4)</li></ul></li><li><div class="k"><p class="t">온라인 강의·커뮤니티</p></div><ul class="sub"><li>패스트캠퍼스 온라인 강의 4종 (Best 강의 2개 선정): 생성 AI 마스터 패키지, 연구자를 위한 AI툴 활용법 등</li><li>GPTers 커뮤니티 'AI로 연구하기' 리더, 국립농업과학원·IYUNO 특강</li><li>준랩 지식 공유방(카카오 오픈채팅) 440여 명 운영</li></ul></li></ol>
+    </section>
 
-        <!-- ===================== LINK HUB ===================== -->
-        <section class="block" id="links" aria-labelledby="links-title" data-reveal style="--reveal-delay:150ms">
-            <div class="section-head">
-                <p class="section-kicker" data-ko="바로가기" data-en="Links">바로가기</p>
-                <h2 class="section-title" id="links-title" data-ko="공식 관문" data-en="Official Gateway">공식 관문</h2>
-                <p class="section-desc" data-ko="제가 하는 일과 만든 것들 — 채널, 커뮤니티, 코드, 강의, 공개 연구로 이어지는 공식 링크입니다." data-en="What I do and what I build — official links to my channel, communities, code, courses, and public research.">제가 하는 일과 만든 것들 — 채널, 커뮤니티, 코드, 강의, 공개 연구로 이어지는 공식 링크입니다.</p>
-            </div>
-            <ul class="links-list">
-                <li><a class="link-row" href="https://class.cmdspace.kr/channels/L2NoYW5uZWxzLzE3Njkx/C00007/classes/153787/information" target="_blank" rel="noopener">
-                    <span class="link-cat" data-ko="강의" data-en="Lecture">강의</span>
-                    <span class="link-body">
-                        <span class="link-title" data-ko="월간 CMDS (구요한 & 박준)" data-en="Monthly CMDS (Koo Yohan & Park Joon)">월간 CMDS (구요한 &amp; 박준)</span>
-                        <span class="link-desc" data-ko="AI·LLM 실무를 다루는 월간 클래스" data-en="A monthly class on hands-on AI and LLM practice">AI·LLM 실무를 다루는 월간 클래스</span>
-                    </span>
-                    <span class="link-arrow" aria-hidden="true">↗</span>
-                </a></li>
-                <li><a class="link-row" href="https://fastcampus.co.kr/data_oneonone_aiservice" target="_blank" rel="noopener">
-                    <span class="link-cat" data-ko="강의" data-en="Lecture">강의</span>
-                    <span class="link-body">
-                        <span class="link-title" data-ko="박준의 나만을 위한 AI 서비스 만들기" data-en="Park Joon's Build-Your-Own AI Service">박준의 나만을 위한 AI 서비스 만들기</span>
-                        <span class="link-desc" data-ko="나만의 AI 서비스를 직접 만드는 강의" data-en="Course on building your own personal AI service">나만의 AI 서비스를 직접 만드는 강의</span>
-                    </span>
-                    <span class="link-arrow" aria-hidden="true">↗</span>
-                </a></li>
-                <li><a class="link-row" href="https://fastcampus.co.kr/biz_online_researcher" target="_blank" rel="noopener">
-                    <span class="link-cat" data-ko="강의" data-en="Lecture">강의</span>
-                    <span class="link-body">
-                        <span class="link-title" data-ko="연구자를 위한 AI툴 활용법" data-en="AI Tools for Researchers">연구자를 위한 AI툴 활용법</span>
-                        <span class="link-desc" data-ko="차원이 다른 연구 프로세스를 위한 AI 활용법" data-en="AI tooling for a next-level research process">차원이 다른 연구 프로세스를 위한 AI 활용법</span>
-                    </span>
-                    <span class="link-arrow" aria-hidden="true">↗</span>
-                </a></li>
-                <li><a class="link-row" href="https://open.kakao.com/o/gl7JSkSg" target="_blank" rel="noopener">
-                    <span class="link-cat" data-ko="커뮤니티" data-en="Community">커뮤니티</span>
-                    <span class="link-body">
-                        <span class="link-title" data-ko="준랩 | JoonLab 지식 공유방 (AI, LLM)" data-en="JoonLab Knowledge Community (AI, LLM)">준랩 | JoonLab 지식 공유방 (AI, LLM)</span>
-                        <span class="link-desc" data-ko="480여 명이 함께하는 AI·LLM 오픈채팅" data-en="An AI·LLM open chat with 480+ members">480여 명이 함께하는 AI·LLM 오픈채팅</span>
-                    </span>
-                    <span class="link-arrow" aria-hidden="true">↗</span>
-                </a></li>
-                <li><a class="link-row" href="https://open.kakao.com/o/sUXWYvlf" target="_blank" rel="noopener">
-                    <span class="link-cat" data-ko="문의" data-en="Inquiry">문의</span>
-                    <span class="link-body">
-                        <span class="link-title" data-ko="카카오톡 1:1 오픈채팅 문의" data-en="1:1 Inquiry via KakaoTalk">카카오톡 1:1 오픈채팅 문의</span>
-                        <span class="link-desc" data-ko="강의·컨설팅 1:1 문의 채널" data-en="Direct channel for lecture and consulting inquiries">강의·컨설팅 1:1 문의 채널</span>
-                    </span>
-                    <span class="link-arrow" aria-hidden="true">↗</span>
-                </a></li>
-                <li><a class="link-row" href="https://www.youtube.com/@joonlab98" target="_blank" rel="noopener">
-                    <span class="link-cat" data-ko="채널" data-en="Channel">채널</span>
-                    <span class="link-body">
-                        <span class="link-title" data-ko="준랩 | JoonLab (YouTube)" data-en="JoonLab (YouTube)">준랩 | JoonLab (YouTube)</span>
-                        <span class="link-desc" data-ko="AI·에이전트·개발을 다루는 유튜브 채널" data-en="YouTube channel on AI, agents, and development">AI·에이전트·개발을 다루는 유튜브 채널</span>
-                    </span>
-                    <span class="link-arrow" aria-hidden="true">↗</span>
-                </a></li>
-                <li><a class="link-row" href="https://soomgo.com/profile/users/7524519" target="_blank" rel="noopener">
-                    <span class="link-cat" data-ko="문의" data-en="Inquiry">문의</span>
-                    <span class="link-body">
-                        <span class="link-title" data-ko="숨고(Soomgo) 전문가 프로필" data-en="Soomgo Expert Profile">숨고(Soomgo) 전문가 프로필</span>
-                        <span class="link-desc" data-ko="AI 강의·컨설팅 전문가 매칭 프로필" data-en="Expert-matching profile for AI lectures and consulting">AI 강의·컨설팅 전문가 매칭 프로필</span>
-                    </span>
-                    <span class="link-arrow" aria-hidden="true">↗</span>
-                </a></li>
-            </ul>
-        </section>
+    <section id="projects" aria-labelledby="projects-h">
+      <div class="sechead"><h2 id="projects-h"><span class="mono secno">04</span>대표 프로젝트</h2><span class="mono">8건</span></div>
+      <ol class="proj"><li><span class="no mono">01</span><div><h3 id="p1-h">Claude Code 에이전트 운용 체계와 설정 공개본</h3><p class="meta">2025 – 2026 · 오픈소스</p><p class="what">Claude Code 세션 여러 개를 사람 없이 이어서 돌리는 작업 릴레이(컨텍스트가 차면 다음 세션에 넘기고, 감시 세션이 권한 요청을 처리)와 세션 간 상태를 기록하는 SQLite 작업판을 만들어 매일 씁니다. 그중 범용 설정을 레벨 1~4 단계로 나눠 공개했습니다.</p><p class="result">공개 설정 저장소 별 <span class="mono">14</span>, 포크 <span class="mono">3</span> <span class="muted">(2026-11-23)</span></p><div class="row"><a href="https://github.com/joonlab/joonlab-claudecode-setting-for-share">설정 공개본 <span aria-hidden="true">↗</span></a><button class="more-btn" type="button" aria-expanded="false" aria-controls="m1" aria-describedby="p1-h">자세히</button></div><div class="more" id="m1"><div inert><ul><li>공개본 구성: 전역 CLAUDE.md, 훅, 슬래시 커맨드, 서브에이전트, 범용 스킬 61개.</li><li>안전 훅: 위험 명령 차단, 답변 속 파일 경로 실재 검증, 메모리 사용량 감시, 공개 전 비밀값 검사.</li><li>machines-as-tools: 세션 하나에서 다른 맥들을 MCP 도구 19개로 불러 셸·브라우저 작업을 나눠 맡깁니다. 맥 3대에서 운용합니다.</li><li>cmux-state-dashboard: Claude Code 세션 수십 개를 한 화면에서 보고 끊긴 세션을 복원합니다.</li></ul></div></div></div></li><li><span class="no mono">02</span><div><h3 id="p2-h">LG 교육용 AI 에이전트 웹앱과 교육 LMS</h3><p class="meta">2026.01 – 07 · LG인화원</p><p class="what">인터뷰 에이전트, 에이전트 빌더, 멀티에이전트 패널토의 웹앱과 교육 운영용 LMS를 만들어 실제 교육에 투입했습니다.</p><p class="result">누적 참가자 <span class="mono">973</span>명, 동시접속 <span class="mono">79</span>명 무중단 처리</p><div class="row"><button class="more-btn" type="button" aria-expanded="false" aria-controls="m2" aria-describedby="p2-h">자세히</button></div><div class="more" id="m2"><div inert><ul><li>Next.js, Supabase, Gemini. 대화형 실습 앱은 LangGraph와 FastAPI.</li><li>여러 교육 차수를 동시에 배치하고, 수강생이 만든 앱을 갤러리로 모읍니다.</li></ul></div></div></div></li><li><span class="no mono">03</span><div><h3 id="p3-h">TOPIK 문항·강의영상 자동 생성 파이프라인</h3><p class="meta">2025.11 – 2026.10 · 이포넷(E4NET) 협업 · 납품·인수인계 완료</p><p class="what">문항 생성부터 해설, TTS, 슬라이드, 영상 합성, 다국어 자막까지 이어지는 파이프라인을 설계·구현했습니다. 사람이 하던 검수 단계를 측정 가능한 자동 합격 기준으로 바꿨습니다.</p><p class="result">해설 영상 <span class="mono">43</span>편(<span class="mono">341.5</span>분), 미얀마어·벵골어 영상 각 <span class="mono">57</span>편, 쓰기 모의고사 <span class="mono">45</span>세트</p><div class="row"><button class="more-btn" type="button" aria-expanded="false" aria-controls="m3" aria-describedby="p3-h">자세히</button></div><div class="more" id="m3"><div inert><ul><li>역할별 서브에이전트 27개가 단계를 나눠 맡고, 단계 사이에는 JSON 스키마 검증을 통과해야 다음 단계로 넘어갑니다.</li><li>생성은 LLM이, 정답 유일성·형식·싱크 같은 결정적 제약은 규칙 엔진과 스크립트가 맡습니다.</li><li>2026-09에 운영 자산 전체를 인수인계했습니다.</li></ul></div></div></div></li><li><span class="no mono">04</span><div><h3 id="p4-h">서울 지금: 실시간 도시 상황 지도</h3><p class="meta">2026.08 · 공개 서비스</p><p class="what">서울 명소의 실시간 혼잡도와 교통·지하철·주차·따릉이·날씨·미세먼지 정보를 한 지도에 모은 무료 웹 서비스입니다.</p><p class="result">장소 <span class="mono">121</span>곳, 공공 API 기반</p><div class="row"><a href="https://seoul.joonlab98.com">seoul.joonlab98.com <span aria-hidden="true">↗</span></a></div></div></li><li><span class="no mono">05</span><div><h3 id="p5-h">폴드8과 맥 연동 도구 모음 (android-mac-lab)</h3><p class="meta">2026.09 · 오픈소스</p><p class="what">갤럭시 Z 폴드8을 맥의 보조모니터·마이크·원격 화면으로 쓰는 도구와 안드로이드 음성 에이전트를 약 1주 동안 Claude Code로 만들어 공개했습니다.</p><p class="result">공개 저장소 <span class="mono">11</span>개, 허브 저장소 별 <span class="mono">12</span></p><div class="row"><a href="https://github.com/joonlab/android-mac-lab">허브 저장소 <span aria-hidden="true">↗</span></a><button class="more-btn" type="button" aria-expanded="false" aria-controls="m5" aria-describedby="p5-h">자세히</button></div><div class="more" id="m5"><div inert><ul><li>deskpad-fold: 폴드8을 맥 보조모니터로 씁니다.</li><li>fold-agent: 말로 시키면 폰이 앱을 열고 누릅니다. 되돌릴 수 없는 동작은 모델이 아니라 코드가 정한 확인 단계를 거칩니다.</li><li>foldmic, clipbridge, fold-cyberdeck, cmux-mobile-remote 등.</li></ul></div></div></div></li><li><span class="no mono">06</span><div><h3 id="p6-h">화상 미팅 양방향 실시간 통역 자막 (macOS)</h3><p class="meta">2026.10 · 개인 개발</p><p class="what">내가 한국어로 말하면 상대 화면에만 상대 언어 자막이, 상대가 말하면 내 화면에만 한국어 자막이 뜹니다. 상대는 아무것도 설치하지 않습니다.</p><p class="result">Gemini Live 번역 기반, 언어 판정·지연 처리 엔진 직접 구현</p></div></li><li><span class="no mono">07</span><div><h3 id="p7-h">웹 단행본 《지식 지도를 그리는 법》</h3><p class="meta">2026.10 – 11 · 공개</p><p class="what">LLM 위키, 온톨로지, RAG로 개인과 조직의 기록을 정리하는 방법을 다룬 웹 단행본입니다. 월간 CMDS 22회 발표 자료로 공개했습니다.</p><p class="result">보론에서 NVIDIA Auto-Ontology를 공개 표본 DB로 직접 돌려, 예시 질문이 틀린 값을 내는 원인(스키마 간 외래키 <span class="mono">59</span>개 누락)을 찾았습니다.</p><div class="row"><a href="https://books.joonlab98.com/knowledge-map/">책 읽기 <span aria-hidden="true">↗</span></a></div></div></li><li><span class="no mono">08</span><div><h3 id="p8-h">3D 박물관 관람 웹앱</h3><p class="meta">2026.11 · 공개 서비스</p><p class="what">루브르 리슐리외관 마를리 중정을 three.js로 재현해, 브라우저에서 걸어 다니며 고전 조각을 3D로 봅니다.</p><p class="result">조각 스캔 <span class="mono">16</span>점 (SMK 퍼블릭 도메인)</p><div class="row"><a href="https://museum.joonlab98.com">museum.joonlab98.com <span aria-hidden="true">↗</span></a><button class="more-btn" type="button" aria-expanded="false" aria-controls="m8" aria-describedby="p8-h">자세히</button></div><div class="more" id="m8"><div inert><ul><li>3D 온라인 강의장(120명, 화면 공유, 조별 테이블)도 만들었습니다.</li></ul></div></div></div></li></ol>
+      <p class="note">전체 케이스 24건과 데모 영상은 포트폴리오에서 볼 수 있습니다. <a href="https://joonlab98.com/portfolio/">joonlab98.com/portfolio <span aria-hidden="true">↗</span></a></p>
+    </section>
 
-        <!-- ===================== 기업 강의 · 컨설팅 ===================== -->
-        <section class="block" aria-labelledby="clients-title" data-reveal style="--reveal-delay:200ms">
-            <div class="section-head">
-                <p class="section-kicker" data-ko="포트폴리오 01" data-en="Portfolio 01">포트폴리오 01</p>
-                <h2 class="section-title" id="clients-title" data-ko="기업 강의 · 컨설팅" data-en="Corporate Training & Consulting">기업 강의 · 컨설팅</h2>
-                <p class="section-desc" data-ko="LG·SK를 비롯한 대기업 경영진과 실무진을 대상으로 AI 교육과 AX 컨설팅을 수행합니다. 에이전트·바이브코딩·AX 전환을 실무에 바로 적용하도록 설계합니다." data-en="I deliver AI education and AX consulting for executives and practitioners at major enterprises including LG and SK, designed for immediate, hands-on application of agents, vibe coding, and AX transformation.">LG·SK를 비롯한 대기업 경영진과 실무진을 대상으로 AI 교육과 AX 컨설팅을 수행합니다. 에이전트·바이브코딩·AX 전환을 실무에 바로 적용하도록 설계합니다.</p>
-            </div>
-            <div class="roster">
-                <div class="roster-row">
-                    <span class="roster-label" data-ko="LG 그룹" data-en="LG Group">LG 그룹</span>
-                    <p class="roster-items" data-ko="LG인화원 AX Camp CEO·임원·리더·신임팀장 시리즈 메인강사(단일 교육 NPS 최고 100), LG U+ AI Build Up 1·2차수(NPS +81.2), 안전환경(HSE) 리더 워크숍" data-en="Lead instructor for LG Academy's AX Camp series — CEO, executive, leader, and new-team-lead tracks (peak NPS 100) — plus LG U+ AI Build Up cohorts 1–2 (NPS +81.2) and HSE leader workshops">LG인화원 AX Camp CEO·임원·리더·신임팀장 시리즈 메인강사(단일 교육 NPS 최고 100), LG U+ AI Build Up 1·2차수(NPS +81.2), 안전환경(HSE) 리더 워크숍</p>
-                </div>
-                <div class="roster-row">
-                    <span class="roster-label" data-ko="SK 그룹" data-en="SK Group">SK 그룹</span>
-                    <p class="roster-items" data-ko="SKT AI Frontier 1–8기 파트너, SK하이닉스·SK에코플랜트·SK mySUNI·SK브로드밴드 강의·컨설팅, SK 일본법인 도쿄 강연(일본어 진행)" data-en="SK Telecom AI Frontier partner (cohorts 1–8); lectures and consulting for SK hynix, SK ecoplant, SK mySUNI, and SK Broadband; a Tokyo keynote for SK Japan, delivered in Japanese">SKT AI Frontier 1–8기 파트너, SK하이닉스·SK에코플랜트·SK mySUNI·SK브로드밴드 강의·컨설팅, SK 일본법인 도쿄 강연(일본어 진행)</p>
-                </div>
-                <div class="roster-row">
-                    <span class="roster-label" data-ko="서울 AI 허브" data-en="Seoul AI Hub">서울 AI 허브</span>
-                    <p class="roster-items" data-ko="「AI Native CEO」 8주 과정(지원 300명 중 선발 CEO 65명) 메인강사 — AI 에이전트 시스템·하네스 엔지니어링" data-en="Lead instructor for the 8-week &quot;AI Native CEO&quot; program (65 CEOs selected from 300 applicants) — AI agent systems and harness engineering">「AI Native CEO」 8주 과정(지원 300명 중 선발 CEO 65명) 메인강사 — AI 에이전트 시스템·하네스 엔지니어링</p>
-                </div>
-                <div class="roster-row">
-                    <span class="roster-label" data-ko="패스트캠퍼스" data-en="FastCampus">패스트캠퍼스</span>
-                    <p class="roster-items" data-ko="Best 강의 2개 선정 — 생성 AI 마스터 패키지, 연구자를 위한 AI툴, 나만의 AI 서비스 만들기 등 온라인 강의 4종" data-en="Two courses selected as Best — four online courses including the Generative AI Master Package, AI Tools for Researchers, and Build-Your-Own AI Service">Best 강의 2개 선정 — 생성 AI 마스터 패키지, 연구자를 위한 AI툴, 나만의 AI 서비스 만들기 등 온라인 강의 4종</p>
-                </div>
-                <div class="roster-row">
-                    <span class="roster-label" data-ko="커뮤니티·컨퍼런스" data-en="Community">커뮤니티·컨퍼런스</span>
-                    <p class="roster-items" data-ko="GPTers 커뮤니티 리더('AI로 연구하기'), 월간 CMDS 정기 발표, 국립농업과학원·IYUNO 특강, 카카오 오픈채팅 480여 명 운영" data-en="GPTers community leader (AI for Research), regular Monthly CMDS speaker, guest lectures for the National Institute of Agricultural Sciences and IYUNO, and a 480-member open chat community">GPTers 커뮤니티 리더('AI로 연구하기'), 월간 CMDS 정기 발표, 국립농업과학원·IYUNO 특강, 카카오 오픈채팅 480여 명 운영</p>
-                </div>
-            </div>
-        </section>
+    <section id="consulting" aria-labelledby="consulting-h">
+      <div class="sechead"><h2 id="consulting-h"><span class="mono secno">05</span>컨설팅·자문</h2></div>
+      <ol class="list"><li><span class="mono d">2026</span><div><p class="t">중소기업 AI 도입 PoC·개발</p><p class="b">유통 일일 실적 보고 에이전트, 숙박 운영 로컬 에이전트, QR로 여는 다국어 표준 레시피 시스템, 교통사고 현장조사 AI(과실 분류·약도 생성) 등. 고객명은 밝히지 않습니다.</p></div></li><li><span class="mono d">2026</span><div><p class="t">박사학위 논문 프롬프트 설계 자문</p><p class="b">체계적 문헌고찰의 데이터 추출 프롬프트를 검토하고, 같은 조건 150회 재현 실험을 포함한 61쪽 의견서를 냈습니다.</p></div></li><li><span class="mono d">2025 – 2026</span><div><p class="t">비영리 재단 기부자 이탈·납부 예측</p><p class="b">대규모 기부자 데이터로 ML과 LLM을 함께 쓰는 이탈·납부 예측 모델(분류 AUC 0.985)과 대시보드를 만들었습니다(이포넷 협업).</p></div></li><li><span class="mono d">2026</span><div><p class="t">백석대학교 Pind 프로젝트 기술 멘토링</p><p class="b">YouTube 영상에서 장소를 자동으로 뽑는 서비스를 만드는 팀에 기술 자문을 했습니다.</p></div></li><li><span class="mono d">2025</span><div><p class="t">신세계서울병원 AI 운영 컨설팅</p><p class="b">병원 운영 데이터 분석과 재고관리 시스템 컨설팅.</p></div></li><li><span class="mono d">2025</span><div><p class="t">데이원컴퍼니 교육 콘텐츠 생성기</p><p class="b">패스트캠퍼스 교육 콘텐츠 생성 데모 앱 개발 (Python, PyInstaller).</p></div></li></ol>
+    </section>
 
-        <!-- ===================== 컨설팅 프로젝트 ===================== -->
-        <section class="block" aria-labelledby="consult-title" data-reveal style="--reveal-delay:250ms">
-            <div class="section-head">
-                <p class="section-kicker" data-ko="포트폴리오 02" data-en="Portfolio 02">포트폴리오 02</p>
-                <h2 class="section-title" id="consult-title" data-ko="컨설팅 프로젝트" data-en="Consulting Projects">컨설팅 프로젝트</h2>
-            </div>
-            <div class="cards">
-                <div class="card">
-                    <p class="card-eyebrow">2026 · LG</p>
-                    <p class="card-title" data-ko="교육용 AI Agent 플랫폼 개발·납품" data-en="AI Agent Platform for Corporate Training">교육용 AI Agent 플랫폼 개발·납품</p>
-                    <p class="card-desc" data-ko="인터뷰 에이전트·에이전트 빌더·멀티에이전트 패널토의 웹앱을 LG인화원 실교육에 투입 — 동시접속 79명 무중단 처리" data-en="Interview agents, an agent builder, and a multi-agent panel-discussion web app deployed in live LG Academy training — 79 concurrent users, zero downtime">인터뷰 에이전트·에이전트 빌더·멀티에이전트 패널토의 웹앱을 LG인화원 실교육에 투입 — 동시접속 79명 무중단 처리</p>
-                </div>
-                <div class="card">
-                    <p class="card-eyebrow" data-ko="2025 · 신세계서울병원" data-en="2025 · Shinsegae Seoul Hospital">2025 · 신세계서울병원</p>
-                    <p class="card-title" data-ko="AI 운영 컨설팅" data-en="AI Operations Consulting">AI 운영 컨설팅</p>
-                    <p class="card-desc" data-ko="AI 기반 병원 운영 데이터 분석 및 재고관리 시스템 컨설팅" data-en="AI-driven analysis of hospital operations data and inventory management systems">AI 기반 병원 운영 데이터 분석 및 재고관리 시스템 컨설팅</p>
-                </div>
-                <div class="card">
-                    <p class="card-eyebrow" data-ko="2025–26 · 이포넷" data-en="2025–26 · E4NET">2025–26 · 이포넷</p>
-                    <p class="card-title" data-ko="TOPIK AI 콘텐츠 대량생산 시스템" data-en="TOPIK AI Content Production System">TOPIK AI 콘텐츠 대량생산 시스템</p>
-                    <p class="card-desc" data-ko="문제 생성→해설→TTS→슬라이드→강의영상의 7단계 AI 파이프라인 구축 — 모의고사 30세트, 5개 언어 확장" data-en="A 7-stage AI pipeline from question generation to explanations, TTS, slides, and lecture videos — 30 mock-exam sets, expanding to 5 languages">문제 생성→해설→TTS→슬라이드→강의영상의 7단계 AI 파이프라인 구축 — 모의고사 30세트, 5개 언어 확장</p>
-                </div>
-                <div class="card">
-                    <p class="card-eyebrow" data-ko="2026 · 백석대학교" data-en="2026 · Baekseok University">2026 · 백석대학교</p>
-                    <p class="card-title" data-ko="Pind 프로젝트 기술 멘토링" data-en="Pind Project Technical Mentoring">Pind 프로젝트 기술 멘토링</p>
-                    <p class="card-desc" data-ko="YouTube 영상 기반 장소 자동 추출 서비스 기술 멘토링" data-en="Technical mentoring for a service that auto-extracts places from YouTube videos">YouTube 영상 기반 장소 자동 추출 서비스 기술 멘토링</p>
-                </div>
-                <div class="card">
-                    <p class="card-eyebrow" data-ko="2025 · 데이원컴퍼니" data-en="2025 · Day1Company">2025 · 데이원컴퍼니</p>
-                    <p class="card-title" data-ko="교육 콘텐츠 생성기 개발" data-en="Education Content Generator">교육 콘텐츠 생성기 개발</p>
-                    <p class="card-desc" data-ko="FastCampus 교육 콘텐츠 생성 데모 앱 개발 (Python, PyInstaller)" data-en="Built a demo app for generating FastCampus training content (Python, PyInstaller)">FastCampus 교육 콘텐츠 생성 데모 앱 개발 (Python, PyInstaller)</p>
-                </div>
-            </div>
-        </section>
+    <section id="writing" aria-labelledby="writing-h">
+      <div class="sechead"><h2 id="writing-h"><span class="mono secno">06</span>글·연구·공개 자료</h2></div>
+      <ol class="list"><li><span class="mono d">논문</span><div><p class="t"><a href="https://arxiv.org/abs/2502.12462">Emulating Retrieval Augmented Generation via Prompt Engineering for Enhanced Long Context Comprehension in LLMs</a></p><p class="b">제1저자, 2025 (교토대 Kashima Lab)</p></div></li><li><span class="mono d">논문</span><div><p class="t"><a href="https://arxiv.org/abs/2603.20993">Long-Term Outlier Prediction Through Outlier Score Modeling</a></p><p class="b">공저, 2026 (파나소닉 공동연구, 시계열 이상탐지)</p></div></li><li><span class="mono d">웹 책</span><div><p class="t"><a href="https://books.joonlab98.com">books.joonlab98.com</a></p><p class="b">《지식 지도를 그리는 법》 등 웹 책 서가</p></div></li><li><span class="mono d">실험</span><div><p class="t"><a href="https://github.com/joonlab/gpt-6.1-sol-benchmark">GPT-6.1 Sol 동조건 벤치마크</a></p><p class="b">7개 트랙, 3,527회 호출 실험 리포트와 평가 데이터</p></div></li><li><span class="mono d">분석</span><div><p class="t"><a href="https://fable5-traces-analysis.vercel.app">Fable-5 Traces 분석</a></p><p class="b">프런티어 모델의 코딩 실행 기록 4,665행 분석, 인터랙티브 뷰어</p></div></li><li><span class="mono d">오픈소스</span><div><p class="t"><a href="https://github.com/joonlab/MacPilot">MacPilot</a></p><p class="b">폰 브라우저를 맥의 트랙패드·키보드로 쓰는 원격 조작 도구 (별 25, 포크 8)</p></div></li><li><span class="mono d">오픈소스</span><div><p class="t"><a href="https://github.com/joonlab/barback">Barback</a></p><p class="b">노치에 가려진 메뉴바 아이콘을 꺼내 쓰는 macOS 앱 (Swift, MIT)</p></div></li><li><span class="mono d">오픈소스</span><div><p class="t"><a href="https://github.com/joonlab/mac-recorder">MacRecorder</a></p><p class="b">화면·마이크 녹화, 로컬 전사, 요약까지 하는 macOS 도구</p></div></li><li><span class="mono d">튜토리얼</span><div><p class="t"><a href="https://github.com/joonlab/claude-agent-sdk-tutorial">Claude Agent SDK 4단계 튜토리얼</a></p><p class="b">에이전트를 코드로 만드는 4단계 예제 20개</p></div></li></ol>
+    </section>
 
-        <!-- ===================== 개발 프로젝트 ===================== -->
-        <section class="block" aria-labelledby="dev-title" data-reveal style="--reveal-delay:300ms">
-            <div class="section-head">
-                <p class="section-kicker" data-ko="포트폴리오 03" data-en="Portfolio 03">포트폴리오 03</p>
-                <h2 class="section-title" id="dev-title" data-ko="개발 프로젝트" data-en="Engineering Projects">개발 프로젝트</h2>
-                <p class="section-desc" data-ko="직접 설계·구축한 프로덕션 규모 에이전트 시스템과 자동화 도구 일부." data-en="Selected production-scale agent systems and automation tools I designed and built.">직접 설계·구축한 프로덕션 규모 에이전트 시스템과 자동화 도구 일부.</p>
-            </div>
-            <div class="cards">
-                <div class="card">
-                    <p class="card-eyebrow">MULTI-AGENT</p>
-                    <p class="card-title" data-ko="준랩 AutoTrader — 멀티에이전트 자동매매" data-en="JoonLab AutoTrader — Multi-Agent Trading">준랩 AutoTrader — 멀티에이전트 자동매매</p>
-                    <p class="card-desc" data-ko="7~12명 LLM 전문가 토론(독립분석→상호반박→종합) 후 결정론적 regime 게이트·하드 리스크 한도로 집행하는 자동매매 (기술 연구)" data-en="Automated trading where 7–12 LLM experts debate (independent analysis, rebuttal, synthesis) before a deterministic regime gate and hard risk limits execute (research project)">7~12명 LLM 전문가 토론(독립분석→상호반박→종합) 후 결정론적 regime 게이트·하드 리스크 한도로 집행하는 자동매매 (기술 연구)</p>
-                </div>
-                <div class="card">
-                    <p class="card-eyebrow">AI ASSISTANT</p>
-                    <p class="card-title" data-ko="Hermes — 능동형 AI 비서" data-en="Hermes — Proactive AI Assistant">Hermes — 능동형 AI 비서</p>
-                    <p class="card-desc" data-ko="데일리 브리핑·SOP 위키·이메일 triage·월간 자가진화를 크론으로 자동화. 클라우드에서 로컬(PM2)로 이전하고 ChatGPT OAuth 정액 백엔드로 운영" data-en="Cron-automated daily briefings, SOP wiki, email triage, and monthly self-evolution — migrated from cloud to local (PM2) on a flat-rate ChatGPT OAuth backend">데일리 브리핑·SOP 위키·이메일 triage·월간 자가진화를 크론으로 자동화. 클라우드에서 로컬(PM2)로 이전하고 ChatGPT OAuth 정액 백엔드로 운영</p>
-                </div>
-                <div class="card">
-                    <p class="card-eyebrow">PIPELINE</p>
-                    <p class="card-title" data-ko="TOPIK I 강의영상 완전 자동화" data-en="Fully Automated TOPIK I Lecture Videos">TOPIK I 강의영상 완전 자동화</p>
-                    <p class="card-desc" data-ko="문제생성→해설→TTS→슬라이드→영상 합성→다국어(5개 언어)까지 무인 파이프라인. 15종 에이전트 팀 + Gemini 4차원 영상 QA" data-en="An unattended pipeline from question generation to explanation, TTS, slides, video synthesis, and 5-language localization — a 15-agent team with Gemini 4-dimensional video QA">문제생성→해설→TTS→슬라이드→영상 합성→다국어(5개 언어)까지 무인 파이프라인. 15종 에이전트 팀 + Gemini 4차원 영상 QA</p>
-                </div>
-                <a class="card is-link" href="https://fable5-traces-analysis.vercel.app" target="_blank" rel="noopener">
-                    <p class="card-eyebrow">OPEN RESEARCH</p>
-                    <p class="card-title" data-ko="Fable-5 Traces 분석 (공개 연구)" data-en="Fable-5 Traces Analysis (Open Research)">Fable-5 Traces 분석 (공개 연구)</p>
-                    <p class="card-desc" data-ko="프런티어 모델의 실제 코딩 궤적 4,665행을 분석해 검증 내장 루프의 86.7%가 10스텝 내 완료됨을 발견. 인터랙티브 뷰어·덱·인포그래픽 공개" data-en="Analyzed 4,665 lines of a frontier model's real coding traces, finding 86.7% of verification-embedded loops finish within 10 steps. Published as an interactive viewer, deck, and infographic">프런티어 모델의 실제 코딩 궤적 4,665행을 분석해 검증 내장 루프의 86.7%가 10스텝 내 완료됨을 발견. 인터랙티브 뷰어·덱·인포그래픽 공개</p>
-                </a>
-                <div class="card">
-                    <p class="card-eyebrow">EDU PLATFORM</p>
-                    <p class="card-title" data-ko="LG AX Camp LMS 플랫폼" data-en="LG AX Camp LMS Platform">LG AX Camp LMS 플랫폼</p>
-                    <p class="card-desc" data-ko="LG그룹 AX 교육용 LMS를 직접 개발·운영 — 누적 참가자 973명, 수강생 제작 앱 갤러리 120개, 복수 교육 동시 배치 시스템" data-en="A self-built LMS powering LG Group AX programs — 973 learners, a 120-app student gallery, and multi-cohort batch operations">LG그룹 AX 교육용 LMS를 직접 개발·운영 — 누적 참가자 973명, 수강생 제작 앱 갤러리 120개, 복수 교육 동시 배치 시스템</p>
-                </div>
-                <a class="card is-link" href="https://github.com/joonlab/barback" target="_blank" rel="noopener">
-                    <p class="card-eyebrow">macOS · OPEN SOURCE</p>
-                    <p class="card-title" data-ko="Barback — macOS 메뉴바 관리앱" data-en="Barback — macOS Menu Bar Manager">Barback — macOS 메뉴바 관리앱</p>
-                    <p class="card-desc" data-ko="노치에 가려진 메뉴바 아이콘을 팝업으로 꺼내는 Bartender 대안. Swift 6 + ScreenCaptureKit + macOS 저수준 API (MIT 오픈소스)" data-en="A Bartender alternative that surfaces menu-bar icons hidden behind the notch. Swift 6, ScreenCaptureKit, and low-level macOS APIs (MIT, open source)">노치에 가려진 메뉴바 아이콘을 팝업으로 꺼내는 Bartender 대안. Swift 6 + ScreenCaptureKit + macOS 저수준 API (MIT 오픈소스)</p>
-                </a>
-                <a class="card is-link" href="https://github.com/joonlab/MacPilot" target="_blank" rel="noopener">
-                    <p class="card-eyebrow">macOS · OPEN SOURCE</p>
-                    <p class="card-title" data-ko="MacPilot — 폰으로 조작하는 맥" data-en="MacPilot — Drive Your Mac from Your Phone">MacPilot — 폰으로 조작하는 맥</p>
-                    <p class="card-desc" data-ko="폰 브라우저가 맥의 무선 트랙패드·키보드·스트림덱이 되는 원격 조작 도구 — 앱 설치 0, 브라우저만으로" data-en="Turns your phone's browser into a wireless trackpad, keyboard, and stream deck for your Mac — zero installs, browser only">폰 브라우저가 맥의 무선 트랙패드·키보드·스트림덱이 되는 원격 조작 도구 — 앱 설치 0, 브라우저만으로</p>
-                </a>
-                <a class="card is-link" href="https://github.com/joonlab/claude-agent-sdk-tutorial" target="_blank" rel="noopener">
-                    <p class="card-eyebrow">OPEN SOURCE</p>
-                    <p class="card-title" data-ko="Claude Agent SDK 4-Phase 튜토리얼" data-en="Claude Agent SDK 4-Phase Tutorial">Claude Agent SDK 4-Phase 튜토리얼</p>
-                    <p class="card-desc" data-ko="에이전트를 코드로 직접 빌드하는 24개 예제 핸즈온 커리큘럼 공개 — 커뮤니티 발표와 함께 배포" data-en="A hands-on curriculum of 24 examples for building agents in code — published alongside a community talk">에이전트를 코드로 직접 빌드하는 24개 예제 핸즈온 커리큘럼 공개 — 커뮤니티 발표와 함께 배포</p>
-                </a>
-            </div>
-        </section>
+    <section id="career" aria-labelledby="career-h">
+      <div class="sechead"><h2 id="career-h"><span class="mono secno">07</span>경력·학력</h2></div>
+      <ol class="list"><li><span class="mono d">2026.10 – 현재</span><div><p class="t">에어스메디컬 AX Engineer</p><p class="b">사내 데이터 레이어, AI 업무 환경, 업무 워크플로 재설계, 사내 AI 교육.</p></div></li><li><span class="mono d">2026.06 – 현재</span><div><p class="t">준랩 JoonLab 대표</p><p class="b">AI 교육, AX 컨설팅, 에이전트 시스템 개발.</p></div></li><li><span class="mono d">2024 – 2026.05</span><div><p class="t">프리랜서 AI 강사·컨설턴트</p><p class="b">LG·SK 그룹 AI 교육, 커맨드스페이스(CMDS) 협업.</p></div></li><li><span class="mono d">2024.01 – 06</span><div><p class="t">Wordvice AI · LLM Researcher</p><p class="b">기획팀 소속 LLM 리서처 (석사 과정 중 근무).</p></div></li><li><span class="mono d">2022.10 – 2025.03</span><div><p class="t">교토대학교 대학원 정보학연구과 석사</p><p class="b">지능정보학 전공, Kashima Lab. LLM, Long Context, RAG, 프롬프트 엔지니어링 연구. 파나소닉 공동연구(시계열 이상탐지).</p></div></li><li><span class="mono d">2018.04 – 2022.03</span><div><p class="t">오카야마대학교 이학부 수학과 학사</p><p class="b">한일공동이공계학부 국비유학생(18기), 학부 전액장학생.</p></div></li></ol>
+      <div class="figs">
+        <h3>언어</h3>
+        <ul class="langlist"><li><span lang="ko">한국어</span><span class="mono">모국어</span></li><li><span lang="ja">日本語</span><span class="mono">JLPT N1</span></li><li><span lang="en">English</span><span class="mono">TOEIC 950</span></li></ul>
+      </div>
+    </section>
 
-        <!-- ===================== 학력 ===================== -->
-        <section class="block" aria-labelledby="edu-title" data-reveal style="--reveal-delay:350ms">
-            <div class="section-head">
-                <p class="section-kicker" data-ko="포트폴리오 04" data-en="Portfolio 04">포트폴리오 04</p>
-                <h2 class="section-title" id="edu-title" data-ko="경력 · 학력" data-en="Background">경력 · 학력</h2>
-            </div>
-            <div class="edu">
-                <div class="edu-item">
-                    <span class="edu-period" data-ko="2026 – 현재" data-en="2026 – Now">2026 – 현재</span>
-                    <div>
-                        <p class="edu-school" data-ko="준랩 JoonLab 대표 — AI 교육 · AX 컨설팅 · 에이전트 시스템 개발" data-en="Founder, JoonLab — AI education, AX consulting, and agent systems">준랩 JoonLab 대표 — AI 교육 · AX 컨설팅 · 에이전트 시스템 개발</p>
-                        <p class="edu-note" data-ko="커맨드스페이스(CMDS)와 LG·SK 대기업 AX 교육 협업" data-en="Partnering with CMDSPACE on enterprise AX programs for LG and SK">커맨드스페이스(CMDS)와 LG·SK 대기업 AX 교육 협업</p>
-                    </div>
-                </div>
-                <div class="edu-item">
-                    <span class="edu-period">2024.01 – 2024.06</span>
-                    <div>
-                        <p class="edu-school" data-ko="Wordvice AI — LLM Researcher" data-en="Wordvice AI — LLM Researcher">Wordvice AI — LLM Researcher</p>
-                        <p class="edu-note" data-ko="기획팀 소속 LLM 리서처 (석사 재학 중 근무)" data-en="LLM researcher on the product planning team (during graduate school)">기획팀 소속 LLM 리서처 (석사 재학 중 근무)</p>
-                    </div>
-                </div>
-                <div class="edu-item">
-                    <span class="edu-period">2022.10 – 2025.03</span>
-                    <div>
-                        <p class="edu-school" data-ko="교토대학 대학원 정보학연구과 지능정보학 석사 (Kashima Lab)" data-en="Kyoto University, Graduate School of Informatics — M.S. in Intelligence Science and Technology (Kashima Lab)">교토대학 대학원 정보학연구과 지능정보학 석사 (Kashima Lab)</p>
-                        <p class="edu-note" data-ko="LLM·Long Context·RAG·Prompt Engineering 연구. Panasonic 공동연구(시계열 이상탐지)" data-en="Research on LLMs, long-context comprehension, RAG, and prompt engineering; joint research with Panasonic on time-series anomaly detection">LLM·Long Context·RAG·Prompt Engineering 연구. Panasonic 공동연구(시계열 이상탐지)</p>
-                    </div>
-                </div>
-                <div class="edu-item">
-                    <span class="edu-period">2018.04 – 2022.03</span>
-                    <div>
-                        <p class="edu-school" data-ko="오카야마대학 이학부 수학과 학사" data-en="Okayama University, Faculty of Science — B.S. in Mathematics">오카야마대학 이학부 수학과 학사</p>
-                        <p class="edu-note" data-ko="한일공동이공계학부 국비유학생(18기), 학부 전액장학생" data-en="Korea-Japan Joint Government Scholarship student (18th cohort), full undergraduate scholarship">한일공동이공계학부 국비유학생(18기), 학부 전액장학생</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="contact" aria-labelledby="contact-h">
+      <div class="sechead"><h2 id="contact-h"><span class="mono secno">08</span>링크·연락</h2></div>
+      <ul class="links"><li><a href="https://class.cmdspace.kr/channels/L2NoYW5uZWxzLzE3Njkx/C00007/classes/153787/information"><span>월간 CMDS (구요한 &amp; 박준)</span><span class="desc">AI·LLM 실무 월간 클래스 <span aria-hidden="true">↗</span></span></a></li><li><a href="https://fastcampus.co.kr/biz_online_researcher"><span>연구자를 위한 AI툴 활용법</span><span class="desc">패스트캠퍼스 온라인 강의 <span aria-hidden="true">↗</span></span></a></li><li><a href="https://open.kakao.com/o/gl7JSkSg"><span>준랩 지식 공유방</span><span class="desc">AI·LLM 카카오 오픈채팅, 440여 명 <span aria-hidden="true">↗</span></span></a></li><li><a href="https://open.kakao.com/o/sUXWYvlf"><span>1:1 문의 오픈채팅</span><span class="desc">강의·컨설팅 문의 <span aria-hidden="true">↗</span></span></a></li><li><a href="https://joonlab98.com"><span>블로그</span><span class="desc">joonlab98.com <span aria-hidden="true">↗</span></span></a></li><li><a href="https://joonlab98.com/portfolio/"><span>포트폴리오</span><span class="desc">케이스 24건과 데모 영상 <span aria-hidden="true">↗</span></span></a></li><li><a href="https://books.joonlab98.com"><span>웹 책</span><span class="desc">books.joonlab98.com <span aria-hidden="true">↗</span></span></a></li><li><a href="https://github.com/joonlab"><span>GitHub</span><span class="desc">github.com/joonlab <span aria-hidden="true">↗</span></span></a></li><li><a href="https://www.youtube.com/@joonlab98"><span>YouTube</span><span class="desc">@joonlab98 <span aria-hidden="true">↗</span></span></a></li><li><a href="https://www.linkedin.com/in/joonlab/"><span>LinkedIn</span><span class="desc">in/joonlab <span aria-hidden="true">↗</span></span></a></li></ul>
+      <p class="note">강의·컨설팅 문의는 메일이나 1:1 오픈채팅으로 받습니다. 준랩 일은 회사 근무시간 외에 진행합니다.</p>
+    </section>
 
-        <!-- ===================== FOOTER ===================== -->
-        <footer class="footer" data-reveal style="--reveal-delay:400ms">
-            <nav class="social" aria-label="소셜 링크">
-                <a href="https://github.com/joonlab" target="_blank" rel="noopener" data-label-ko="GitHub" data-label-en="GitHub" aria-label="GitHub">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.4 9.4 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
-                </a>
-                <a href="https://www.youtube.com/@joonlab98" target="_blank" rel="noopener" data-label-ko="YouTube" data-label-en="YouTube" aria-label="YouTube">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.4-.43-5.03a2.6 2.6 0 00-1.83-1.84C19.1 4.7 12 4.7 12 4.7s-7.1 0-8.74.43A2.6 2.6 0 001.43 6.97C1 8.6 1 12 1 12s0 3.4.43 5.03c.24.9.94 1.6 1.83 1.84 1.64.43 8.74.43 8.74.43s7.1 0 8.74-.43a2.6 2.6 0 001.83-1.84C23 15.4 23 12 23 12zM9.75 15.27V8.73L15.5 12l-5.75 3.27z"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/joonlab/" target="_blank" rel="noopener" data-label-ko="LinkedIn" data-label-en="LinkedIn" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3V9zm6 0h3.83v1.64h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14V21h-4v-5.44c0-1.3-.02-2.97-1.81-2.97-1.81 0-2.09 1.41-2.09 2.87V21H9V9z"/></svg>
-                </a>
-                <a href="mailto:wns9133@gmail.com" data-label-ko="이메일 보내기" data-label-en="Send email" aria-label="이메일 보내기">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
-                </a>
-            </nav>
-            <p class="footer-meta">
-                <span>© <span id="yr">2026</span> JoonLab · 박준 Park Joon</span>
-                <span class="dot" aria-hidden="true">·</span>
-                <span data-ko="최종 업데이트 2026-07-06" data-en="Last updated 2026-07-06">최종 업데이트 2026-07-06</span>
-            </p>
-        </footer>
-    </main>
-
-    <script>
-        (function () {
-            var root = document.documentElement;
-            var themeBtn = document.getElementById("themeBtn");
-            var themeIcon = document.getElementById("themeIcon");
-            var langBtn = document.getElementById("langBtn");
-
-            var currentLang = "ko";
-            try { currentLang = localStorage.getItem("joon-bio-lang") === "en" ? "en" : "ko"; } catch (e) {}
-            var savedTheme = null;
-            try { savedTheme = localStorage.getItem("joon-bio-theme"); } catch (e) {}
-            var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-            /* ---------- Theme ---------- */
-            function iconMarkup(theme) {
-                if (theme === "dark") {
-                    return '<circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/>';
-                }
-                return '<path d="M20.5 13.2A8.3 8.3 0 1110.8 3.5 6.5 6.5 0 0020.5 13.2z"/>';
-            }
-            function setTheme(theme) {
-                root.setAttribute("data-theme", theme);
-                themeBtn.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
-                var toLight = currentLang === "en" ? "Switch to light mode" : "라이트 모드로 전환";
-                var toDark = currentLang === "en" ? "Switch to dark mode" : "다크 모드로 전환";
-                themeBtn.setAttribute("aria-label", theme === "dark" ? toLight : toDark);
-                themeIcon.innerHTML = iconMarkup(theme);
-            }
-
-            /* ---------- Language ---------- */
-            function applyLanguage(lang) {
-                currentLang = lang === "en" ? "en" : "ko";
-                root.setAttribute("lang", currentLang);
-                try { localStorage.setItem("joon-bio-lang", currentLang); } catch (e) {}
-                var attr = currentLang === "en" ? "data-en" : "data-ko";
-                var attrHtml = currentLang === "en" ? "data-en-html" : "data-ko-html";
-                document.querySelectorAll("[data-ko][data-en]").forEach(function (el) {
-                    el.textContent = el.getAttribute(attr);
-                });
-                document.querySelectorAll("[data-ko-html][data-en-html]").forEach(function (el) {
-                    el.innerHTML = el.getAttribute(attrHtml);
-                });
-                document.querySelectorAll("[data-label-ko][data-label-en]").forEach(function (el) {
-                    el.setAttribute("aria-label", currentLang === "en" ? el.getAttribute("data-label-en") : el.getAttribute("data-label-ko"));
-                });
-                document.querySelectorAll("[data-alt-ko][data-alt-en]").forEach(function (el) {
-                    el.setAttribute("alt", currentLang === "en" ? el.getAttribute("data-alt-en") : el.getAttribute("data-alt-ko"));
-                });
-                langBtn.textContent = currentLang === "en" ? "KO" : "EN";
-                langBtn.setAttribute("aria-label", currentLang === "en" ? "한국어로 전환" : "Switch to English");
-                setTheme(root.getAttribute("data-theme") || (prefersDark ? "dark" : "light"));
-            }
-
-            setTheme(savedTheme || (prefersDark ? "dark" : "light"));
-            applyLanguage(currentLang);
-
-            themeBtn.addEventListener("click", function () {
-                var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-                setTheme(next);
-                try { localStorage.setItem("joon-bio-theme", next); } catch (e) {}
-            });
-            langBtn.addEventListener("click", function () {
-                applyLanguage(currentLang === "en" ? "ko" : "en");
-            });
-
-            document.getElementById("yr").textContent = String(new Date().getFullYear());
-
-            /* ---------- Email copy ---------- */
-            var copyBtn = document.getElementById("copyEmail");
-            var copyLabel = copyBtn.querySelector(".btn-label");
-            function fallbackCopy(text) {
-                var area = document.createElement("textarea");
-                area.value = text; area.setAttribute("readonly", "");
-                area.style.position = "fixed"; area.style.opacity = "0";
-                document.body.appendChild(area); area.select();
-                try { document.execCommand("copy"); } finally { document.body.removeChild(area); }
-            }
-            copyBtn.addEventListener("click", function () {
-                var text = copyBtn.getAttribute("data-copy");
-                var settled = false;
-                var done = function () {
-                    if (settled) return;
-                    settled = true;
-                    copyLabel.textContent = currentLang === "en" ? "Copied" : "복사됨";
-                    copyBtn.setAttribute("data-copied", "true");
-                    setTimeout(function () {
-                        copyLabel.textContent = currentLang === "en" ? "Copy email" : "이메일 복사";
-                        copyBtn.removeAttribute("data-copied");
-                    }, 1600);
-                };
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(text).then(done).catch(function () { fallbackCopy(text); done(); });
-                    /* guard: if writeText neither resolves nor rejects (e.g. no focus), copy + confirm anyway */
-                    setTimeout(function () { if (!settled) { fallbackCopy(text); done(); } }, 500);
-                } else { fallbackCopy(text); done(); }
-            });
-
-            /* ---------- Reveal (one-time page-load stagger; idempotent, multi-triggered) ---------- */
-            var groups = Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"));
-            function revealAll() { groups.forEach(function (el) { el.classList.add("in"); }); }
-            var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-            if (reduceMotion) {
-                revealAll();
-            } else {
-                if (window.requestAnimationFrame) requestAnimationFrame(function () { requestAnimationFrame(revealAll); });
-                setTimeout(revealAll, 80);                 // fires even where rAF is throttled
-                window.addEventListener("load", revealAll); // last-resort trigger
-            }
-        })();
-    </script>
-    <script>
-        /* Independent failsafe: guarantee content is visible even if the main script above threw. */
-        (function () {
-            function reveal() {
-                var g = document.querySelectorAll("[data-reveal]"), i;
-                for (i = 0; i < g.length; i++) g[i].classList.add("in");
-            }
-            try { setTimeout(reveal, 1400); }
-            catch (e) { document.documentElement.className = document.documentElement.className.replace(/\bjs\b/, ""); }
-        })();
-    </script>
+    <footer>JoonLab · 박준 PARK JOON · <span class="mono">2026-11-23</span></footer>
+  </main>
+</div>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

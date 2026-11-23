@@ -1,0 +1,477 @@
+{
+  "lang": "ja",
+  "path": "/ja/",
+  "meta": {
+    "title": "パク・ジュン PARK JOON · AX Engineer、JoonLab 代表",
+    "description": "AIRS Medical AX Engineer、JoonLab 代表のパク・ジュン。LG・SKなどでの企業向けAI研修とAXコンサルティング、エージェントシステム開発の経歴と公式リンク。",
+    "og_locale": "ja_JP"
+  },
+  "ui": {
+    "skip": "本文へ移動",
+    "toc_label": "目次",
+    "theme_to_dark": "ダークモード",
+    "theme_to_light": "ライトモード",
+    "copy": "コピー",
+    "copied": "アドレスをコピーしました",
+    "copy_fail": "コピーできませんでした。アドレスを直接選択してください",
+    "more": "詳細",
+    "updated": "更新",
+    "as_of": "時点",
+    "lang_label": "言語",
+    "contact_btn": "講演・協業のお問い合わせメールを送る",
+    "mail_subject": "講演・協業のお問い合わせ",
+    "photo_alt": "パク・ジュンのプロフィール写真",
+    "open": "開く",
+    "th_num": "数値",
+    "th_what": "内容",
+    "th_src": "出典・時点"
+  },
+  "toc": {
+    "intro": "紹介",
+    "now": "現在の活動",
+    "teaching": "講義・研修",
+    "projects": "主なプロジェクト",
+    "consulting": "コンサルティング",
+    "writing": "執筆・研究・公開資料",
+    "career": "経歴・学歴",
+    "contact": "リンク・連絡先"
+  },
+  "hero": {
+    "name": "パク・ジュン",
+    "name_sub": "PARK JOON",
+    "lede": "企業の経営層と実務担当者にAI活用を教え、業務で使うエージェントシステムを自ら設計・運用しています。",
+    "role": "<b>AIRS Medical</b> AX Engineer <span aria-hidden=\"true\">·</span> <b>JoonLab</b> 代表",
+    "sub": "京都大学大学院 情報学研究科 修士課程修了（LLM・RAG研究）。韓国語と日本語で講義を行います。"
+  },
+  "now": {
+    "items": [
+      {
+        "date": "2026.10 – 現在",
+        "title": "AIRS Medical AX Engineer",
+        "lines": [
+          "社内の構造化・非構造化データをAIエージェントが利用できるよう集約するCentral Data Layer（OLAP・Vector DB・Graph DB）を設計・構築・運用しています。",
+          "社内のAI Native Workspace（MCPサーバー、業務ワークフロービルダー、Flywheelエンジン）を開発しています。社員がワークフローを使うほどデータが蓄積され、そのデータでエージェントを改善する仕組みです。",
+          "Sales・Finance・RA/QA・CSなどのドメインチームと、主要業務のワークフローをAIベースで再設計しています。",
+          "社内のAI利用ポリシーとスキルガイドを作成し、月例の研修セッションを運営しています。"
+        ]
+      },
+      {
+        "date": "2026.06 – 現在",
+        "title": "JoonLab 代表",
+        "lines": [
+          "勤務時間外に企業向けAI研修とAXコンサルティングを担当しています。",
+          "CommandSpaceのク・ヨハン氏と月刊CMDSを毎月共同で開催しています（2026-11-04 第22回）。"
+        ]
+      },
+      {
+        "date": "執筆中",
+        "title": "共著『ソロプレナーのAIエージェントチームの作り方』（韓国語）",
+        "lines": [
+          "個人事業主がAIエージェントに業務を分担させる方法をまとめた書籍です。担当原稿の初稿と挿絵を書き終え、推敲しています。"
+        ]
+      }
+    ],
+    "fig_title": "数字で見る経歴",
+    "figures": [
+      {
+        "num": "+81.2",
+        "what": "LG U+ AI Build Up 研修 第1期 NPS",
+        "src": "研修後アンケート"
+      },
+      {
+        "num": "973名",
+        "what": "自作のLG AX研修LMSの累計参加者",
+        "src": "2026-08"
+      },
+      {
+        "num": "65名",
+        "what": "ソウルAIハブ「AI Native CEO」第1期 選抜CEO（応募300名）",
+        "src": "2026-06"
+      },
+      {
+        "num": "22回",
+        "what": "月刊CMDS 累計開催回数",
+        "src": "2026-11-04"
+      },
+      {
+        "num": "240",
+        "what": "GitHubリポジトリ（公開 79）",
+        "src": "2026-11-23"
+      },
+      {
+        "num": "440+",
+        "what": "JoonLab 知識共有ルーム（KakaoTalkオープンチャット）参加人数",
+        "src": "2026-11"
+      }
+    ]
+  },
+  "teaching": {
+    "intro": "大企業の経営層から新任チームリーダー、実務担当者まで、対象ごとに研修を設計し自ら実施しています。エージェント活用、バイブコーディング、AX転換を実習中心で扱います。",
+    "groups": [
+      {
+        "org": "LG Academy（LG人和院）",
+        "period": "2026",
+        "lines": [
+          "AX Camp 1泊2日コース 3回 メイン講師・コース開発（5/27–28、7/2–3、7/9–10）",
+          "新任チーム長AX研修 上級クラス担当講師（7/7、研修全体で92名・3クラス）",
+          "AXリーダーセミナー（6月、48名）、新任研究委員・専門委員向けAXセッション（4月、66名）、安全環境（HSE）リーダーワークショップ",
+          "LG購買カンファレンス（PROCON）登壇者へのAI活用コーチングとセッション構成の助言（9/10）"
+        ]
+      },
+      {
+        "org": "LG U+ · LG電子",
+        "period": "2026",
+        "lines": [
+          "LG U+ AI Build Up 第1・2期（第1期 NPS +81.2）",
+          "LG電子 役員向け Claude Code 上級研修"
+        ]
+      },
+      {
+        "org": "SKグループ",
+        "period": "",
+        "lines": [
+          "SKT AI Frontier 第1–8期 パートナー",
+          "SK hynix・SK ecoplant・SK mySUNI・SK Broadband での講義・コンサルティング",
+          "SK日本法人 東京での講演（日本語で実施）"
+        ]
+      },
+      {
+        "org": "ソウルAIハブ「AI Native CEO」",
+        "period": "2026.06 – 10",
+        "lines": [
+          "第1期：選抜CEO 65名、第7週 第13・14回 メイン講師（エージェントシステム・ハーネスエンジニアリング）",
+          "第2期：第5週の講義（9/15 オンライン、9/17 対面、ハーネスエンジニアリングとエージェントチーム設計）"
+        ]
+      },
+      {
+        "org": "月刊CMDS",
+        "period": "毎月",
+        "lines": [
+          "CommandSpaceのク・ヨハンさんと共同で進行する月例のAI実務クラスです。毎回、発表資料と実習キットを提供しています（一部はGitHubで公開）。（韓国語）",
+          "最近の回：第19回 自分だけのソフトウェアを作る（8/3）、第22回 LLMウィキとオントロジー（11/4）"
+        ]
+      },
+      {
+        "org": "オンライン講座・コミュニティ",
+        "period": "",
+        "lines": [
+          "FastCampus オンライン講座 4本（Best講座に2本選出）：生成AIマスターパッケージ、研究者のためのAIツール活用法 など（韓国語）",
+          "GPTersコミュニティ「AIで研究する」リーダー、韓国国立農業科学院・IYUNOでの特別講義",
+          "JoonLab 知識共有ルーム（KakaoTalkオープンチャット）約440名を運営（韓国語）"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "note": "8件",
+    "items": [
+      {
+        "title": "Claude Code エージェント運用体制と設定の公開版",
+        "meta": "2025 – 2026 · オープンソース",
+        "what": "複数のClaude Codeセッションを人手を介さずに引き継いで動かす作業リレー（コンテキストが埋まると次のセッションに引き継ぎ、監視セッションが権限要求を処理）と、セッション間の状態を記録するSQLiteの作業ボードを作り、毎日使っています。そのうち汎用的な設定をレベル1〜4の段階に分けて公開しました。",
+        "result": "公開設定リポジトリ スター <span class=\"mono\">14</span>、フォーク <span class=\"mono\">3</span> <span class=\"muted\">(2026-11-23)</span>",
+        "links": [
+          {
+            "label": "設定の公開版",
+            "url": "https://github.com/joonlab/joonlab-claudecode-setting-for-share"
+          }
+        ],
+        "more": [
+          "公開版の構成：グローバルCLAUDE.md、フック、スラッシュコマンド、サブエージェント、汎用スキル61個。",
+          "安全用フック：危険なコマンドのブロック、回答内のファイルパスの実在確認、メモリ使用量の監視、公開前の秘密情報チェック。",
+          "machines-as-tools：1つのセッションから他のMacを19個のMCPツールとして呼び出し、シェル・ブラウザ作業を分担させます。Mac 3台で運用しています。",
+          "cmux-state-dashboard：数十個のClaude Codeセッションを1画面で確認し、途切れたセッションを復元します。"
+        ]
+      },
+      {
+        "title": "LG研修用AIエージェントWebアプリと研修LMS",
+        "meta": "2026.01 – 07 · LG Academy（LG人和院）",
+        "what": "インタビューエージェント、エージェントビルダー、マルチエージェントによるパネルディスカッションのWebアプリと、研修運営用LMSを開発し、実際の研修で使用しました。",
+        "result": "累計参加者 <span class=\"mono\">973</span>名、同時接続 <span class=\"mono\">79</span>名を無停止で処理",
+        "links": [],
+        "more": [
+          "Next.js、Supabase、Gemini。対話型の実習アプリはLangGraphとFastAPI。",
+          "複数の研修回を同時に運用し、受講者が作ったアプリをギャラリーに集めます。"
+        ]
+      },
+      {
+        "title": "TOPIK 問題・講義動画 自動生成パイプライン",
+        "meta": "2025.11 – 2026.10 · E4NETとの協業 · 納品・引き継ぎ完了",
+        "what": "問題生成から解説、TTS、スライド、動画合成、多言語字幕までのパイプラインを設計・実装しました。人手で行っていた検収工程を、測定可能な自動合格基準に置き換えました。",
+        "result": "解説動画 <span class=\"mono\">43</span>本（<span class=\"mono\">341.5</span>分）、ミャンマー語・ベンガル語動画 各<span class=\"mono\">57</span>本、作文模擬試験 <span class=\"mono\">45</span>セット",
+        "links": [],
+        "more": [
+          "役割別のサブエージェント27個が工程を分担し、工程間ではJSONスキーマの検証を通過した場合のみ次へ進みます。",
+          "生成はLLMが、正解の一意性・形式・同期などの決定的な制約はルールエンジンとスクリプトが担います。",
+          "2026年9月に運用資産一式を引き継ぎました。"
+        ]
+      },
+      {
+        "title": "ソウル今：リアルタイム都市状況マップ",
+        "meta": "2026.08 · 公開サービス",
+        "what": "ソウルの名所のリアルタイム混雑度と、交通・地下鉄・駐車場・公共自転車タルンイ・天気・微小粒子状物質の情報を1つの地図にまとめた無料のWebサービスです。",
+        "result": "対象地点 <span class=\"mono\">121</span>か所、公共APIを利用",
+        "links": [
+          {
+            "label": "seoul.joonlab98.com",
+            "url": "https://seoul.joonlab98.com"
+          }
+        ],
+        "more": []
+      },
+      {
+        "title": "Fold8とMacの連携ツール集（android-mac-lab）",
+        "meta": "2026.09 · オープンソース",
+        "what": "Galaxy Z Fold8をMacのサブモニター・マイク・リモート画面として使うツールと、Android音声エージェントを、約1週間でClaude Codeを使って作り公開しました。",
+        "result": "公開リポジトリ <span class=\"mono\">11</span>個、ハブリポジトリ スター <span class=\"mono\">12</span>",
+        "links": [
+          {
+            "label": "ハブリポジトリ",
+            "url": "https://github.com/joonlab/android-mac-lab"
+          }
+        ],
+        "more": [
+          "deskpad-fold：Fold8をMacのサブモニターとして使います。",
+          "fold-agent：話しかけるとスマートフォンがアプリを開いて操作します。取り消せない操作は、モデルではなくコードで定めた確認ステップを経ます。",
+          "foldmic、clipbridge、fold-cyberdeck、cmux-mobile-remote など。"
+        ]
+      },
+      {
+        "title": "ビデオ会議向け双方向リアルタイム通訳字幕（macOS）",
+        "meta": "2026.10 · 個人開発",
+        "what": "自分が韓国語で話すと相手の画面にだけ相手の言語の字幕が、相手が話すと自分の画面にだけ韓国語の字幕が表示されます。相手側は何もインストールする必要がありません。",
+        "result": "Gemini Liveの翻訳を利用、言語判定・遅延処理エンジンを独自に実装",
+        "links": [],
+        "more": []
+      },
+      {
+        "title": "Web書籍『知識マップの描き方』（韓国語）",
+        "meta": "2026.10 – 11 · 公開",
+        "what": "LLMウィキ、オントロジー、RAGで個人と組織の記録を整理する方法をまとめたWeb書籍です。月刊CMDS第22回の発表資料として公開しました。",
+        "result": "補論では、NVIDIA Auto-Ontologyを公開サンプルDBで実際に動かし、例示の質問が誤った値を返す原因（スキーマ間の外部キー <span class=\"mono\">59</span>個の欠落）を特定しました。",
+        "links": [
+          {
+            "label": "書籍を読む",
+            "url": "https://books.joonlab98.com/knowledge-map/"
+          }
+        ],
+        "more": []
+      },
+      {
+        "title": "3D美術館鑑賞Webアプリ",
+        "meta": "2026.11 · 公開サービス",
+        "what": "ルーヴル美術館リシュリュー翼のマルリーの中庭をthree.jsで再現し、ブラウザ上で歩き回りながら古典彫刻を3Dで鑑賞できます。",
+        "result": "彫刻スキャン <span class=\"mono\">16</span>点（SMK パブリックドメイン）",
+        "links": [
+          {
+            "label": "museum.joonlab98.com",
+            "url": "https://museum.joonlab98.com"
+          }
+        ],
+        "more": [
+          "3Dオンライン講義室（120名、画面共有、グループ別テーブル）も作りました。"
+        ]
+      }
+    ],
+    "all_link_text": "全24件の事例とデモ動画はポートフォリオでご覧いただけます。",
+    "all_link_label": "joonlab98.com/portfolio",
+    "all_link_url": "https://joonlab98.com/portfolio/"
+  },
+  "consulting": {
+    "items": [
+      {
+        "date": "2026",
+        "title": "中小企業のAI導入PoC・開発",
+        "body": "流通業の日次実績報告エージェント、宿泊施設運営向けローカルエージェント、QRコードで開く多言語標準レシピシステム、交通事故現場調査AI（過失分類・略図生成）など。顧客名は公開していません。"
+      },
+      {
+        "date": "2026",
+        "title": "博士論文のプロンプト設計に関する助言",
+        "body": "システマティックレビューのデータ抽出プロンプトを検証し、同一条件での150回の再現実験を含む61ページの意見書を提出しました。"
+      },
+      {
+        "date": "2025 – 2026",
+        "title": "非営利財団の寄付者離脱・納付予測",
+        "body": "大規模な寄付者データを用い、MLとLLMを組み合わせた離脱・納付予測モデル（分類AUC 0.985）とダッシュボードを構築しました（E4NETとの協業）。"
+      },
+      {
+        "date": "2026",
+        "title": "白石大学校 Pindプロジェクトの技術メンタリング",
+        "body": "YouTube動画から場所を自動抽出するサービスの技術メンタリング。"
+      },
+      {
+        "date": "2025",
+        "title": "新世界ソウル病院 AI運用コンサルティング",
+        "body": "病院運営データの分析と在庫管理システムに関するコンサルティング。"
+      },
+      {
+        "date": "2025",
+        "title": "Day1 Company 教育コンテンツ生成ツール",
+        "body": "FastCampusの教育コンテンツを生成するデモアプリの開発（Python、PyInstaller）。"
+      }
+    ]
+  },
+  "writing": {
+    "items": [
+      {
+        "kind": "論文",
+        "title": "Emulating Retrieval Augmented Generation via Prompt Engineering for Enhanced Long Context Comprehension in LLMs",
+        "desc": "筆頭著者、2025（京都大学 鹿島研究室）",
+        "url": "https://arxiv.org/abs/2502.12462"
+      },
+      {
+        "kind": "論文",
+        "title": "Long-Term Outlier Prediction Through Outlier Score Modeling",
+        "desc": "共著、2026（パナソニックとの共同研究、時系列異常検知）",
+        "url": "https://arxiv.org/abs/2603.20993"
+      },
+      {
+        "kind": "Web書籍",
+        "title": "books.joonlab98.com",
+        "desc": "『知識マップの描き方』などのWeb書籍の書架（韓国語）",
+        "url": "https://books.joonlab98.com"
+      },
+      {
+        "kind": "実験",
+        "title": "GPT-6.1 Sol 同条件ベンチマーク",
+        "desc": "7トラック、3,527回の呼び出し実験のレポートと評価データ",
+        "url": "https://github.com/joonlab/gpt-6.1-sol-benchmark"
+      },
+      {
+        "kind": "分析",
+        "title": "Fable-5 Traces 分析",
+        "desc": "フロンティアモデルのコーディング実行記録 4,665行の分析、インタラクティブビューア",
+        "url": "https://fable5-traces-analysis.vercel.app"
+      },
+      {
+        "kind": "オープンソース",
+        "title": "MacPilot",
+        "desc": "スマートフォンのブラウザをMacのトラックパッド・キーボードとして使うリモート操作ツール（スター 25、フォーク 8）",
+        "url": "https://github.com/joonlab/MacPilot"
+      },
+      {
+        "kind": "オープンソース",
+        "title": "Barback",
+        "desc": "ノッチに隠れたメニューバーアイコンを取り出して使えるmacOSアプリ（Swift、MIT）",
+        "url": "https://github.com/joonlab/barback"
+      },
+      {
+        "kind": "オープンソース",
+        "title": "MacRecorder",
+        "desc": "画面・マイクの録画からローカル文字起こし、要約まで行うmacOSツール",
+        "url": "https://github.com/joonlab/mac-recorder"
+      },
+      {
+        "kind": "チュートリアル",
+        "title": "Claude Agent SDK 4段階チュートリアル",
+        "desc": "エージェントをコードで作る4段階・20例",
+        "url": "https://github.com/joonlab/claude-agent-sdk-tutorial"
+      }
+    ]
+  },
+  "career": {
+    "items": [
+      {
+        "date": "2026.10 – 現在",
+        "title": "AIRS Medical AX Engineer",
+        "body": "社内データレイヤー、AI業務環境、業務ワークフローの再設計、社内AI研修。"
+      },
+      {
+        "date": "2026.06 – 現在",
+        "title": "JoonLab 代表",
+        "body": "AI研修、AXコンサルティング、エージェントシステム開発。"
+      },
+      {
+        "date": "2024 – 2026.05",
+        "title": "フリーランス AI講師・コンサルタント",
+        "body": "LG・SKグループのAI研修、CommandSpace（CMDS）との協業。"
+      },
+      {
+        "date": "2024.01 – 06",
+        "title": "Wordvice AI · LLM Researcher",
+        "body": "企画チーム所属のLLMリサーチャー（修士課程在学中に勤務）。"
+      },
+      {
+        "date": "2022.10 – 2025.03",
+        "title": "京都大学大学院 情報学研究科 修士課程修了",
+        "body": "知能情報学専攻、鹿島研究室。LLM、Long Context、RAG、プロンプトエンジニアリングを研究。パナソニックとの共同研究（時系列異常検知）。"
+      },
+      {
+        "date": "2018.04 – 2022.03",
+        "title": "岡山大学 理学部 数学科 卒業",
+        "body": "日韓共同理工系学部留学生（国費・第18期）、学部全額奨学生。"
+      }
+    ],
+    "langs_title": "言語",
+    "langs": [
+      {
+        "name": "한국어",
+        "level": "ネイティブ"
+      },
+      {
+        "name": "日本語",
+        "level": "JLPT N1"
+      },
+      {
+        "name": "English",
+        "level": "TOEIC 950"
+      }
+    ]
+  },
+  "contact": {
+    "links": [
+      {
+        "label": "月刊CMDS（ク・ヨハン & パク・ジュン）",
+        "desc": "AI・LLM実務の月刊クラス（韓国語）",
+        "url": "https://class.cmdspace.kr/channels/L2NoYW5uZWxzLzE3Njkx/C00007/classes/153787/information"
+      },
+      {
+        "label": "研究者のためのAIツール活用法",
+        "desc": "FastCampus オンライン講座（韓国語）",
+        "url": "https://fastcampus.co.kr/biz_online_researcher"
+      },
+      {
+        "label": "JoonLab 知識共有ルーム",
+        "desc": "AI・LLMのKakaoTalkオープンチャット、約440名（韓国語）",
+        "url": "https://open.kakao.com/o/gl7JSkSg"
+      },
+      {
+        "label": "個別相談用オープンチャット",
+        "desc": "講演・コンサルティングのお問い合わせ",
+        "url": "https://open.kakao.com/o/sUXWYvlf"
+      },
+      {
+        "label": "ブログ",
+        "desc": "joonlab98.com（韓国語）",
+        "url": "https://joonlab98.com"
+      },
+      {
+        "label": "ポートフォリオ",
+        "desc": "事例24件とデモ動画",
+        "url": "https://joonlab98.com/portfolio/"
+      },
+      {
+        "label": "Web書籍",
+        "desc": "books.joonlab98.com（韓国語）",
+        "url": "https://books.joonlab98.com"
+      },
+      {
+        "label": "GitHub",
+        "desc": "github.com/joonlab",
+        "url": "https://github.com/joonlab"
+      },
+      {
+        "label": "YouTube",
+        "desc": "@joonlab98",
+        "url": "https://www.youtube.com/@joonlab98"
+      },
+      {
+        "label": "LinkedIn",
+        "desc": "in/joonlab",
+        "url": "https://www.linkedin.com/in/joonlab/"
+      }
+    ],
+    "note": "講演・コンサルティングのお問い合わせは、メールまたは1:1オープンチャットで承ります。JoonLabの業務は会社の勤務時間外に行っています。"
+  },
+  "footer": "JoonLab · パク・ジュン PARK JOON"
+}

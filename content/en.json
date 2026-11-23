@@ -1,0 +1,477 @@
+{
+  "lang": "en",
+  "path": "/en/",
+  "meta": {
+    "title": "Park Joon 박준 · AX Engineer, Founder of JoonLab",
+    "description": "Park Joon, AX Engineer at AIRS Medical and founder of JoonLab. Corporate AI training for LG, SK and others, AX consulting, agent system development, and official links.",
+    "og_locale": "en_US"
+  },
+  "ui": {
+    "skip": "Skip to content",
+    "toc_label": "Contents",
+    "theme_to_dark": "Dark mode",
+    "theme_to_light": "Light mode",
+    "copy": "Copy",
+    "copied": "Address copied",
+    "copy_fail": "Couldn't copy. Please select the address manually",
+    "more": "Details",
+    "updated": "Updated",
+    "as_of": "as of",
+    "lang_label": "Language",
+    "contact_btn": "Email me about talks or projects",
+    "mail_subject": "Talk or project inquiry",
+    "photo_alt": "Profile photo of Park Joon",
+    "open": "Open",
+    "th_num": "Figure",
+    "th_what": "What",
+    "th_src": "As of"
+  },
+  "toc": {
+    "intro": "About",
+    "now": "Now",
+    "teaching": "Teaching",
+    "projects": "Selected projects",
+    "consulting": "Consulting",
+    "writing": "Writing, research, public work",
+    "career": "Career and education",
+    "contact": "Links and contact"
+  },
+  "hero": {
+    "name": "Park Joon",
+    "name_sub": "박준",
+    "lede": "I teach executives and staff at companies how to use AI, and I design and run agent systems that people use in their daily work.",
+    "role": "AX Engineer at <b>AIRS Medical</b> <span aria-hidden=\"true\">·</span> Founder of <b>JoonLab</b>",
+    "sub": "Master of Informatics, Kyoto University (research on LLMs and RAG). I teach in Korean and Japanese."
+  },
+  "now": {
+    "items": [
+      {
+        "date": "2026.10 – Present",
+        "title": "AX Engineer, AIRS Medical",
+        "lines": [
+          "I design, build and operate the Central Data Layer (OLAP, vector DB, graph DB) that collects the company's structured and unstructured data so AI agents can use it.",
+          "I build the company's AI Native Workspace (MCP servers, a workflow builder and a Flywheel engine). The more people use the workflows, the more data accumulates, and that data is used to improve the agents.",
+          "I work with domain teams such as Sales, Finance, RA/QA and CS to redesign their core workflows around AI.",
+          "I write the company's AI usage policy and skill guides and run monthly training sessions."
+        ]
+      },
+      {
+        "date": "2026.06 – Present",
+        "title": "Founder, JoonLab",
+        "lines": [
+          "Outside working hours, I take on corporate AI training and AX consulting.",
+          "I co-host Monthly CMDS with Yohan Koo of CommandSpace (22nd session on 2026-11-04)."
+        ]
+      },
+      {
+        "date": "In progress",
+        "title": "Co-authoring \"Building an AI Agent Team as a Solopreneur\" (in Korean)",
+        "lines": [
+          "A book on how solo business owners can divide their work among AI agents. I have finished the first draft and illustrations for my chapters and am revising them."
+        ]
+      }
+    ],
+    "fig_title": "By the numbers",
+    "figures": [
+      {
+        "num": "+81.2",
+        "what": "NPS, LG U+ AI Build Up training (cohort 1)",
+        "src": "Post-course survey"
+      },
+      {
+        "num": "973",
+        "what": "Total participants on the LG AX training LMS I built",
+        "src": "2026-08"
+      },
+      {
+        "num": "65",
+        "what": "CEOs selected for Seoul AI Hub \"AI Native CEO\" cohort 1 (300 applicants)",
+        "src": "2026-06"
+      },
+      {
+        "num": "22",
+        "what": "Monthly CMDS sessions to date",
+        "src": "2026-11-04"
+      },
+      {
+        "num": "240",
+        "what": "GitHub repositories (79 public)",
+        "src": "2026-11-23"
+      },
+      {
+        "num": "440+",
+        "what": "Members of the JoonLab knowledge-sharing room (KakaoTalk open chat, in Korean)",
+        "src": "2026-11"
+      }
+    ]
+  },
+  "teaching": {
+    "intro": "I design and teach courses for each audience, from executives at large companies to new team leaders and working staff. The courses are hands-on and cover using agents, vibe coding and AX transformation.",
+    "groups": [
+      {
+        "org": "LG Academy",
+        "period": "2026",
+        "lines": [
+          "Lead instructor and course developer for 3 cohorts of the two-day AX Camp (5/27–28, 7/2–3, 7/9–10)",
+          "Instructor for the advanced class of the AX course for new team leaders (7/7; 92 participants in 3 classes overall)",
+          "AX Leader Seminar (June, 48 participants), AX session for newly appointed research and specialist fellows (April, 66 participants), HSE leader workshop",
+          "Coached LG Procurement Conference (PROCON) speakers on using AI and advised on session content (9/10)"
+        ]
+      },
+      {
+        "org": "LG U+ · LG Electronics",
+        "period": "2026",
+        "lines": [
+          "LG U+ AI Build Up, cohorts 1 and 2 (cohort 1 NPS +81.2)",
+          "Advanced Claude Code training for LG Electronics executives"
+        ]
+      },
+      {
+        "org": "SK Group",
+        "period": "",
+        "lines": [
+          "Partner for SKT AI Frontier, cohorts 1–8",
+          "Lectures and consulting for SK hynix, SK ecoplant, SK mySUNI and SK Broadband",
+          "Talk in Tokyo for SK's Japan subsidiary (in Japanese)"
+        ]
+      },
+      {
+        "org": "Seoul AI Hub \"AI Native CEO\"",
+        "period": "2026.06 – 10",
+        "lines": [
+          "Cohort 1: 65 selected CEOs; lead instructor for week 7, sessions 13 and 14 (agent systems, harness engineering)",
+          "Cohort 2: week 5 lectures (9/15 online, 9/17 in person; harness engineering and agent team design)"
+        ]
+      },
+      {
+        "org": "Monthly CMDS",
+        "period": "Monthly",
+        "lines": [
+          "A monthly hands-on AI class I co-host with Yohan Koo of CommandSpace. Each session comes with slides and a practice kit (some are public on GitHub). (in Korean)",
+          "Recent: #19 Building Your Own Software (8/3), #22 LLM Wikis and Ontologies (11/4)"
+        ]
+      },
+      {
+        "org": "Online courses and community",
+        "period": "",
+        "lines": [
+          "4 online courses on FastCampus (2 selected as Best courses), including Generative AI Master Package and AI Tools for Researchers (in Korean)",
+          "Leader of \"Research with AI\" in the GPTers community; guest lectures at the National Institute of Agricultural Sciences and IYUNO",
+          "I run the JoonLab knowledge-sharing room (KakaoTalk open chat, about 440 members, in Korean)"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "note": "8 projects",
+    "items": [
+      {
+        "title": "Claude Code agent operating setup and public configuration",
+        "meta": "2025 – 2026 · Open source",
+        "what": "I built and use daily a work relay that runs multiple Claude Code sessions back to back, unattended (when the context fills up, it hands off to the next session, and a watcher session handles permission requests), plus a SQLite task board that records state between sessions. I published the general-purpose parts of the setup, split into levels 1 to 4.",
+        "result": "Public configuration repository: <span class=\"mono\">14</span> stars, <span class=\"mono\">3</span> forks <span class=\"muted\">(2026-11-23)</span>",
+        "links": [
+          {
+            "label": "Public configuration",
+            "url": "https://github.com/joonlab/joonlab-claudecode-setting-for-share"
+          }
+        ],
+        "more": [
+          "What the public set includes: a global CLAUDE.md, hooks, slash commands, subagents and 61 general-purpose skills.",
+          "Safety hooks: blocking dangerous commands, checking that file paths in answers exist, monitoring memory usage, and scanning for secrets before publishing.",
+          "machines-as-tools: one session calls other Macs through 19 MCP tools and hands them shell and browser tasks. Running across 3 Macs.",
+          "cmux-state-dashboard: shows dozens of Claude Code sessions on one screen and restores disconnected sessions."
+        ]
+      },
+      {
+        "title": "AI agent web apps and training LMS for LG",
+        "meta": "2026.01 – 07 · LG Academy",
+        "what": "I built an interview agent, an agent builder, a multi-agent panel discussion web app, and an LMS for running the courses, and used them in actual training.",
+        "result": "<span class=\"mono\">973</span> total participants, <span class=\"mono\">79</span> concurrent users with no downtime",
+        "links": [],
+        "more": [
+          "Next.js, Supabase, Gemini. The conversational practice apps use LangGraph and FastAPI.",
+          "Several course cohorts can be scheduled at once, and the apps participants build are collected in a gallery."
+        ]
+      },
+      {
+        "title": "TOPIK test item and lecture video pipeline",
+        "meta": "2025.11 – 2026.10 · with E4NET · delivered and handed over",
+        "what": "I designed and built a pipeline that runs from item generation through explanations, TTS, slides, video composition and multilingual subtitles, and replaced manual review steps with measurable automatic pass criteria.",
+        "result": "<span class=\"mono\">43</span> explanation videos (<span class=\"mono\">341.5</span> min), <span class=\"mono\">57</span> videos each in Burmese and Bengali, <span class=\"mono\">45</span> writing mock-test sets",
+        "links": [],
+        "more": [
+          "27 role-specific subagents split the stages; each stage hands off only after its output passes JSON Schema validation.",
+          "LLMs handle generation; rule engines and scripts enforce deterministic constraints such as a single correct answer, format and sync.",
+          "All operating assets were handed over in September 2026."
+        ]
+      },
+      {
+        "title": "Seoul Now: real-time city status map",
+        "meta": "2026.08 · Public service",
+        "what": "A free web service that puts real-time crowd levels at Seoul landmarks together with traffic, subway, parking, Ttareungyi (Seoul's public bikes), weather and fine particulate (PM2.5/PM10) levels on one map.",
+        "result": "<span class=\"mono\">121</span> places, built on public APIs",
+        "links": [
+          {
+            "label": "seoul.joonlab98.com",
+            "url": "https://seoul.joonlab98.com"
+          }
+        ],
+        "more": []
+      },
+      {
+        "title": "Fold8 and Mac integration tools (android-mac-lab)",
+        "meta": "2026.09 · Open source",
+        "what": "In about a week with Claude Code, I built and published tools that let a Galaxy Z Fold8 work as a Mac's secondary monitor, microphone and remote screen, along with an Android voice agent.",
+        "result": "<span class=\"mono\">11</span> public repositories, <span class=\"mono\">12</span> stars on the hub repository",
+        "links": [
+          {
+            "label": "Hub repository",
+            "url": "https://github.com/joonlab/android-mac-lab"
+          }
+        ],
+        "more": [
+          "deskpad-fold: uses the Fold8 as a secondary monitor for the Mac.",
+          "fold-agent: tell it what to do and the phone opens apps and taps. Irreversible actions go through a confirmation step defined in code, not by the model.",
+          "foldmic, clipbridge, fold-cyberdeck, cmux-mobile-remote and others."
+        ]
+      },
+      {
+        "title": "Two-way real-time interpretation subtitles for video meetings (macOS)",
+        "meta": "2026.10 · Personal project",
+        "what": "When I speak Korean, subtitles in the other person's language appear only on their screen; when they speak, Korean subtitles appear only on mine. The other person installs nothing.",
+        "result": "Built on Gemini Live translation, with my own engine for language detection and latency handling",
+        "links": [],
+        "more": []
+      },
+      {
+        "title": "Web book \"How to Draw a Knowledge Map\" (in Korean)",
+        "meta": "2026.10 – 11 · Public",
+        "what": "A web book on organizing personal and organizational records with LLM wikis, ontologies and RAG. I published it as the material for Monthly CMDS session 22.",
+        "result": "In the appendix, I ran NVIDIA Auto-Ontology on a public sample DB and found why the example questions returned wrong values (<span class=\"mono\">59</span> missing foreign keys between schemas).",
+        "links": [
+          {
+            "label": "Read the book",
+            "url": "https://books.joonlab98.com/knowledge-map/"
+          }
+        ],
+        "more": []
+      },
+      {
+        "title": "3D museum web app",
+        "meta": "2026.11 · Public service",
+        "what": "A three.js recreation of the Cour Marly in the Louvre's Richelieu wing, where you walk around in the browser and view classical sculptures in 3D.",
+        "result": "<span class=\"mono\">16</span> sculpture scans (SMK public domain)",
+        "links": [
+          {
+            "label": "museum.joonlab98.com",
+            "url": "https://museum.joonlab98.com"
+          }
+        ],
+        "more": [
+          "I also built a 3D online lecture hall (120 people, screen sharing, group tables)."
+        ]
+      }
+    ],
+    "all_link_text": "All 24 cases and demo videos are in my portfolio.",
+    "all_link_label": "joonlab98.com/portfolio",
+    "all_link_url": "https://joonlab98.com/portfolio/"
+  },
+  "consulting": {
+    "items": [
+      {
+        "date": "2026",
+        "title": "AI adoption PoCs and development for small and mid-sized companies",
+        "body": "A daily sales report agent for a retailer, a local agent for lodging operations, a QR-based multilingual standard recipe system, and an AI for traffic accident site investigation (fault classification, sketch generation), among others. Client names are not disclosed."
+      },
+      {
+        "date": "2026",
+        "title": "Prompt design advisory for a doctoral dissertation",
+        "body": "I reviewed the data extraction prompts for a systematic literature review and delivered a 61-page opinion, including a reproduction experiment of 150 runs under identical conditions."
+      },
+      {
+        "date": "2025 – 2026",
+        "title": "Donor churn and payment prediction for a nonprofit foundation",
+        "body": "Built a churn and payment prediction model combining ML and LLMs on a large donor dataset (classification AUC 0.985), plus a dashboard (with E4NET)."
+      },
+      {
+        "date": "2026",
+        "title": "Technical mentoring for the Pind project, Baekseok University",
+        "body": "Technical mentoring for a service that automatically extracts places from YouTube videos."
+      },
+      {
+        "date": "2025",
+        "title": "AI operations consulting for Shinsegae Seoul Hospital",
+        "body": "Consulting on hospital operations data analysis and an inventory management system."
+      },
+      {
+        "date": "2025",
+        "title": "Training content generator for Day1 Company",
+        "body": "Developed a demo app that generates FastCampus training content (Python, PyInstaller)."
+      }
+    ]
+  },
+  "writing": {
+    "items": [
+      {
+        "kind": "Paper",
+        "title": "Emulating Retrieval Augmented Generation via Prompt Engineering for Enhanced Long Context Comprehension in LLMs",
+        "desc": "First author, 2025 (Kashima Lab, Kyoto University)",
+        "url": "https://arxiv.org/abs/2502.12462"
+      },
+      {
+        "kind": "Paper",
+        "title": "Long-Term Outlier Prediction Through Outlier Score Modeling",
+        "desc": "Co-author, 2026 (joint research with Panasonic, time-series anomaly detection)",
+        "url": "https://arxiv.org/abs/2603.20993"
+      },
+      {
+        "kind": "Web books",
+        "title": "books.joonlab98.com",
+        "desc": "Shelf of web books, including How to Draw a Knowledge Map (in Korean)",
+        "url": "https://books.joonlab98.com"
+      },
+      {
+        "kind": "Experiment",
+        "title": "GPT-6.1 Sol same-condition benchmark",
+        "desc": "Report and evaluation data from 3,527 calls across 7 tracks",
+        "url": "https://github.com/joonlab/gpt-6.1-sol-benchmark"
+      },
+      {
+        "kind": "Analysis",
+        "title": "Fable-5 Traces analysis",
+        "desc": "Analysis of 4,665 rows of a frontier model's coding execution logs, with an interactive viewer",
+        "url": "https://fable5-traces-analysis.vercel.app"
+      },
+      {
+        "kind": "Open source",
+        "title": "MacPilot",
+        "desc": "Remote control tool that turns a phone browser into a trackpad and keyboard for a Mac (25 stars, 8 forks)",
+        "url": "https://github.com/joonlab/MacPilot"
+      },
+      {
+        "kind": "Open source",
+        "title": "Barback",
+        "desc": "macOS app that brings out menu bar icons hidden behind the notch (Swift, MIT)",
+        "url": "https://github.com/joonlab/barback"
+      },
+      {
+        "kind": "Open source",
+        "title": "MacRecorder",
+        "desc": "macOS tool for screen and microphone recording, local transcription and summaries",
+        "url": "https://github.com/joonlab/mac-recorder"
+      },
+      {
+        "kind": "Tutorial",
+        "title": "Claude Agent SDK tutorial in 4 steps",
+        "desc": "20 examples in 4 phases for building agents in code",
+        "url": "https://github.com/joonlab/claude-agent-sdk-tutorial"
+      }
+    ]
+  },
+  "career": {
+    "items": [
+      {
+        "date": "2026.10 – Present",
+        "title": "AX Engineer, AIRS Medical",
+        "body": "Company data layer, AI work environment, workflow redesign, internal AI training."
+      },
+      {
+        "date": "2026.06 – Present",
+        "title": "Founder, JoonLab",
+        "body": "AI training, AX consulting, agent system development."
+      },
+      {
+        "date": "2024 – 2026.05",
+        "title": "Freelance AI instructor and consultant",
+        "body": "AI training for LG and SK Group, collaboration with CommandSpace (CMDS)."
+      },
+      {
+        "date": "2024.01 – 06",
+        "title": "Wordvice AI · LLM Researcher",
+        "body": "LLM researcher on the planning team (while in the master's program)."
+      },
+      {
+        "date": "2022.10 – 2025.03",
+        "title": "Master of Informatics, Graduate School of Informatics, Kyoto University",
+        "body": "Department of Intelligence Science and Technology, Kashima Lab. Research on LLMs, long context, RAG and prompt engineering. Joint research with Panasonic (time-series anomaly detection)."
+      },
+      {
+        "date": "2018.04 – 2022.03",
+        "title": "B.S. in Mathematics, Faculty of Science, Okayama University",
+        "body": "Korea-Japan Joint Government Scholarship Program for Science and Engineering (18th cohort); full undergraduate scholarship."
+      }
+    ],
+    "langs_title": "Languages",
+    "langs": [
+      {
+        "name": "한국어",
+        "level": "Native"
+      },
+      {
+        "name": "日本語",
+        "level": "JLPT N1"
+      },
+      {
+        "name": "English",
+        "level": "TOEIC 950"
+      }
+    ]
+  },
+  "contact": {
+    "links": [
+      {
+        "label": "Monthly CMDS (Yohan Koo & Park Joon)",
+        "desc": "Monthly practical AI and LLM class (in Korean)",
+        "url": "https://class.cmdspace.kr/channels/L2NoYW5uZWxzLzE3Njkx/C00007/classes/153787/information"
+      },
+      {
+        "label": "AI Tools for Researchers",
+        "desc": "FastCampus online course (in Korean)",
+        "url": "https://fastcampus.co.kr/biz_online_researcher"
+      },
+      {
+        "label": "JoonLab knowledge-sharing room",
+        "desc": "AI and LLM KakaoTalk open chat, about 440 members (in Korean)",
+        "url": "https://open.kakao.com/o/gl7JSkSg"
+      },
+      {
+        "label": "1:1 inquiry open chat",
+        "desc": "Talk and consulting inquiries",
+        "url": "https://open.kakao.com/o/sUXWYvlf"
+      },
+      {
+        "label": "Blog",
+        "desc": "joonlab98.com (in Korean)",
+        "url": "https://joonlab98.com"
+      },
+      {
+        "label": "Portfolio",
+        "desc": "24 cases and demo videos",
+        "url": "https://joonlab98.com/portfolio/"
+      },
+      {
+        "label": "Web books",
+        "desc": "books.joonlab98.com (in Korean)",
+        "url": "https://books.joonlab98.com"
+      },
+      {
+        "label": "GitHub",
+        "desc": "github.com/joonlab",
+        "url": "https://github.com/joonlab"
+      },
+      {
+        "label": "YouTube",
+        "desc": "@joonlab98",
+        "url": "https://www.youtube.com/@joonlab98"
+      },
+      {
+        "label": "LinkedIn",
+        "desc": "in/joonlab",
+        "url": "https://www.linkedin.com/in/joonlab/"
+      }
+    ],
+    "note": "I take talk and consulting inquiries by email or the 1:1 open chat. I do JoonLab work outside my working hours at the company."
+  },
+  "footer": "JoonLab · Park Joon 박준"
+}

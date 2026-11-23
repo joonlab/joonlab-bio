@@ -7,18 +7,29 @@
 
 ## 스택
 
-순수 정적 HTML/CSS + **Cloudflare Workers 정적 에셋(assets)** 서빙. 빌드 스텝·프레임워크 없음.
+정적 HTML/CSS + **Cloudflare Workers 정적 에셋(assets)** 서빙. 프레임워크 없음.
+본문은 언어별 JSON(`content/ko|en|ja.json`)에 있고, `python3 build.py` 가 `public/` 아래 정적 페이지 3개를 만든다.
 
 ```
 .
+├── build.py                # content/*.json → public/index.html, public/en/, public/ja/
+├── content/                # 본문 원고 (ko 정본, en·ja 번역)
 ├── wrangler.jsonc          # Cloudflare Workers 설정 (정적 에셋 + 커스텀 도메인)
-├── public/                 # 배포되는 정적 에셋
-│   ├── index.html
+├── public/                 # 배포되는 정적 에셋 (빌드 결과 포함, 커밋한다)
+│   ├── index.html          # 한국어
+│   ├── en/index.html       # English
+│   ├── ja/index.html       # 日本語
 │   ├── favicon.svg
-│   └── assets/             # 프로필 사진, OG 이미지 등
+│   └── assets/             # site.css, site.js, 프로필 사진, OG 이미지
 └── .github/workflows/
     └── deploy.yml          # push → Actions → wrangler deploy
 ```
+
+## 내용 고치기
+
+1. `content/ko.json` 을 고친다(정본). 같은 키를 `en.json`·`ja.json` 에도 반영한다.
+2. `build.py` 의 `UPDATED` 날짜를 바꾼다.
+3. `python3 build.py` → `public/` 결과까지 커밋한다.
 
 ## 로컬 미리보기
 
