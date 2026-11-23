@@ -1,0 +1,43 @@
+---
+import { LANGS, SITE, pathFor, type Lang } from '../lib';
+interface Props { lang: Lang; title: string; description: string; ogLocale: string; }
+const { lang, title, description, ogLocale } = Astro.props;
+const og = lang === 'ko' ? 'og.png' : `og-${lang}.png`;
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={SITE + pathFor(lang)} />
+{LANGS.map((l) => <link rel="alternate" hreflang={l} href={SITE + pathFor(l)} />)}
+<link rel="alternate" hreflang="x-default" href={SITE + '/'} />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={SITE + pathFor(lang)} />
+<meta property="og:image" content={`${SITE}/assets/${og}`} />
+<meta property="og:locale" content={ogLocale} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content={`${SITE}/assets/${og}`} />
+<meta name="theme-color" content="#E3E6E5" />
+<meta name="color-scheme" content="light" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="preconnect" href="https://joonlab98.com" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+{lang === 'ko' && <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2.0.5/fonts/variable/woff2/SUIT-Variable.css" />}
+{lang === 'en' && <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&display=swap" />}
+{lang === 'ja' && <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />}
+{lang === 'ja' && <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap" />}
+{lang === 'ja' && <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css" />}
+<slot name="head" />
+</head>
+<body>
+<slot />
+</body>
+</html>

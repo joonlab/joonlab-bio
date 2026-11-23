@@ -1,0 +1,42 @@
+---
+// 판 위에 자석으로 붙인 데모 출력물(16:10). 영상은 preload="none" + poster, 재생은 video-pool 이 정한다.
+// 연결(links.json)이 있으면 data-link 로 강의 줄을 가리키고, 캡션에 근거 문구를 초록으로 적는다.
+import { tilt, magnet, demoText, connOf, nowrapDates, targetId, type Demo } from '../content/board';
+import type { Lang } from '../lib';
+interface Props {
+  demo: Demo;
+  lang: Lang;
+  i: number;
+  /** 이 판에 연결 대상 줄이 있으면 true → 선을 긋는다 */
+  line?: boolean;
+  priority?: boolean;
+  metric?: boolean;
+  class?: string;
+  style?: string;
+  id?: string;
+}
+const { demo: d, lang, i, line = false, priority = false, metric = true, class: cls, style = '', id } = Astro.props;
+const tx = demoText(d, lang);
+const conn = connOf(`demo:${d.slug}`, lang);
+const m = tx.metric;
+---
+<a
+  id={id}
+  class:list={['print print--demo', conn && 'print--linked', cls]}
+  href={d.url}
+  data-link={line && conn ? targetId(conn.key) : undefined}
+  data-line={line && conn ? conn.line : undefined}
+  style={`--tilt:${tilt(i)};--magnet:${magnet(i)};${style}`}
+>
+  <span class="print__media">
+    <video muted playsinline loop preload="none" poster={d.poster} data-src={d.card} data-priority={priority ? '1' : undefined} width="1200" height="750" aria-hidden="true" tabindex="-1"></video>
+  </span>
+  <span class="print__cap">
+    <span class="print__title">{tx.title}</span>
+    <span class="print__meta"><span class="nw">{d.period}</span> · {tx.category}</span>
+    {metric && m && <span class="print__metric"><b>{m.value}{m.unit && ` ${m.unit}`}</b> {m.label}</span>}
+    {conn && (
+      <span class="print__linked"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 2v6.5a3 3 0 0 0 3 3h7M10 8.5l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span set:html={nowrapDates(conn.label)} /></span>
+    )}
+  </span>
+</a>

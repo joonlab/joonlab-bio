@@ -1,0 +1,44 @@
+---
+// 강의 현장 사진을 인화한 출력물. 캡션 = photos.json 문구 · 날짜 · 장소.
+// photos.json link 가 있는 사진만 «↳ 기관» 표시와 선(data-link)을 가진다.
+import { tilt, magnet, venue, teachKey, targetId, type Photo } from '../content/board';
+import { CONTENT, type Lang } from '../lib';
+import { teachIndex } from '../content/board';
+interface Props {
+  photo: Photo;
+  lang: Lang;
+  i: number;
+  /** 단독 출력물로 선을 그을 때 true (묶음 안에서는 묶음이 선을 갖는다) */
+  line?: boolean;
+  lineLabel?: string;
+  /** 평소엔 숨기고 가리킬 때만 선을 보인다 */
+  quiet?: boolean;
+  eager?: boolean;
+  class?: string;
+  style?: string;
+}
+const { photo: p, lang, i, line = false, quiet = false, lineLabel, eager = false, class: cls, style = '' } = Astro.props;
+const cap = p[lang];
+const key = teachKey(p.link);
+const org = key ? CONTENT[lang].teaching.groups[teachIndex(key)]?.org : undefined;
+const v = venue(p.venue, lang);
+const linkedId = key ? `lk-${p.id}` : undefined;
+---
+<figure
+  class:list={['print print--photo', key && 'print--linked', cls]}
+  data-link={line && key ? targetId(key) : undefined}
+  data-line={line && key ? lineLabel ?? `${v} · ${p.date}` : undefined}
+  data-quiet={line && quiet ? '' : undefined}
+  tabindex="0"
+  aria-describedby={linkedId}
+  style={`--tilt:${tilt(i + 3)};--magnet:${magnet(i + 1)};${style}`}
+>
+  <img src={p.src} width={p.w} height={p.h} alt={`${cap}, ${p.date}`} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+  <figcaption class="print__cap">
+    <span class="print__title">{cap}</span>
+    <span class="print__meta"><time class="nw" datetime={p.date}>{p.date}</time> · {v}</span>
+    {org && (
+      <span class="print__linked" id={linkedId}><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 2v6.5a3 3 0 0 0 3 3h7M10 8.5l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>{org}</span>
+    )}
+  </figcaption>
+</figure>

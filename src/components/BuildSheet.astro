@@ -1,0 +1,36 @@
+---
+// 영상이 없는 «만든 것»(build:lg-edu-agents = projects.items[1])을 인쇄한 한 장.
+// 숫자는 projects.items[1].result 의 .mono 값, 근거 문구는 links.json.
+import { CONTENT, type Lang } from '../lib';
+import { tilt, magnet, connOf, nowrapDates, targetId, boardText } from '../content/board';
+interface Props { lang: Lang; i: number; line?: boolean; class?: string; style?: string; id?: string }
+const { lang, i, line = false, class: cls, style = '', id } = Astro.props;
+const p = CONTENT[lang].projects.items[1];
+const t = boardText(lang);
+const nums = [...p.result.matchAll(/<span class="mono">([^<]+)<\/span>/g)].map((m) => m[1]);
+const conn = connOf('build:lg-edu-agents', lang);
+---
+<a
+  id={id}
+  class:list={['print print--sheet', conn && 'print--linked', cls]}
+  href="#p1"
+  data-link={line && conn ? targetId(conn.key) : undefined}
+  data-line={line && conn ? conn.line : undefined}
+  style={`--tilt:${tilt(i)};--magnet:${magnet(i)};${style}`}
+>
+  <span class="sheet">
+    <span class="sheet__head"><span class="sheet__title">{p.title}</span><span class="sheet__meta">{p.meta}</span></span>
+    <span class="sheet__nums">
+      <span class="sheet__num"><b>{nums[0]}</b>{t.unit_people && <i>{t.unit_people}</i>}<span>{t.sheet_total}</span></span>
+      <span class="sheet__num"><b>{nums[1]}</b>{t.unit_people && <i>{t.unit_people}</i>}<span>{t.sheet_peak}</span></span>
+    </span>
+    <span class="sheet__parts" aria-label={t.sheet_head}>
+      {t.sheet_parts.map((s) => <span class="sheet__part">{s}</span>)}
+    </span>
+  </span>
+  {conn && (
+    <span class="print__cap">
+      <span class="print__linked"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 2v6.5a3 3 0 0 0 3 3h7M10 8.5l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span set:html={nowrapDates(conn.label)} /></span>
+    </span>
+  )}
+</a>

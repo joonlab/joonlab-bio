@@ -1,0 +1,1500 @@
+[
+ {
+  "slug": "exam-video-factory",
+  "title": "한국어 시험 강의·해설 영상 무인 생산 라인",
+  "subtitle": "문항 생성부터 음성·애니메이션 슬라이드·영상 합성까지, 사람 검수 단계를 측정 가능한 자동 게이트로 바꾼 다국어 영상 파이프라인",
+  "category": "영상·모션",
+  "origin": "기업 프로젝트",
+  "period": "2026.06–2026.10",
+  "metrics": [
+   {
+    "value": "43",
+    "unit": "편",
+    "label": "중·고급 시험 해설 영상 납품(합계 341.5분)"
+   },
+   {
+    "value": "57×2",
+    "unit": "편",
+    "label": "미얀마어·벵골어 화면번역 영상 본생산"
+   },
+   {
+    "value": "0",
+    "unit": "건",
+    "label": "납품 게이트 FAIL(PASS 37 · REVIEW 6)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/exam-video-factory/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/exam-video-factory/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/exam-video-factory/",
+  "en": {
+   "title": "Unattended Production Line for Korean Exam Lecture Videos",
+   "subtitle": "A multilingual video pipeline covering item generation, voice, animated slides and video compositing, with human review steps replaced by measurable automated gates",
+   "category": "Video & Motion",
+   "metrics": [
+    {
+     "label": "Intermediate/advanced exam explanation videos delivered (341.5 min total)",
+     "unit": "videos"
+    },
+    {
+     "label": "Videos produced with Burmese and Bengali on-screen translation",
+     "unit": "videos"
+    },
+    {
+     "label": "Delivery gate FAILs (PASS 37 · REVIEW 6)",
+     "unit": "cases"
+    }
+   ]
+  },
+  "ja": {
+   "title": "韓国語試験の講義・解説動画 無人生産ライン",
+   "subtitle": "問題生成から音声・アニメーションスライド・動画合成まで、人の検品工程を計測可能な自動ゲートに置き換えた多言語動画パイプライン",
+   "category": "動画・モーション",
+   "metrics": [
+    {
+     "label": "中・上級試験の解説動画を納品(計341.5分)",
+     "unit": "本"
+    },
+    {
+     "label": "ミャンマー語・ベンガル語の画面翻訳動画を本生産",
+     "unit": "本"
+    },
+    {
+     "label": "納品ゲートFAIL(PASS 37・REVIEW 6)",
+     "unit": "件"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "exam-content-pipeline",
+  "title": "한국어 시험 문항·음성 자동 생성·검수 파이프라인",
+  "subtitle": "쓰기·듣기·읽기 모의고사 문항 생성 하네스와 사람 검수용 TTS 스튜디오, 작업지시–실행–승인 작업판까지 갖춘 시험 콘텐츠 생산 체계",
+  "category": "AI 에이전트·자동화",
+  "origin": "기업 프로젝트",
+  "period": "2025.11–2026.10",
+  "metrics": [
+   {
+    "value": "45",
+    "unit": "세트",
+    "label": "쓰기 모의고사 시스템 업로드 형식 전달"
+   },
+   {
+    "value": "11",
+    "unit": "건",
+    "label": "50문항 파일럿에서 찾은 검증 장치 결함"
+   },
+   {
+    "value": "3",
+    "unit": "개 언어",
+    "label": "TTS 스튜디오 작업 공간(한·영·우즈베크)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/exam-content-pipeline/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/exam-content-pipeline/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/exam-content-pipeline/",
+  "en": {
+   "title": "Automated Generation and Review Pipeline for Korean Exam Items and Audio",
+   "subtitle": "An exam content production system with a generation harness for writing, listening and reading mock tests, a TTS studio for human review, and a work-order, execution and approval board",
+   "category": "AI Agents & Automation",
+   "metrics": [
+    {
+     "label": "Writing mock tests delivered in the system upload format",
+     "unit": "sets"
+    },
+    {
+     "label": "Validator defects found in a 50-item pilot",
+     "unit": "issues"
+    },
+    {
+     "label": "TTS studio workspaces (Korean, English, Uzbek)",
+     "unit": "languages"
+    }
+   ]
+  },
+  "ja": {
+   "title": "韓国語試験の問題・音声 自動生成・検品パイプライン",
+   "subtitle": "書く・聞く・読む模擬試験の問題生成ハーネス、人による検品用TTSスタジオ、作業指示–実行–承認の作業ボードまで備えた試験コンテンツ生産体制",
+   "category": "AIエージェント・自動化",
+   "metrics": [
+    {
+     "label": "書く模擬試験をシステムアップロード形式で納品",
+     "unit": "セット"
+    },
+    {
+     "label": "50問パイロットで見つけた検証機構の欠陥",
+     "unit": "件"
+    },
+    {
+     "label": "TTSスタジオの作業スペース(韓・英・ウズベク)",
+     "unit": "言語"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "retail-daily-report-agent",
+  "title": "유통 일일 실적 보고 자동화 에이전트",
+  "subtitle": "매일 아침 쿼리 결과를 넣으면 보고서와 집계표가 나오고, 발송·발주는 사람 결재 뒤에만 확정되는 유통업 운영 에이전트 진단과 PoC",
+  "category": "AI 에이전트·자동화",
+  "origin": "의뢰 프로젝트",
+  "period": "2026.08–2026.09",
+  "metrics": [
+   {
+    "value": "8",
+    "unit": "항목",
+    "label": "보고서 생성 전 자동 입고검사 검출"
+   },
+   {
+    "value": "60",
+    "unit": "개",
+    "label": "산출물 인수 검증 계층 합계 등식"
+   },
+   {
+    "value": "99",
+    "unit": "항목",
+    "label": "약속 원장 QA(충족 74 · 조건부 16)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/retail-daily-report-agent/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/retail-daily-report-agent/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/retail-daily-report-agent/",
+  "en": {
+   "title": "Daily Retail Sales Report Automation Agent",
+   "subtitle": "Assessment and PoC of a retail operations agent: paste the morning query results to get a report and summary tables, with sending and ordering confirmed only after human approval",
+   "category": "AI Agents & Automation",
+   "metrics": [
+    {
+     "label": "Issues caught by automatic intake checks before report generation",
+     "unit": "items"
+    },
+    {
+     "label": "Hierarchical sum equations in output acceptance checks",
+     "unit": "checks"
+    },
+    {
+     "label": "Commitment ledger QA (met 74 · conditional 16)",
+     "unit": "items"
+    }
+   ]
+  },
+  "ja": {
+   "title": "流通業 日次実績報告 自動化エージェント",
+   "subtitle": "毎朝クエリ結果を入れると報告書と集計表が出力され、送信・発注は人の承認後にのみ確定する流通業向け運用エージェントの診断とPoC",
+   "category": "AIエージェント・自動化",
+   "metrics": [
+    {
+     "label": "報告書生成前の自動受入検査で検出",
+     "unit": "項目"
+    },
+    {
+     "label": "成果物受入検証の階層合計式",
+     "unit": "個"
+    },
+    {
+     "label": "約束台帳QA(充足74・条件付き16)",
+     "unit": "項目"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "lodging-ops-agent",
+  "title": "숙박 운영 로컬 AI 에이전트 «지휘탑»",
+  "subtitle": "한국어 한 줄 지시로 예약·정산·OTA 재고·게스트 응대·청소·가격 업무를 계획→확인→실행→검증→기록하는 로컬 에이전트",
+  "category": "AI 에이전트·자동화",
+  "origin": "의뢰 프로젝트",
+  "period": "2026.10",
+  "metrics": [
+   {
+    "value": "958",
+    "unit": "건",
+    "label": "자동 시험 통과(실패 0)"
+   },
+   {
+    "value": "43",
+    "unit": "개",
+    "label": "6개 업무 영역+시스템 액션"
+   },
+   {
+    "value": "7",
+    "unit": "종",
+    "label": "실행 후 검증 절차"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/lodging-ops-agent/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/lodging-ops-agent/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/lodging-ops-agent/",
+  "en": {
+   "title": "Local AI Agent for Lodging Operations",
+   "subtitle": "A local agent that takes one-line Korean instructions and plans, confirms, executes, verifies and logs reservations, settlement, OTA inventory, guest messaging, cleaning and pricing tasks",
+   "category": "AI Agents & Automation",
+   "metrics": [
+    {
+     "label": "Automated tests passed (0 failures)",
+     "unit": "tests"
+    },
+    {
+     "label": "Actions across 6 business areas plus system",
+     "unit": "actions"
+    },
+    {
+     "label": "Post-execution verification procedures",
+     "unit": "types"
+    }
+   ]
+  },
+  "ja": {
+   "title": "宿泊運営ローカルAIエージェント「指揮塔」",
+   "subtitle": "韓国語の一行指示で予約・精算・OTA在庫・ゲスト対応・清掃・価格の業務を計画→確認→実行→検証→記録するローカルエージェント",
+   "category": "AIエージェント・自動化",
+   "metrics": [
+    {
+     "label": "自動テスト合格(失敗0)",
+     "unit": "件"
+    },
+    {
+     "label": "6業務領域+システムアクション",
+     "unit": "個"
+    },
+    {
+     "label": "実行後の検証手順",
+     "unit": "種"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "researcher-ai-os",
+  "title": "개인 연구자용 AI 운영체계",
+  "subtitle": "Claude Code 위에 등급 판정·위임·타사 모델 교차검토, 훅 5종, 산출물 스킬 3종, 화면 mod 3종을 얹어 실제로 돌려 보고 반증까지 기록한 1단계 데모",
+  "category": "컨설팅·업무설계",
+  "origin": "의뢰 프로젝트",
+  "period": "2026.10",
+  "metrics": [
+   {
+    "value": "5",
+    "unit": "종",
+    "label": "훅(라우터·가드·작업기록·인계·컨텍스트)"
+   },
+   {
+    "value": "3",
+    "unit": "종",
+    "label": "산출물 스킬(회의록·보고서·발표)"
+   },
+   {
+    "value": "23/23",
+    "unit": "",
+    "label": "훅 단위 시험 통과(수정 후)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/researcher-ai-os/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/researcher-ai-os/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/researcher-ai-os/",
+  "en": {
+   "title": "AI Operating Setup for an Independent Researcher",
+   "subtitle": "A phase-1 demo adding task grading, delegation, cross-review by other vendors' models, 5 hooks, 3 output skills and 3 UI mods on top of Claude Code, run in practice with counterexamples recorded",
+   "category": "Consulting & Work Design",
+   "metrics": [
+    {
+     "label": "Hooks (router, guard, work log, handoff, context)",
+     "unit": "hooks"
+    },
+    {
+     "label": "Output skills (meeting notes, reports, presentations)",
+     "unit": "skills"
+    },
+    {
+     "label": "Hook unit tests passed (after fixes)"
+    }
+   ]
+  },
+  "ja": {
+   "title": "個人研究者向けAI運用体系",
+   "subtitle": "Claude Codeの上に等級判定・委任・他社モデルによるクロスレビュー、フック5種、成果物スキル3種、画面mod3種を載せ、実際に運用して反証まで記録した第1段階デモ",
+   "category": "コンサルティング・業務設計",
+   "metrics": [
+    {
+     "label": "フック(ルーター・ガード・作業記録・引き継ぎ・コンテキスト)",
+     "unit": "種"
+    },
+    {
+     "label": "成果物スキル(議事録・報告書・発表)",
+     "unit": "種"
+    },
+    {
+     "label": "フック単体テスト合格(修正後)"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "unattended-ai-relay",
+  "title": "사람 없이 이어 달리는 AI 작업 릴레이",
+  "subtitle": "컨텍스트가 차면 스스로 다음 세션에 넘기고, 막히면 메일로 결정을 묻는 무인 작업 사슬",
+  "category": "AI 에이전트·자동화",
+  "origin": "사이드 프로젝트",
+  "period": "2026.09–2026.10",
+  "metrics": [
+   {
+    "value": "7",
+    "unit": "회",
+    "label": "첫 실전까지 세션 인계 성공(스모크 1 + 실전 6, 실패 0)"
+   },
+   {
+    "value": "6",
+    "unit": "건",
+    "label": "첫 실전 2시간 동안 무인 완주한 작업 단위"
+   },
+   {
+    "value": "11",
+    "unit": "세션",
+    "label": "외부 PoC 1건을 약 5시간에 완주한 사슬 길이"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/unattended-ai-relay/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/unattended-ai-relay/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/unattended-ai-relay/",
+  "en": {
+   "title": "Unattended AI Work Relay",
+   "subtitle": "An unattended work chain that hands off to the next session when context fills up and asks for decisions by email when blocked",
+   "category": "AI Agents & Automation",
+   "metrics": [
+    {
+     "label": "Successful session handoffs through the first real run (1 smoke + 6 real, 0 failures)",
+     "unit": "handoffs"
+    },
+    {
+     "label": "Work units completed unattended in the first 2-hour real run",
+     "unit": "units"
+    },
+    {
+     "label": "Chain length for one external PoC completed in about 5 hours",
+     "unit": "sessions"
+    }
+   ]
+  },
+  "ja": {
+   "title": "人なしで継続するAI作業リレー",
+   "subtitle": "コンテキストが埋まると自ら次のセッションに引き継ぎ、行き詰まるとメールで判断を求める無人作業チェーン",
+   "category": "AIエージェント・自動化",
+   "metrics": [
+    {
+     "label": "初の実戦までのセッション引き継ぎ成功(スモーク1+実戦6、失敗0)",
+     "unit": "回"
+    },
+    {
+     "label": "初の実戦2時間で無人完走した作業単位",
+     "unit": "件"
+    },
+    {
+     "label": "外部PoC1件を約5時間で完走したチェーン長",
+     "unit": "セッション"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "voice-writing-harness",
+  "title": "블라인드 심판을 통과하는 '내 문체' 글쓰기 하네스",
+  "subtitle": "본인이 직접 쓴 글로 문체를 측정하고, 판별 패널이 사람 글과 구별하지 못할 때까지 고쳐 쓰는 시스템",
+  "category": "AI 에이전트·자동화",
+  "origin": "사이드 프로젝트",
+  "period": "2026.07–2026.09",
+  "metrics": [
+   {
+    "value": "5/5",
+    "unit": "",
+    "label": "순수 AI 글을 잡아낸 심판 캘리브레이션"
+   },
+   {
+    "value": "5/6",
+    "unit": "건",
+    "label": "실전 케이스 중 판별 1/5 이하로 통과"
+   },
+   {
+    "value": "65",
+    "unit": "규칙",
+    "label": "AI 표현 린터(상투어 56 + 구조 9)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/voice-writing-harness/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/voice-writing-harness/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/voice-writing-harness/",
+  "en": {
+   "title": "Personal Writing-Style Harness Tested by Blind Judges",
+   "subtitle": "A system that measures writing style from the author's own texts and rewrites drafts until a judge panel cannot tell them from human writing",
+   "category": "AI Agents & Automation",
+   "metrics": [
+    {
+     "label": "Judge calibration: pure AI texts detected"
+    },
+    {
+     "label": "Real cases passed with detection at 1/5 or lower",
+     "unit": "cases"
+    },
+    {
+     "label": "AI-phrasing linter rules (56 clichés + 9 structural)",
+     "unit": "rules"
+    }
+   ]
+  },
+  "ja": {
+   "title": "ブラインド審査を通過する「自分の文体」執筆ハーネス",
+   "subtitle": "本人が書いた文章で文体を測定し、判定パネルが人の文章と区別できなくなるまで書き直すシステム",
+   "category": "AIエージェント・自動化",
+   "metrics": [
+    {
+     "label": "純粋なAI文を見抜いた審査員キャリブレーション"
+    },
+    {
+     "label": "実案件のうち判定1/5以下で通過",
+     "unit": "件"
+    },
+    {
+     "label": "AI表現リンター(常套句56+構造9)",
+     "unit": "ルール"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "commerce-ops-agent",
+  "title": "공동구매 커머스 업무 자동화 에이전트",
+  "subtitle": "격리된 작업 VM 안의 코딩 에이전트가 인플루언서 발굴·인기 상품 조사·섭외 문구 준비를 자율로 수행하는 PoC",
+  "category": "AI 에이전트·자동화",
+  "origin": "의뢰 프로젝트",
+  "period": "2026.09",
+  "metrics": [
+   {
+    "value": "5분 22초",
+    "unit": "",
+    "label": "유사 인플루언서 15명 탐색 (화면 판정 ○12·△3)"
+   },
+   {
+    "value": "31/31",
+    "unit": "",
+    "label": "인기 공구 게시물 원본 대조 정확도"
+   },
+   {
+    "value": "31/36",
+    "unit": "",
+    "label": "조사 범위 안 재현율"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/commerce-ops-agent/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/commerce-ops-agent/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/commerce-ops-agent/",
+  "en": {
+   "title": "Group-Buying Commerce Operations Agent",
+   "subtitle": "A PoC in which a coding agent inside an isolated VM autonomously finds influencers, researches popular products and prepares outreach messages",
+   "category": "AI Agents & Automation",
+   "metrics": [
+    {
+     "label": "Search for 15 similar influencers (visual check ○12 · △3)",
+     "value": "5m 22s"
+    },
+    {
+     "label": "Accuracy of popular group-buy posts checked against originals"
+    },
+    {
+     "label": "Recall within the research scope"
+    }
+   ]
+  },
+  "ja": {
+   "title": "共同購入コマース業務 自動化エージェント",
+   "subtitle": "隔離された作業VM内のコーディングエージェントが、インフルエンサー発掘・人気商品調査・依頼文の準備を自律的に行うPoC",
+   "category": "AIエージェント・自動化",
+   "metrics": [
+    {
+     "label": "類似インフルエンサー15人の探索(画面判定○12・△3)",
+     "value": "5分22秒"
+    },
+    {
+     "label": "人気共同購入投稿の原本照合正確度"
+    },
+    {
+     "label": "調査範囲内の再現率"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "agent-trace-analysis",
+  "title": "프런티어 모델 에이전트 실행 궤적 해부",
+  "subtitle": "코딩 에이전트 4,665스텝을 정량 분석해 하네스 설계 원칙과 교육 자료로 정리",
+  "category": "연구·평가",
+  "origin": "연구 프로젝트",
+  "period": "2026.06",
+  "metrics": [
+   {
+    "value": "4,665",
+    "unit": "스텝",
+    "label": "분석한 실행 궤적(60세션)"
+   },
+   {
+    "value": "86.7",
+    "unit": "%",
+    "label": "코드 작성 후 10스텝 내 검증 비율(중앙값 2스텝)"
+   },
+   {
+    "value": "31",
+    "unit": "종",
+    "label": "관찰된 고유 도구 수"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/agent-trace-analysis/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/agent-trace-analysis/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/agent-trace-analysis/",
+  "en": {
+   "title": "Dissecting Frontier-Model Agent Execution Traces",
+   "subtitle": "Quantitative analysis of 4,665 coding-agent steps, summarized into harness design principles and training materials",
+   "category": "Research & Evaluation",
+   "metrics": [
+    {
+     "label": "Execution trace steps analyzed (60 sessions)",
+     "unit": "steps"
+    },
+    {
+     "label": "Share of code writes verified within 10 steps (median 2 steps)"
+    },
+    {
+     "label": "Distinct tools observed",
+     "unit": "tools"
+    }
+   ]
+  },
+  "ja": {
+   "title": "フロンティアモデルのエージェント実行軌跡の分析",
+   "subtitle": "コーディングエージェント4,665ステップを定量分析し、ハーネス設計原則と教材にまとめたもの",
+   "category": "研究・評価",
+   "metrics": [
+    {
+     "label": "分析した実行軌跡(60セッション)",
+     "unit": "ステップ"
+    },
+    {
+     "label": "コード作成後10ステップ以内の検証率(中央値2ステップ)"
+    },
+    {
+     "label": "観察された固有ツール数",
+     "unit": "種"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "seoul-live-map",
+  "title": "«서울 지금» 실시간 도시 상황 지도",
+  "subtitle": "명소 121곳 혼잡도와 교통·날씨·CCTV를 한 화면에 모으고 «지금 나가기 좋은가»를 근거와 함께 판정",
+  "category": "웹앱·대시보드",
+  "origin": "사이드 프로젝트",
+  "period": "2026.08",
+  "metrics": [
+   {
+    "value": "121",
+    "unit": "곳",
+    "label": "실시간 혼잡도를 보여주는 명소"
+   },
+   {
+    "value": "1",
+    "unit": "콜",
+    "label": "121곳 개요 조회(22KB, 공개 API 경로는 121콜)"
+   },
+   {
+    "value": "34,848",
+    "unit": "행/일",
+    "label": "5분 단위 혼잡도 시계열 적재량"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/seoul-live-map/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/seoul-live-map/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/seoul-live-map/",
+  "en": {
+   "title": "\"Seoul Now\" Real-Time City Map",
+   "subtitle": "Crowding at 121 landmarks plus traffic, weather and CCTV on one screen, with an evidence-backed call on whether now is a good time to go out",
+   "category": "Web Apps & Dashboards",
+   "metrics": [
+    {
+     "label": "Landmarks with real-time crowding",
+     "unit": "places"
+    },
+    {
+     "label": "Overview request for all 121 places (22 KB; the public API route takes 121 calls)",
+     "unit": "call"
+    },
+    {
+     "label": "5-minute crowding time series stored",
+     "unit": "rows/day"
+    }
+   ]
+  },
+  "ja": {
+   "title": "「ソウル今」リアルタイム都市状況マップ",
+   "subtitle": "名所121か所の混雑度と交通・天気・CCTVを一画面に集め、「今出かけるのに良いか」を根拠付きで判定",
+   "category": "Webアプリ・ダッシュボード",
+   "metrics": [
+    {
+     "label": "リアルタイム混雑度を表示する名所",
+     "unit": "か所"
+    },
+    {
+     "label": "121か所の概要取得(22KB、公開API経由では121コール)",
+     "unit": "コール"
+    },
+    {
+     "label": "5分単位の混雑度時系列の蓄積量",
+     "unit": "行/日"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "messenger-wiki",
+  "title": "단톡방을 비공개 위키로",
+  "subtitle": "내 기기의 메신저 대화를 로컬에서만 처리해 방마다 일일 리포트·대화 흐름 그래프·하이브리드 RAG·AI 팟캐스트로",
+  "category": "AI 에이전트·자동화",
+  "origin": "사이드 프로젝트",
+  "period": "2026.06",
+  "metrics": [
+   {
+    "value": "14,300",
+    "unit": "건",
+    "label": "초기 적재 메시지(최근 30일, 7개 방)"
+   },
+   {
+    "value": "46",
+    "unit": "개",
+    "label": "단위 테스트(게이트 17 · 검색 29)"
+   },
+   {
+    "value": "4",
+    "unit": "계층",
+    "label": "파이프라인 영역(복호화·콘텐츠·검색·웹)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/messenger-wiki/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/messenger-wiki/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/messenger-wiki/",
+  "en": {
+   "title": "Turning KakaoTalk Group Chats into a Private Wiki",
+   "subtitle": "Processes messenger chats on the user's own device, locally only, into daily per-room reports, conversation flow graphs, hybrid RAG and AI podcasts",
+   "category": "AI Agents & Automation",
+   "metrics": [
+    {
+     "label": "Messages initially loaded (last 30 days, 7 rooms)",
+     "unit": "messages"
+    },
+    {
+     "label": "Unit tests (gate 17 · search 29)",
+     "unit": "tests"
+    },
+    {
+     "label": "Pipeline areas (decryption, content, search, web)",
+     "unit": "layers"
+    }
+   ]
+  },
+  "ja": {
+   "title": "KakaoTalkグループチャットを非公開Wikiに",
+   "subtitle": "自分の端末のメッセンジャー会話をローカルだけで処理し、ルームごとの日次レポート・会話フローグラフ・ハイブリッドRAG・AIポッドキャストに",
+   "category": "AIエージェント・自動化",
+   "metrics": [
+    {
+     "label": "初期取り込みメッセージ(直近30日、7ルーム)",
+     "unit": "件"
+    },
+    {
+     "label": "単体テスト(ゲート17・検索29)",
+     "unit": "個"
+    },
+    {
+     "label": "パイプライン領域(復号・コンテンツ・検索・Web)",
+     "unit": "層"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "qr-recipe-system",
+  "title": "QR로 여는 다국어 표준 레시피 시스템",
+  "subtitle": "한상 QR → 구성 음식 → 표준 레시피를 2개 언어로 보는 사업장용 웹앱 시연판",
+  "category": "웹앱·대시보드",
+  "origin": "의뢰 프로젝트",
+  "period": "2026.10",
+  "metrics": [
+   {
+    "value": "29/29",
+    "unit": "건",
+    "label": "서버 테스트 통과"
+   },
+   {
+    "value": "91/91",
+    "unit": "건",
+    "label": "배포 주소 E2E 통과(콘솔 오류 0)"
+   },
+   {
+    "value": "14",
+    "unit": "개",
+    "label": "자동 생성한 레시피 PDF(성조 깨짐 0)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/qr-recipe-system/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/qr-recipe-system/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/qr-recipe-system/",
+  "en": {
+   "title": "QR-Based Multilingual Standard Recipe System",
+   "subtitle": "A demo web app for food businesses: scan a set-meal QR, see its dishes, and view standard recipes in two languages",
+   "category": "Web Apps & Dashboards",
+   "metrics": [
+    {
+     "label": "Server tests passed",
+     "unit": "tests"
+    },
+    {
+     "label": "E2E tests passed on the deployed URL (0 console errors)",
+     "unit": "tests"
+    },
+    {
+     "label": "Recipe PDFs generated automatically (0 broken tone marks)",
+     "unit": "PDFs"
+    }
+   ]
+  },
+  "ja": {
+   "title": "QRで開く多言語標準レシピシステム",
+   "subtitle": "定食QR → 構成料理 → 標準レシピを2言語で見られる事業所向けWebアプリのデモ版",
+   "category": "Webアプリ・ダッシュボード",
+   "metrics": [
+    {
+     "label": "サーバーテスト合格",
+     "unit": "件"
+    },
+    {
+     "label": "デプロイ先URLでのE2E合格(コンソールエラー0)",
+     "unit": "件"
+    },
+    {
+     "label": "自動生成したレシピPDF(声調記号の崩れ0)",
+     "unit": "個"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "accident-survey-ai",
+  "title": "교통사고 현장조사 AI — 과실 분류·약도 자동 생성",
+  "subtitle": "사고 진술을 공개 과실 도표 코드로 분류하고, AI는 의미만·좌표는 규칙 엔진이 만드는 2단 구조 PoC",
+  "category": "AI 에이전트·자동화",
+  "origin": "의뢰 프로젝트",
+  "period": "2026.08",
+  "metrics": [
+   {
+    "value": "6/6",
+    "unit": "건",
+    "label": "정답 도표 분류축 일치(최빈 결과 기준)"
+   },
+   {
+    "value": "26/28",
+    "unit": "회",
+    "label": "동일 입력 반복 일치"
+   },
+   {
+    "value": "101",
+    "unit": "개",
+    "label": "실측 확인한 차대차 과실 도표"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/accident-survey-ai/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/accident-survey-ai/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/accident-survey-ai/",
+  "en": {
+   "title": "Traffic Accident Survey AI: Fault Classification and Auto-Generated Sketches",
+   "subtitle": "A two-stage PoC that classifies accident statements into public fault chart codes, with AI handling meaning only and a rule engine producing coordinates",
+   "category": "AI Agents & Automation",
+   "metrics": [
+    {
+     "label": "Match with the correct chart's classification axes (by most frequent result)",
+     "unit": "cases"
+    },
+    {
+     "label": "Identical results on repeated identical input",
+     "unit": "runs"
+    },
+    {
+     "label": "Vehicle-to-vehicle fault charts verified",
+     "unit": "charts"
+    }
+   ]
+  },
+  "ja": {
+   "title": "交通事故現場調査AI — 過失分類・略図の自動生成",
+   "subtitle": "事故の供述を公開過失図表コードに分類し、AIは意味のみ、座標はルールエンジンが生成する2段構成のPoC",
+   "category": "AIエージェント・自動化",
+   "metrics": [
+    {
+     "label": "正解図表の分類軸と一致(最頻結果基準)",
+     "unit": "件"
+    },
+    {
+     "label": "同一入力の反復一致",
+     "unit": "回"
+    },
+    {
+     "label": "実際に確認した車両相互の過失図表",
+     "unit": "個"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "senior-travel-app",
+  "title": "시니어 국내여행 예약 앱",
+  "subtitle": "60~80대를 위한 여행 상품 예약·결제·환불·후기·관리자까지, 웹과 안드로이드 앱을 코드 하나로",
+  "category": "모바일·디바이스",
+  "origin": "의뢰 프로젝트",
+  "period": "2026.10",
+  "metrics": [
+   {
+    "value": "24/24",
+    "unit": "건",
+    "label": "서버 테스트(환불 경계값·좌석·포인트 등)"
+   },
+   {
+    "value": "28/28",
+    "unit": "건",
+    "label": "배포 주소 E2E(콘솔 오류 0)"
+   },
+   {
+    "value": "29/29",
+    "unit": "건",
+    "label": "폴더블 실기기 E2E(커버 14 · 펼침 15)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/senior-travel-app/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/senior-travel-app/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/senior-travel-app/",
+  "en": {
+   "title": "Domestic Travel Booking App for Seniors",
+   "subtitle": "Booking, payment, refunds, reviews and admin for travel packages aimed at people in their 60s to 80s, with web and Android apps from one codebase",
+   "category": "Mobile & Devices",
+   "metrics": [
+    {
+     "label": "Server tests (refund boundaries, seats, points, etc.)",
+     "unit": "tests"
+    },
+    {
+     "label": "E2E tests on the deployed URL (0 console errors)",
+     "unit": "tests"
+    },
+    {
+     "label": "E2E tests on a physical foldable (cover 14 · unfolded 15)",
+     "unit": "tests"
+    }
+   ]
+  },
+  "ja": {
+   "title": "シニア向け国内旅行予約アプリ",
+   "subtitle": "60〜80代向けの旅行商品の予約・決済・返金・レビュー・管理画面まで、Webとアンドロイドアプリを一つのコードで",
+   "category": "モバイル・デバイス",
+   "metrics": [
+    {
+     "label": "サーバーテスト(返金境界値・座席・ポイントなど)",
+     "unit": "件"
+    },
+    {
+     "label": "デプロイ先URLでのE2E(コンソールエラー0)",
+     "unit": "件"
+    },
+    {
+     "label": "フォルダブル実機E2E(カバー14・展開15)",
+     "unit": "件"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "homework-assign-app",
+  "title": "학원 미완료 과제 자동 배정 앱",
+  "subtitle": "수업 뒤 남은 과제를 학생별 다음 일정에 자동 배정하고, 웹·안드로이드·서버가 같은 데이터를 쓰는 학원 운영 도구",
+  "category": "웹앱·대시보드",
+  "origin": "의뢰 프로젝트",
+  "period": "2026.10",
+  "metrics": [
+   {
+    "value": "117/117",
+    "unit": "건",
+    "label": "화면 9개 × 기기 10종 레이아웃 감사 통과"
+   },
+   {
+    "value": "19.5",
+    "unit": "초",
+    "label": "웹→앱 최악 동기화 지연 (목표 20초)"
+   },
+   {
+    "value": "52/52",
+    "unit": "개",
+    "label": "서버 단위 테스트 통과"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/homework-assign-app/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/homework-assign-app/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/homework-assign-app/",
+  "en": {
+   "title": "Automatic Assignment App for Unfinished Academy Homework",
+   "subtitle": "An academy operations tool that assigns leftover homework to each student's next session, with web, Android and server sharing the same data",
+   "category": "Web Apps & Dashboards",
+   "metrics": [
+    {
+     "label": "Layout audit passed: 9 screens × 10 device types",
+     "unit": "checks"
+    },
+    {
+     "label": "Worst-case web-to-app sync delay (target 20 s)",
+     "unit": "s"
+    },
+    {
+     "label": "Server unit tests passed",
+     "unit": "tests"
+    }
+   ]
+  },
+  "ja": {
+   "title": "学習塾の未完了課題 自動割り当てアプリ",
+   "subtitle": "授業後に残った課題を生徒ごとの次の予定へ自動で割り当て、Web・アンドロイド・サーバーが同じデータを使う学習塾運営ツール",
+   "category": "Webアプリ・ダッシュボード",
+   "metrics": [
+    {
+     "label": "画面9個 × 端末10種のレイアウト監査合格",
+     "unit": "件"
+    },
+    {
+     "label": "Web→アプリの最大同期遅延(目標20秒)",
+     "unit": "秒"
+    },
+    {
+     "label": "サーバー単体テスト合格",
+     "unit": "個"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "foldable-mac-lab",
+  "title": "폴더블 폰 × 맥 연동 랩",
+  "subtitle": "무선만으로 안드로이드 폴더블과 맥을 하나로 묶은 미니 프로젝트 묶음 — 클립보드·마이크·화면·입력·음성 에이전트까지",
+  "category": "모바일·디바이스",
+  "origin": "사이드 프로젝트",
+  "period": "2026.09–2026.10",
+  "metrics": [
+   {
+    "value": "10",
+    "unit": "개",
+    "label": "9일 동안 만든 미니 프로젝트"
+   },
+   {
+    "value": "11",
+    "unit": "개",
+    "label": "공개 저장소 (허브 포함)"
+   },
+   {
+    "value": "35",
+    "unit": "분",
+    "label": "첫 앱을 폰에 설치하기까지"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/foldable-mac-lab/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/foldable-mac-lab/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/foldable-mac-lab/",
+  "en": {
+   "title": "Foldable Phone × Mac Integration Lab",
+   "subtitle": "A set of mini projects linking an Android foldable and a Mac over wireless only: clipboard, microphone, screen, input and a voice agent",
+   "category": "Mobile & Devices",
+   "metrics": [
+    {
+     "label": "Mini projects built in 9 days",
+     "unit": "projects"
+    },
+    {
+     "label": "Public repositories (including the hub)",
+     "unit": "repos"
+    },
+    {
+     "label": "Until the first app was installed on the phone",
+     "unit": "min"
+    }
+   ]
+  },
+  "ja": {
+   "title": "フォルダブルスマホ × Mac 連携ラボ",
+   "subtitle": "無線だけでアンドロイドのフォルダブルとMacを連携させたミニプロジェクト群 — クリップボード・マイク・画面・入力・音声エージェントまで",
+   "category": "モバイル・デバイス",
+   "metrics": [
+    {
+     "label": "9日間で作ったミニプロジェクト",
+     "unit": "個"
+    },
+    {
+     "label": "公開リポジトリ(ハブを含む)",
+     "unit": "個"
+    },
+    {
+     "label": "最初のアプリをスマホにインストールするまで",
+     "unit": "分"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "subway-seat-predictor",
+  "title": "«앉을까» 지하철 착석 예측 앱",
+  "subtitle": "노선도·실시간 도착·혼잡도 통계를 한 화면에 모으고 «이 열차를 타면 몇 정거장 안에 앉을까»를 추정하는 폴더블 앱",
+  "category": "모바일·디바이스",
+  "origin": "사이드 프로젝트",
+  "period": "2026.10",
+  "metrics": [
+   {
+    "value": "656",
+    "unit": "개",
+    "label": "노선 그래프에 묶은 역 (노선 24개)"
+   },
+   {
+    "value": "58",
+    "unit": "%",
+    "label": "도착 예정 초 필드가 0으로 오는 비율 — 메시지 파싱으로 보정"
+   },
+   {
+    "value": "950",
+    "unit": "회/일",
+    "label": "실시간 호출 상한 (공식 한도 1,000회)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/subway-seat-predictor/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/subway-seat-predictor/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/subway-seat-predictor/",
+  "en": {
+   "title": "Subway Seat Prediction App",
+   "subtitle": "A foldable app that brings the route map, live arrivals and crowding statistics onto one screen and estimates how many stops it will take to get a seat on a given train",
+   "category": "Mobile & Devices",
+   "metrics": [
+    {
+     "label": "Stations in the route graph (24 lines)",
+     "unit": "stations"
+    },
+    {
+     "label": "Share of arrival-seconds fields returned as 0, corrected by parsing the message text"
+    },
+    {
+     "label": "Daily real-time request cap (official limit 1,000)",
+     "unit": "calls/day"
+    }
+   ]
+  },
+  "ja": {
+   "title": "「座れるかな」地下鉄着席予測アプリ",
+   "subtitle": "路線図・リアルタイム到着・混雑度統計を一画面に集め、「この列車に乗れば何駅以内に座れるか」を推定するフォルダブルアプリ",
+   "category": "モバイル・デバイス",
+   "metrics": [
+    {
+     "label": "路線グラフに収めた駅(24路線)",
+     "unit": "駅"
+    },
+    {
+     "label": "到着予定秒フィールドが0で返る割合 — メッセージ解析で補正"
+    },
+    {
+     "label": "リアルタイム呼び出しの上限(公式上限1,000回)",
+     "unit": "回/日"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "dualcue-live-interpreter",
+  "title": "화상 미팅 양방향 실시간 통역 자막",
+  "subtitle": "내 말은 상대 화면에만 영어 자막으로, 상대 말은 내 화면에만 한국어 자막으로 — 상대는 아무것도 설치하지 않는 macOS 앱",
+  "category": "음성·오디오",
+  "origin": "사이드 프로젝트",
+  "period": "2026.10",
+  "metrics": [
+   {
+    "value": "48→8",
+    "unit": "%",
+    "label": "반쪽 문장 확정 비율, 첫 버전→v2 (한국어→영어)"
+   },
+   {
+    "value": "58:8",
+    "unit": "",
+    "label": "블라인드 쌍비교 승패, 다듬은 자막 vs 초벌만 (p<0.001)"
+   },
+   {
+    "value": "0.5~1",
+    "unit": "초",
+    "label": "말한 뒤 초벌 자막 표시까지"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/dualcue-live-interpreter/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/dualcue-live-interpreter/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/dualcue-live-interpreter/",
+  "en": {
+   "title": "Two-Way Live Interpretation Subtitles for Video Meetings",
+   "subtitle": "A macOS app that shows my speech as English subtitles only on the other person's screen and their speech as Korean subtitles only on mine, with nothing for them to install",
+   "category": "Voice & Audio",
+   "metrics": [
+    {
+     "label": "Rate of finalized half-sentences, first version → v2 (Korean→English)"
+    },
+    {
+     "label": "Blind pairwise wins:losses, refined vs. draft-only subtitles (p<0.001)"
+    },
+    {
+     "label": "From speech to draft subtitle on screen",
+     "unit": "s"
+    }
+   ]
+  },
+  "ja": {
+   "title": "ビデオ会議の双方向リアルタイム通訳字幕",
+   "subtitle": "自分の発話は相手の画面にだけ英語字幕で、相手の発話は自分の画面にだけ韓国語字幕で表示 — 相手は何もインストールしないmacOSアプリ",
+   "category": "音声・オーディオ",
+   "metrics": [
+    {
+     "label": "文の途中で確定した割合、初版→v2(韓国語→英語)"
+    },
+    {
+     "label": "ブラインド一対比較の勝敗、仕上げ字幕 vs 下訳のみ(p<0.001)"
+    },
+    {
+     "label": "発話から下訳字幕の表示まで",
+     "unit": "秒"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "local-tts-voice-clone",
+  "title": "대형 오픈 TTS 로컬 서버화 + 내 목소리 복제",
+  "subtitle": "GPU 서버 전용으로 공개된 35B MoE 음성 합성 모델을 맥에서 4bit로 돌리고, 받아쓰기 검증으로 빠진 문장을 다시 만드는 개인 TTS 서버",
+  "category": "음성·오디오",
+  "origin": "사이드 프로젝트",
+  "period": "2026.10",
+  "metrics": [
+   {
+    "value": "약 2",
+    "unit": "배",
+    "label": "실시간 대비 생성 속도 (검증 끔)"
+   },
+   {
+    "value": "약 32",
+    "unit": "GB",
+    "label": "생성 중 최대 메모리"
+   },
+   {
+    "value": "0~0.07",
+    "unit": "CER",
+    "label": "본인 목소리 최종 QA 오류율 (용도 7종)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/local-tts-voice-clone/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/local-tts-voice-clone/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/local-tts-voice-clone/",
+  "en": {
+   "title": "Running a Large Open TTS Model Locally + Cloning My Own Voice",
+   "subtitle": "A personal TTS server that runs a 35B MoE speech model, released for GPU servers only, on a Mac at 4-bit, and regenerates sentences that transcription checks find missing",
+   "category": "Voice & Audio",
+   "metrics": [
+    {
+     "label": "Generation speed relative to real time (verification off)",
+     "unit": "×",
+     "value": "~2"
+    },
+    {
+     "label": "Peak memory during generation",
+     "value": "~32"
+    },
+    {
+     "label": "Error rate in final QA of my own voice (7 use cases)"
+    }
+   ]
+  },
+  "ja": {
+   "title": "大型オープンTTSのローカルサーバー化+自分の声の複製",
+   "subtitle": "GPUサーバー専用として公開された35B MoE音声合成モデルをMac上で4bitで動かし、書き起こし検証で抜けた文を作り直す個人用TTSサーバー",
+   "category": "音声・オーディオ",
+   "metrics": [
+    {
+     "label": "実時間比の生成速度(検証オフ)",
+     "unit": "倍",
+     "value": "約2"
+    },
+    {
+     "label": "生成中の最大メモリ",
+     "value": "約32"
+    },
+    {
+     "label": "本人の声の最終QAエラー率(用途7種)"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "coding-tutor-curriculum",
+  "title": "비개발자 대표를 위한 AI 코딩 과외 커리큘럼·교재 사이트",
+  "subtitle": "Claude Code 한 도구를 축으로 한 1:1 과외의 5단계 커리큘럼 페이지와, 강사용·배포용 교재를 한 쌍씩 만든 교재 사이트",
+  "category": "교육·콘텐츠 제작",
+  "origin": "의뢰 프로젝트",
+  "period": "2026.09",
+  "metrics": [
+   {
+    "value": "37",
+    "unit": "항목",
+    "label": "본 과정 5단계 학습 항목"
+   },
+   {
+    "value": "83",
+    "unit": "개",
+    "label": "교재 문서 (강사용 + 배포용)"
+   },
+   {
+    "value": "30",
+    "unit": "장",
+    "label": "교재 그림 (SVG 25 + 생성 표지 5)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/coding-tutor-curriculum/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/coding-tutor-curriculum/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/coding-tutor-curriculum/",
+  "en": {
+   "title": "AI Coding Tutoring Curriculum and Textbook Site for a Non-Developer CEO",
+   "subtitle": "A 5-stage curriculum page for one-on-one tutoring built around Claude Code, plus a textbook site with paired instructor and handout versions",
+   "category": "Education & Content",
+   "metrics": [
+    {
+     "label": "Learning items across the 5 stages of the main course",
+     "unit": "items"
+    },
+    {
+     "label": "Textbook documents (instructor + handout)",
+     "unit": "docs"
+    },
+    {
+     "label": "Textbook figures (25 SVG + 5 generated covers)",
+     "unit": "figures"
+    }
+   ]
+  },
+  "ja": {
+   "title": "非開発者の代表向けAIコーディング家庭教師カリキュラム・教材サイト",
+   "subtitle": "Claude Codeを軸にした1対1指導の5段階カリキュラムページと、講師用・配布用の教材を対で作った教材サイト",
+   "category": "教育・コンテンツ制作",
+   "metrics": [
+    {
+     "label": "本課程5段階の学習項目",
+     "unit": "項目"
+    },
+    {
+     "label": "教材文書(講師用+配布用)",
+     "unit": "個"
+    },
+    {
+     "label": "教材の図(SVG 25+生成表紙5)",
+     "unit": "枚"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "motion-reel-engine",
+  "title": "코드로 만드는 모션그래픽 영상 엔진",
+  "subtitle": "HTML 타임라인을 프레임 단위로 렌더링하고, 레이아웃·영상·음량을 자동 검사하는 영상 제작 키트",
+  "category": "영상·모션",
+  "origin": "사이드 프로젝트",
+  "period": "2026.09–2026.10",
+  "metrics": [
+   {
+    "value": "6",
+    "unit": "종",
+    "label": "장면별로 섞어 쓰는 스타일 팩(손그림·아이소·다크·키네틱·인포그래픽·사진)"
+   },
+   {
+    "value": "12",
+    "unit": "종",
+    "label": "엔진 내장 장면 전환"
+   },
+   {
+    "value": "102",
+    "unit": "건",
+    "label": "실제 제작에서 쌓은 교훈 기록(LESSONS)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/motion-reel-engine/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/motion-reel-engine/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/motion-reel-engine/",
+  "en": {
+   "title": "Code-Driven Motion Graphics Video Engine",
+   "subtitle": "A video production kit that renders HTML timelines frame by frame and automatically checks layout, video and loudness",
+   "category": "Video & Motion",
+   "metrics": [
+    {
+     "label": "Style packs mixed per scene (hand-drawn, isometric, dark, kinetic, infographic, photo)",
+     "unit": "packs"
+    },
+    {
+     "label": "Built-in scene transitions",
+     "unit": "transitions"
+    },
+    {
+     "label": "Lessons recorded from real production (LESSONS)",
+     "unit": "entries"
+    }
+   ]
+  },
+  "ja": {
+   "title": "コードで作るモーショングラフィックス動画エンジン",
+   "subtitle": "HTMLタイムラインをフレーム単位でレンダリングし、レイアウト・映像・音量を自動検査する動画制作キット",
+   "category": "動画・モーション",
+   "metrics": [
+    {
+     "label": "シーンごとに組み合わせるスタイルパック(手描き・アイソメ・ダーク・キネティック・インフォグラフィック・写真)",
+     "unit": "種"
+    },
+    {
+     "label": "エンジン内蔵のシーントランジション",
+     "unit": "種"
+    },
+    {
+     "label": "実制作で蓄積した教訓記録(LESSONS)",
+     "unit": "件"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "character-video-system",
+  "title": "캐릭터 일관성 유지 AI 영상 반복 제작 시스템",
+  "subtitle": "직접 만든 2D 캐릭터의 화풍을 지키며 짧은 영상을 반복 생성하는 오픈웨이트 파이프라인 PoC와 실측",
+  "category": "연구·평가",
+  "origin": "연구 프로젝트",
+  "period": "2026.08",
+  "metrics": [
+   {
+    "value": "94~102",
+    "unit": "%",
+    "label": "확정 처방(키프레임 사전 lanczos 축소+약한 언샤프) 적용 시 입력 대비 손 외곽선 복원율, 3개 컷 모두 재현(대조군 78~84%)"
+   },
+   {
+    "value": "123",
+    "unit": "초",
+    "label": "RTX 5090 기준 720×1280·5초 컷 1편 생성 시간(초기 환경 warm, 이후 환경에서는 141~147초)"
+   },
+   {
+    "value": "90",
+    "unit": "초",
+    "label": "OpenPose 제어 동작 이식 1편 생성 시간(애니메이트 모델 방식 225초)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/character-video-system/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/character-video-system/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/character-video-system/",
+  "en": {
+   "title": "Repeatable AI Video Production with Consistent Characters",
+   "subtitle": "An open-weight pipeline PoC with measurements for repeatedly generating short videos while keeping an original 2D character's art style",
+   "category": "Research & Evaluation",
+   "metrics": [
+    {
+     "label": "Hand outline recovery vs. input with the final fix (pre-shrinking keyframes with Lanczos + light unsharp), reproduced on all 3 shots (control 78–84%)"
+    },
+    {
+     "label": "Time to generate one 720×1280, 5-second shot on an RTX 5090 (initial environment warm; 141–147 s in later environments)",
+     "unit": "s"
+    },
+    {
+     "label": "Time to generate one OpenPose-controlled motion transfer (225 s with the animate-model approach)",
+     "unit": "s"
+    }
+   ]
+  },
+  "ja": {
+   "title": "キャラクターの一貫性を保つAI動画の反復制作システム",
+   "subtitle": "自作2Dキャラクターの画風を保ちながら短い動画を繰り返し生成するオープンウェイトのパイプラインPoCと実測",
+   "category": "研究・評価",
+   "metrics": [
+    {
+     "label": "確定処方(キーフレームを事前にlanczos縮小+弱いアンシャープ)適用時の入力比の手の輪郭線復元率、3カットすべてで再現(対照群78〜84%)"
+    },
+    {
+     "label": "RTX 5090で720×1280・5秒カット1本の生成時間(初期環境warm、以降の環境では141〜147秒)",
+     "unit": "秒"
+    },
+    {
+     "label": "OpenPose制御による動作移植1本の生成時間(アニメイトモデル方式は225秒)",
+     "unit": "秒"
+    }
+   ]
+  }
+ },
+ {
+  "slug": "agent-session-dashboard",
+  "title": "AI 코딩 세션 수십 개 관제·복구 대시보드",
+  "subtitle": "동시에 도는 Claude Code 세션 중 나를 기다리는 것을 찾고, 강제 종료 뒤 고른 것만 부하 없이 되살리는 도구",
+  "category": "웹앱·대시보드",
+  "origin": "사이드 프로젝트",
+  "period": "2026.07–2026.10",
+  "metrics": [
+   {
+    "value": "158/158",
+    "unit": "세션",
+    "label": "배터리 방전 종료 뒤 단계 복원으로 되살린 Claude 세션(창 8/8)"
+   },
+   {
+    "value": "2.51→0.25",
+    "unit": "GB",
+    "label": "보존 정책·압축 적용 후 스냅샷 저장 용량(21,284건→7,003건)"
+   },
+   {
+    "value": "12",
+    "unit": "개",
+    "label": "한 번에 자동 실행하는 세션 상한(메모리 보호)"
+   }
+  ],
+  "card": "https://joonlab98.com/portfolio/media/agent-session-dashboard/card.mp4",
+  "poster": "https://joonlab98.com/portfolio/media/agent-session-dashboard/poster.webp",
+  "url": "https://joonlab98.com/portfolio/projects/agent-session-dashboard/",
+  "en": {
+   "title": "Monitoring and Recovery Dashboard for Dozens of AI Coding Sessions",
+   "subtitle": "A tool that finds which of many concurrent Claude Code sessions are waiting on me and, after a forced shutdown, restores only the selected ones without overloading the machine",
+   "category": "Web Apps & Dashboards",
+   "metrics": [
+    {
+     "label": "Claude sessions restored in stages after a battery-drain shutdown (windows 8/8)",
+     "unit": "sessions"
+    },
+    {
+     "label": "Snapshot storage after retention policy and compression (21,284 → 7,003 snapshots)"
+    },
+    {
+     "label": "Cap on sessions launched automatically at once (memory protection)",
+     "unit": "sessions"
+    }
+   ]
+  },
+  "ja": {
+   "title": "数十のAIコーディングセッションの監視・復旧ダッシュボード",
+   "subtitle": "同時に動くClaude Codeセッションの中から自分を待っているものを見つけ、強制終了後に選んだものだけを負荷をかけずに復元するツール",
+   "category": "Webアプリ・ダッシュボード",
+   "metrics": [
+    {
+     "label": "バッテリー切れ終了後に段階復元したClaudeセッション(ウィンドウ8/8)",
+     "unit": "セッション"
+    },
+    {
+     "label": "保存ポリシー・圧縮適用後のスナップショット保存容量(21,284件→7,003件)"
+    },
+    {
+     "label": "一度に自動起動するセッションの上限(メモリ保護)",
+     "unit": "個"
+    }
+   ]
+  }
+ }
+]

@@ -1,0 +1,38 @@
+[
+ {
+  "from": "demo:agent-session-dashboard",
+  "to": "teach:cmds",
+  "label_ko": "월간 CMDS 20회 (2026-09-03)에서 소개",
+  "evidence": "github.com/joonlab/cmux-state-dashboard README «월간 CMDS 20회차에서, 이 도구를 소개하며» · 강의/월간 CMDS/20회차_20260903/05_슬라이드_원고.md"
+ },
+ {
+  "from": "demo:messenger-wiki",
+  "to": "teach:cmds",
+  "label_ko": "월간 CMDS 20회 (2026-09-03) 카톡 기록 회수 사례",
+  "evidence": "강의/월간 CMDS/20회차_20260903/05_슬라이드_원고.md (카톡 사진·장문 보존 기간 표)"
+ },
+ {
+  "from": "demo:foldable-mac-lab",
+  "to": "teach:cmds",
+  "label_ko": "월간 CMDS 21회 (2026-10-06)에서 시연",
+  "evidence": "강의/월간 CMDS/21회차_20261006/05_슬라이드_원고.md (폴드8·라이브 데모)"
+ },
+ {
+  "from": "demo:unattended-ai-relay",
+  "to": "teach:cmds",
+  "label_ko": "월간 CMDS 21회 (2026-10-06)에서 소개",
+  "evidence": "강의/월간 CMDS/21회차_20261006/05_슬라이드_원고.md (릴레이)"
+ },
+ {
+  "from": "build:lg-edu-agents",
+  "to": "teach:lg-academy",
+  "label_ko": "LG인화원 실제 교육에 투입 · 누적 973명 · 동시접속 79명",
+  "evidence": "ko.json projects.items[1]"
+ },
+ {
+  "from": "photo:*",
+  "to": "photos.json link 필드",
+  "label_ko": "사진은 촬영 기관의 강의 줄로만 연결",
+  "evidence": "인스타 하이라이트 Lecture 스토리 캡션·위치 태그"
+ }
+]

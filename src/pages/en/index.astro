@@ -1,0 +1,9 @@
+---
+import Base from '../../layouts/Base.astro';
+import Page from '../../components/Page.astro';
+import { CONTENT } from '../../lib';
+const c = CONTENT.en;
+---
+<Base lang="en" title={c.meta.title} description={c.meta.description} ogLocale={c.meta.og_locale}>
+  <Page lang="en" />
+</Base>

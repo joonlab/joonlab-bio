@@ -1,7 +1,7 @@
 {
   "name": "joonlab-bio",
   "compatibility_date": "2026-07-01",
-  "assets": { "directory": "./public" },
+  "assets": { "directory": "./dist" },
   "routes": [
     { "pattern": "bio.joonlab98.com", "custom_domain": true }
   ]

@@ -1,0 +1,6 @@
+---
+// 판에 마커로 쓰고 네모를 두른 제목. color: ink | blue | green
+interface Props { id: string; color?: 'ink' | 'blue' | 'green'; tilt?: number }
+const { id, color = 'ink', tilt = -0.8 } = Astro.props;
+---
+<h2 class:list={['mh', `mh--${color}`]} id={id} style={`--mh-tilt:${tilt}deg`}><span class="mh__box"><slot /></span></h2>

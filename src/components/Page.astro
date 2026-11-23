@@ -1,0 +1,341 @@
+---
+// v4 세계 B «워크숍 판서 벽». 판은 두 장뿐이다.
+//   판 1(첫 화면): 이름·강의 줄과 출력물 5장. 초록 화살표가 출력물 → 강의 줄을 잇는다.
+//   판 2(넓은 판): 왼쪽에 가르친 곳(기관 마커 줄 + 그 기관에서 찍은 사진), 오른쪽에 만든 것(출력물·메모)을
+//                 줄마다 마주 보게 붙이고, links.json 에 있는 연결만 판 안에서 긋는다.
+// 지금 하는 일·숫자·컨설팅·글·경력은 판 아래 서랍(details)에, 연락은 펜 받침 아래 턱에 모은다.
+// 출력물은 페이지 전체에서 한 번만 붙인다. 다른 자리에서는 마커 참조(↑)로 첫 화면 출력물을 가리킨다.
+import '../styles/board.css';
+import { CONTENT, LANGS, UPDATED, pathFor, type Lang } from '../lib';
+import {
+  HERO, WIDE_ROWS, MORE_DEMOS, MAIN_CONTACT,
+  boardText, heroLines, demoBy, connOf, teachIndex, targetId, photosLinkedTo, unlinkedPhotos, nowrapDates,
+} from '../content/board';
+import photos from '../content/photos.json';
+import FocusLinks from './vendor/focus-links.tsx';
+import Printout from './Printout.astro';
+import PhotoPrint from './PhotoPrint.astro';
+import BuildSheet from './BuildSheet.astro';
+import MarkerHeading from './MarkerHeading.astro';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const c = CONTENT[lang];
+const t = boardText(lang);
+const mail = `mailto:wns9133@gmail.com?subject=${encodeURIComponent(c.ui.mail_subject)}`;
+const LANG_NAME: Record<Lang, string> = { ko: '한국어', en: 'English', ja: '日本語' };
+const groups = c.teaching.groups;
+const photoBy = Object.fromEntries(photos.map((p) => [p.id, p]));
+const lines = heroLines(lang);
+const byDateDesc = <T extends { date: string }>(a: T, b: T) => b.date.localeCompare(a.date);
+const countFmt = t.count(9).replace('9', '{n}');
+
+// 기관 키 → teaching.groups 인덱스 (세 언어 groups 순서는 같다)
+const koGroups = CONTENT.ko.teaching.groups;
+const GROUP_IDX: Record<string, number> = {
+  'lg-academy': teachIndex('lg-academy'),
+  sk: teachIndex('sk'),
+  cmds: teachIndex('cmds'),
+  community: teachIndex('community'),
+  lgu: koGroups.findIndex((g) => g.org.startsWith('LG U+')),
+  seoul: koGroups.findIndex((g) => g.org.startsWith('서울AI허브')),
+};
+// 선·강조 대상이 되는 기관(사진이나 만든 것이 이어진 곳)
+const LINKED_KEYS = new Set(['lg-academy', 'sk', 'cmds', 'community']);
+// 사진도 페이지에서 한 번만: 첫 화면에 붙인 사진은 넓은 판 묶음에서 뺀다
+const heroPhotoIds = new Set(HERO.photos);
+const groupPhotos = (key: string) => photosLinkedTo(key).filter((p) => !heroPhotoIds.has(p.id)).sort(byDateDesc);
+const otherPhotos = unlinkedPhotos.slice().sort(byDateDesc);
+
+const heroDemo = demoBy[HERO.demo];
+const heroVideo = demoBy[HERO.video];
+const [heroP1, heroP2] = HERO.photos.map((id) => photoBy[id]);
+const heroKeys = new Set([connOf(`demo:${HERO.video}`, lang)?.key, connOf(`demo:${HERO.demo}`, lang)?.key, connOf('build:lg-edu-agents', lang)?.key]);
+const REF_ID = { sheet: 'hp-sheet', video: 'hp-video', demo: 'hp-demo' } as const;
+
+const mainLinks = c.contact.links.filter((l) => MAIN_CONTACT.some((u) => l.url.includes(u)));
+const restLinks = c.contact.links.filter((l) => !mainLinks.includes(l));
+let tiltN = 0;
+const nextTilt = () => tiltN++;
+---
+<a class="skip" href="#main">{c.ui.skip}</a>
+<div class="wall">
+
+  <!-- 판 1: 첫 화면. 왼쪽 마커 글씨, 오른쪽 출력물, 사이를 초록 화살표 -->
+  <div class="frame">
+    <section class="board hero" data-board id="top" aria-labelledby="main">
+      <FocusLinks client:idle countFmt={countFmt} />
+      <nav class="tags" aria-label={c.ui.lang_label}>
+        {LANGS.map((l) => (
+          <a class="tag" href={pathFor(l)} hreflang={l} lang={l} aria-current={l === lang ? 'page' : undefined}>{LANG_NAME[l]}</a>
+        ))}
+      </nav>
+      <div class="hero__text" data-lane>
+        <h1 class="hero__name" id="main" tabindex="-1"><span class="hero__nm">{c.hero.name}</span><span class="hero__latin" lang={lang === 'en' ? 'ko' : 'en'}>{c.hero.name_sub}</span></h1>
+        <p class="hero__title"><span class="t-teach">{t.title[0]}<span class="hero__dot">·</span></span><span class="t-build">{t.title[1]}</span></p>
+        <p class="hero__role" set:html={c.hero.role} />
+        <p class="hero__lede">{c.hero.lede}</p>
+        <p class="hero__sub">{c.hero.sub}</p>
+        <div class="hero__taught">
+          <h2 class="taught__h">{t.taught}</h2>
+          <ul class="taught">
+            {lines.map((ln) => {
+              const idx = ln.key ? GROUP_IDX[ln.key] : GROUP_IDX.seoul;
+              return (
+                <li>
+                  <a class="taught__line" href={`#g${idx}`} data-target={ln.key && heroKeys.has(ln.key) ? targetId(ln.key) : undefined}>
+                    <b>{ln.org}</b> <span set:html={nowrapDates(ln.text)} />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+      <div class="hero__prints">
+        <div class="hp-a">
+          <BuildSheet lang={lang} i={2} line id={REF_ID.sheet} class="hp hp--sheet" />
+          <Printout demo={heroVideo} lang={lang} i={0} line id={REF_ID.video} class="hp hp--video" priority metric={false} />
+          <Printout demo={heroDemo} lang={lang} i={1} line id={REF_ID.demo} class="hp hp--demo" metric={false} />
+        </div>
+        <div class="hp-b">
+          <PhotoPrint photo={heroP1} lang={lang} i={0} eager class="hp hp--p1" />
+          <PhotoPrint photo={heroP2} lang={lang} i={1} eager class="hp hp--p2" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 판 2: 넓은 판. 왼쪽 가르친 곳 ↔ 오른쪽 만든 것을 줄마다 마주 보게 놓고, 근거 있는 선만 긋는다 -->
+  <div class="frame">
+    <section class="board wide" data-board aria-labelledby="teaching">
+      <FocusLinks client:idle countFmt={countFmt} />
+      <div class="wb wb--head">
+        <div class="wb__l">
+          <MarkerHeading id="teaching" color="blue" tilt={-0.6}>{c.toc.teaching}</MarkerHeading>
+          <p class="board__intro">{c.teaching.intro}</p>
+        </div>
+        <div class="wb__r">
+          <MarkerHeading id="projects" color="ink" tilt={-1.2}>{c.toc.projects}</MarkerHeading>
+        </div>
+      </div>
+
+      {WIDE_ROWS.map((row, ri) => (
+        <div class:list={['wb', `wb--r${ri}`]}>
+          <div class="wb__l" data-lane>
+            {row.teach.map((key) => {
+              if (key === 'others') {
+                return (
+                  <div class="tg tg--others">
+                    <h3 class="sub-h">{t.other_photos}</h3>
+                    <div class="snaps snaps--others">
+                      {otherPhotos.map((p) => <PhotoPrint photo={p} lang={lang} i={nextTilt()} class={p.h > p.w ? 'print--tall' : undefined} />)}
+                    </div>
+                  </div>
+                );
+              }
+              const g = GROUP_IDX[key];
+              const grp = groups[g];
+              const linked = LINKED_KEYS.has(key);
+              const ps = linked ? groupPhotos(key) : [];
+              return (
+                <div class:list={['tg', !linked && 'tg--small']} id={`g${g}`}>
+                  <h3 class:list={['org', !linked && 'org--small']}>
+                    <span class="org__name" data-target={linked ? targetId(key) : undefined} tabindex={linked ? '0' : undefined}>{grp.org}</span>
+                  </h3>
+                  {grp.period && <p class="org__period nw">{grp.period}</p>}
+                  <ul class="dash">{grp.lines.map((l) => <li set:html={nowrapDates(l)} />)}</ul>
+                  {ps.length > 0 && (
+                    <div class:list={['snaps', `snaps--${ps.length}`]} data-link={targetId(key)} data-noline>
+                      {ps.map((p) => <PhotoPrint photo={p} lang={lang} i={nextTilt()} class={p.h > p.w ? 'print--tall' : undefined} />)}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+          <div class="wb__r">
+            {row.made.map((it, k) => {
+              const p = it.p !== undefined ? c.projects.items[it.p] : undefined;
+              const d = it.demo ? demoBy[it.demo] : undefined;
+              const noteConn = it.p === 1 ? connOf('build:lg-edu-agents', lang) : undefined;
+              const ref = it.ref;
+              return (
+                <div class:list={['mi', d && p && 'mi--pair', d && !p && 'mi--solo', !d && 'mi--note', `mi--k${(ri * 3 + k) % 4}`]}>
+                  {d && <Printout demo={d} lang={lang} i={nextTilt()} line={it.line} class="mi__print" />}
+                  {p && (
+                    <article
+                      class="note"
+                      id={`p${it.p}`}
+                      data-link={it.line && noteConn ? targetId(noteConn.key) : undefined}
+                      data-line={it.line && noteConn ? noteConn.line : undefined}
+                    >
+                      <h3 class="ptitle">{p.title}</h3>
+                      <p class="pmeta" set:html={nowrapDates(p.meta)} />
+                      <p class="pwhat">{p.what}</p>
+                      <p class="presult" set:html={p.result} />
+                      {noteConn && (
+                        <p class="print__linked note__linked"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 2v6.5a3 3 0 0 0 3 3h7M10 8.5l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span set:html={nowrapDates(noteConn.label)} /></p>
+                      )}
+                      {ref && (
+                        <a class="ref" href={`#${REF_ID[ref]}`}><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 13.5V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{t.ref[ref]}</a>
+                      )}
+                      {(p.links.length > 0 || p.more.length > 0) && (
+                        <div class="pfoot">
+                          {p.links.map((l) => <a class="ink-link" href={l.url}>{l.label}</a>)}
+                          {p.more.length > 0 && (
+                            <details class="more">
+                              <summary>{c.ui.more}</summary>
+                              <ul class="dash">{p.more.map((m) => <li>{m}</li>)}</ul>
+                            </details>
+                          )}
+                        </div>
+                      )}
+                    </article>
+                  )}
+                </div>
+              );
+            })}
+            {ri === WIDE_ROWS.length - 1 && (
+              <div class="mi mi--more">
+                <h3 class="sub-h">{t.other_demos}</h3>
+                <div class="minis">
+                  {MORE_DEMOS.map((s) => <Printout demo={demoBy[s]} lang={lang} i={nextTilt()} metric={false} />)}
+                </div>
+                <p class="minis__all"><a class="ink-link" href={c.projects.all_link_url}>{t.all_demos}</a></p>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </section>
+  </div>
+
+  <!-- 판 아래 서랍: 지금 하는 일·숫자 / 컨설팅 / 글 / 경력 -->
+  <section class="drawers" aria-label={t.drawers}>
+    <details class="drawer">
+      <summary><h2 class="drawer__t" id="now">{c.toc.now}</h2><span class="drawer__n">{t.items(c.now.items.length)}</span></summary>
+      <div class="drawer__body dgrid">
+        <ol class="now__list">
+          {c.now.items.map((it) => (
+            <li class="now__item">
+              <p class="now__date nw">{it.date}</p>
+              <h3 class="now__title">{it.title}</h3>
+              <ul class="dash">{it.lines.map((l) => <li set:html={nowrapDates(l)} />)}</ul>
+            </li>
+          ))}
+        </ol>
+        <div class="figs-wrap">
+          <h3 class="table__h">{c.now.fig_title}</h3>
+          <table class="figs">
+            <caption class="sr">{t.figures_note}</caption>
+            <thead><tr><th scope="col">{c.ui.th_num}</th><th scope="col">{c.ui.th_what}</th><th scope="col">{c.ui.th_src}</th></tr></thead>
+            <tbody>
+              {c.now.figures.map((fg) => (
+                <tr><td class="figs__num">{fg.num}</td><td>{fg.what}</td><td class="figs__src">{fg.src}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+    <details class="drawer">
+      <summary><h2 class="drawer__t" id="consulting">{c.toc.consulting}</h2><span class="drawer__n">{t.items(c.consulting.items.length)}</span></summary>
+      <div class="drawer__body">
+        <ul class="clist">
+          {c.consulting.items.map((it) => (
+            <li>
+              <p class="clist__date nw">{it.date}</p>
+              <h3 class="clist__title">{it.title}</h3>
+              <p>{it.body}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </details>
+    <details class="drawer">
+      <summary><h2 class="drawer__t" id="writing">{c.toc.writing}</h2><span class="drawer__n">{t.items(c.writing.items.length)}</span></summary>
+      <div class="drawer__body">
+        <ul class="wlist">
+          {c.writing.items.map((w) => (
+            <li>
+              <span class="wlist__kind">{w.kind}</span>
+              <a class="wlist__title" href={w.url}>{w.title}</a>
+              <span class="wlist__desc">{w.desc}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </details>
+    <details class="drawer">
+      <summary><h2 class="drawer__t" id="career">{c.toc.career}</h2><span class="drawer__n">{t.items(c.career.items.length)}</span></summary>
+      <div class="drawer__body dgrid">
+        <ol class="tline">
+          {c.career.items.map((it) => (
+            <li>
+              <p class="tline__date nw">{it.date}</p>
+              <h3 class="tline__title">{it.title}</h3>
+              <p>{it.body}</p>
+            </li>
+          ))}
+        </ol>
+        <div class="langs-wrap">
+          <h3 class="table__h">{c.career.langs_title}</h3>
+          <ul class="langs">
+            {c.career.langs.map((l) => <li><b lang={l.name === '日本語' ? 'ja' : l.name === 'English' ? 'en' : 'ko'}>{l.name}</b><span>{l.level}</span></li>)}
+          </ul>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- 펜 받침: 화면 아래에 붙어 따라오다가, 끝에서는 연락 턱 위에 얹힌다 -->
+  <div class="tray" role="region" aria-label={c.ui.contact_btn}>
+    <ul class="pens">
+      <li><span class="pen pen--blue" aria-hidden="true"></span>{t.pen_blue}</li>
+      <li><span class="pen pen--green" aria-hidden="true"></span>{t.pen_green}</li>
+      <li><span class="pen pen--ink" aria-hidden="true"></span>{t.pen_black}</li>
+    </ul>
+    <div class="tray__acts">
+      <a class="tray__second" href={c.projects.all_link_url}>{t.portfolio}</a>
+      <a class="btn" href={mail} aria-label={c.ui.contact_btn}>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3.5 6.5h17v11h-17zM4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span class="btn__full">{c.ui.contact_btn}</span><span class="btn__short">{t.mail_short}</span>
+      </a>
+    </div>
+  </div>
+  <!-- 펜 받침 턱: 연락. 주요 쪽지 3장 + 나머지는 마커 한 줄 목록 -->
+  <section class="ledge" id="contact-ledge" aria-labelledby="contact">
+    <div class="ledge__lead">
+      <h2 class="ledge__h" id="contact">{c.toc.contact}</h2>
+      <p>{c.contact.note}</p>
+      <p class="ledge__addr">{t.mail_label} <span class="addr">wns9133@gmail.com</span></p>
+    </div>
+    <div class="ledge__side">
+      <ul class="slips">
+        {mainLinks.map((l, li) => (
+          <li class="slip" style={`--tilt:${[-1.2, 0.8, -0.5][li % 3]}deg;--magnet:${['var(--magnet-yellow)', 'var(--magnet-blue)', 'var(--magnet-red)'][li % 3]}`}>
+            <a href={l.url}><b>{l.label}</b><span>{l.desc}</span></a>
+          </li>
+        ))}
+      </ul>
+      <div class="ledge__more">
+        <h3 class="ledge__more-h">{t.other_links}</h3>
+        <ul class="mlinks">
+          {restLinks.map((l) => <li><a href={l.url}>{l.label}</a></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p>{c.footer} · {c.ui.updated} <time class="nw" datetime={UPDATED}>{UPDATED}</time></p>
+    <a class="ink-link" href="#top">{t.to_top}</a>
+  </footer>
+
+</div>
+
+<script>
+  import { startVideoPool } from './vendor/video-pool';
+  startVideoPool();
+</script>

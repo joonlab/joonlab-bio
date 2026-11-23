@@ -1,65 +1,47 @@
 # joonlab-bio
 
-박준(PARK JOON)의 커스텀 bio-link & 포트폴리오 사이트.
+박준(PARK JOON)의 bio·포트폴리오 사이트.
 
-- **라이브**: https://bio.joonlab98.com
-- **워커**: `joonlab-bio` (Cloudflare Workers)
+- **라이브**: https://bio.joonlab98.com (`/`, `/en/`, `/ja/`)
+- **워커**: `joonlab-bio` (Cloudflare Workers 정적 에셋)
 
 ## 스택
 
-정적 HTML/CSS + **Cloudflare Workers 정적 에셋(assets)** 서빙. 프레임워크 없음.
-본문은 언어별 JSON(`content/ko|en|ja.json`)에 있고, `python3 build.py` 가 `public/` 아래 정적 페이지 3개를 만든다.
+Astro 7 + React island. 빌드 결과 `dist/` 를 Cloudflare Workers 정적 에셋으로 서빙한다. Node 24 (`.node-version`).
 
 ```
 .
-├── build.py                # content/*.json → public/index.html, public/en/, public/ja/
-├── content/                # 본문 원고 (ko 정본, en·ja 번역)
-├── wrangler.jsonc          # Cloudflare Workers 설정 (정적 에셋 + 커스텀 도메인)
-├── public/                 # 배포되는 정적 에셋 (빌드 결과 포함, 커밋한다)
-│   ├── index.html          # 한국어
-│   ├── en/index.html       # English
-│   ├── ja/index.html       # 日本語
-│   ├── favicon.svg
-│   └── assets/             # site.css, site.js, 프로필 사진, OG 이미지
-└── .github/workflows/
-    └── deploy.yml          # push → Actions → wrangler deploy
+├── astro.config.mjs
+├── package.json / package-lock.json
+├── src/
+│   ├── pages/            # index.astro, en/, ja/
+│   ├── layouts/Base.astro
+│   ├── components/       # Page.astro(판 구성), Printout·PhotoPrint·BuildSheet, vendor/(레퍼런스 컴포넌트 이식본)
+│   ├── content/          # ko·en·ja.json(본문), demos.json(포트폴리오 데모), photos.json(강의 사진), links.json(만든 것↔가르친 것 연결 근거), board.ts
+│   └── styles/board.css
+├── public/               # photos/(개인정보 가림 처리본), assets/(OG·아이콘·프로필), favicon
+├── wrangler.jsonc        # assets.directory = ./dist
+└── .github/workflows/deploy.yml   # push → npm ci → astro build → wrangler deploy
+```
+
+## 로컬
+
+```bash
+npm ci
+npm run dev        # http://localhost:4321
+npm run build      # dist/
 ```
 
 ## 내용 고치기
 
-1. `content/ko.json` 을 고친다(정본). 같은 키를 `en.json`·`ja.json` 에도 반영한다.
-2. `build.py` 의 `UPDATED` 날짜를 바꾼다.
-3. `python3 build.py` → `public/` 결과까지 커밋한다.
-
-## 로컬 미리보기
-
-```bash
-# Cloudflare Workers 런타임 그대로 로컬 실행
-npx wrangler dev
-
-# 또는 단순 정적 서버로 확인
-python3 -m http.server -d public 8000   # → http://localhost:8000
-```
+- 본문: `src/content/ko.json`(정본) → 같은 키를 `en.json`·`ja.json` 에 반영.
+- 연결선: `src/content/links.json` 에 근거가 있는 연결만 넣는다. 사진은 `photos.json` 의 `link`.
+- 강의 사진을 추가할 때: 화이트보드·화면·명찰에 전화번호·이메일·이름·비밀번호가 읽히는지 원본 해상도로 확인하고, 있으면 단색으로 가린 뒤 넣는다(블러 금지).
 
 ## 배포
 
-`main` 브랜치에 push하면 GitHub Actions가 `cloudflare/wrangler-action`으로 `wrangler deploy`를 실행해 자동 배포됩니다.
-
-### 필요한 GitHub Secret
-
-| 이름 | 설명 |
-|------|------|
-| `CLOUDFLARE_API_TOKEN` | Cloudflare API 토큰 (권한: **Account · Workers Scripts · Edit** + **Zone · Workers Routes · Edit**, 대상 `joonlab98.com`) |
-
-토큰 생성: Cloudflare 대시보드 → My Profile → API Tokens → Create Token → *Edit Cloudflare Workers* 템플릿.
-등록: `gh secret set CLOUDFLARE_API_TOKEN --repo joonlab/joonlab-bio`
-
-### 수동 배포 (로컬)
-
-```bash
-npx wrangler deploy
-```
+`main` push → GitHub Actions 가 Node 24 로 빌드하고 `cloudflare/wrangler-action@v3`(`wranglerVersion: "4.77.0"` 고정)로 배포한다. Secret `CLOUDFLARE_API_TOKEN` 필요.
 
 ## 크레딧
 
-레이아웃·구성은 요한님의 **cmds-bio** bio-link 사이트에서 영감을 받았습니다.
+디자인 참고: impeccable(design skill), Aceternity UI Focus Cards 이식(`src/components/vendor/`, 원본 라이선스 주석 유지).
